@@ -147,15 +147,16 @@ header .container_content::after{
     font-weight: 00;
     position: relative;
 }
-.header_title::after{
+/*.header_title::after{
   content: 'Wediing';
   position: absolute;
-  top: 0;
-  left: 0;
+  bottom: 0;
+  right: 0;
   font-size: 1rem;
   opacity: 0.4;
-  transform: translate(-50%, 40%);
-}
+  transform: translate(60%, 50%);
+   font-family: 'Ci', sans-serif; 
+}*/
 .d{
      font-family: 'Ci', sans-serif; 
      font-weight: 00;
@@ -212,10 +213,13 @@ box-shadow: 0 0px 80px rgba(44,49,57,0.3);
 
 /*Nav*/
 .top_bar{
-  position: absolute;
+  position: fixed;
   width: 100%;
   top: 0;
   z-index: 999;
+     backdrop-filter: blur(4px); 
+  -webkit-backdrop-filter: blur(4px); /* Safari support */
+  background-color: rgba(255, 255, 255, 0.01);
 }
 
 .top_bar-info{
