@@ -107,16 +107,16 @@ header{
 header .container_content{
     justify-content: space-between;
     height: 100vh;
-    padding: 0px 0px 150px;
+    padding: 0px 0px 10px;
     width: 100%;
- /* background-image: url("../img/image\ 7.jpg");
+  /*background-image: url("../img/image\ 7.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;*/
     padding-top: 36px;
 }
-header .container_content::after{
+/*header .container_content::after{
   content: '';
   position: absolute;
   background-color: #000000;
@@ -125,7 +125,7 @@ header .container_content::after{
   bottom: 0;
   left: 0;
   clip-path: polygon(0% 0%, 0 100%, 100% 100%);
-}
+}*/
 .header_top{
   display: flex;
   flex-direction: column;
@@ -149,7 +149,7 @@ header .container_content::after{
     width: 100%;
 }
 .header_title img{
-  padding: 0px 11px;
+  padding: 0px 13px;
 }
 /*.header_title::after{
   content: 'Wediing';
@@ -178,6 +178,7 @@ header .container_content::after{
   display: flex;
   flex-direction: column;
   align-items: center;
+  display: none;
 }
 .unlock_button{
 width: 50px;
@@ -230,7 +231,7 @@ box-shadow: 0 0px 80px rgba(44,49,57,0.3);
   display: flex;
   width: 100%;
   justify-content: space-between;
-  padding: 10px;
+  padding: 10px  0px;
   opacity: 0.95;
  
   position: relative;
@@ -268,7 +269,7 @@ box-shadow: 0 0px 80px rgba(44,49,57,0.3);
 
 
 .image{
-    width: 97%;
+    width: 95%;
     height: 100%;
     background-color: azure;
     margin: 12px 0px 12px 0px;
