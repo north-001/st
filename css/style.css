@@ -146,11 +146,10 @@ header .container_content::after{
     font-weight: 00;
     position: relative;
     padding: 10px 0px;
-
     width: 100%;
 }
 .header_title img{
-  padding: 0px 10px;
+  padding: 0px 11px;
 }
 /*.header_title::after{
   content: 'Wediing';
@@ -269,11 +268,11 @@ box-shadow: 0 0px 80px rgba(44,49,57,0.3);
 
 
 .image{
-    width: 100%;
+    width: 97%;
     height: 100%;
     background-color: azure;
-    margin: 12px 0px 0px 0px;
-    position: relative;
+    margin: 12px 0px 12px 0px;
+    position: relative;  
 }
 .image .img{
     background-image: url("../img/image\ 7.jpg");
