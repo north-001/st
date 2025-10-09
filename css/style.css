@@ -165,6 +165,7 @@ body {
   width: 100%;
   height: 100dvh;
   display: flex;
+  flex-direction: row;
   background-color: #F9F8EC;
 }
 
@@ -172,6 +173,9 @@ body {
   justify-content: space-between;
   height: 100%;
   padding-top: 34px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .hero-header{
@@ -193,7 +197,8 @@ body {
 
 .hero-image{
   width: 100%;
-  height: 100dvh; /* вместо 100% */
+  height: 100%;
+  max-height: 100%;
   position: relative;
   margin: 10px 0;
 }
@@ -235,7 +240,4 @@ body {
 
 .spacer {
   height: 300dvh;
-  background-color: red;
 }
-
-
