@@ -45,94 +45,105 @@
       </div>
     </header>
 
-    <div class="section-main-info section">
+    <!-- Основная информация -->
+    <section class="section section-intro">
       <div class="container">
         <div class="container_content container_content_center">
-          <p class="title">
-            Дорогие <span class="title-i">родные</span> и
-            <span class="title-i">близкие</span>
+          <p class="section-title">
+            Дорогие <span class="section-title-accent">родные</span> и
+            <span class="section-title-accent">близкие</span>
           </p>
-          <p class="text">
+          <p class="section-text">
             Приближается очень важный и трепетный для нас день. Наша свадьба! Мы
             будем рады разделить это событие с вами.
           </p>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="section-date section">
+    <!-- Дата -->
+    <section class="section section-date">
       <div class="container">
         <div class="container_content container_content_center">
-          <p class="title">12.08.2026</p>
+          <p class="section-title">12.08.2026</p>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="section-location section">
+    <!-- Локация -->
+    <section class="section section-location">
       <div class="container">
         <div class="container_content container_content_center">
-          <p class="title"><span class="title-i">Место</p>
-          <p class="text">Villa Barvikha 135, посёлок Барвиха, 135.</p>
+          <p class="section-title">
+            <span class="section-title-accent">Место</span>
+          </p>
+          <p class="section-text">Villa Barvikha 135, посёлок Барвиха, 135.</p>
           <img
-            class="image"
+            class="section-image"
             src="img/blue-sky-and-flower-ds-3840x2400-3235952354.jpg"
-            alt=""
+            alt="Локация свадьбы"
           />
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="section-programm section">
+    <!-- Программа -->
+    <section class="section section-program">
       <div class="container">
         <div class="container_content container_content_center">
-          <p class="title m-title">Программа дня</p>
+          <p class="section-title section-title-main">Программа дня</p>
 
-          <ul class="programm-time-list ">
-            <ul class="programm-time-info programm-time-info_active">
-              <li class="title">16:00</li>
-              <li class="subtitle">Welcome</li>
-              <li class="text">
+          <ul class="program-list">
+            <li class="program-item program-item_active">
+              <p class="program-time">16:00</p>
+              <p class="program-subtitle">Welcome</p>
+              <p class="program-text">
                 Холодное Prosecco, легкая обстановка и знакомство
-              </li>
-              <div class="break-conteiner"><div class="break"></div></div>
-            </ul>
-            <ul class="programm-time-info">
-              <li class="title">16:30</li>
-              <li class="subtitle">Welcome</li>
-              <li class="text">
+              </p>
+              <div class="program-divider"></div>
+            </li>
+
+            <li class="program-item">
+              <p class="program-time">16:30</p>
+              <p class="program-subtitle">Welcome</p>
+              <p class="program-text">
                 Холодное Prosecco, легкая обстановка и знакомство
-              </li>
-              <div class="break-conteiner"><div class="break"></div></div>
-            </ul>
-            <ul class="programm-time-info">
-              <li class="title">17:00</li>
-              <li class="subtitle">Welcome</li>
-              <li class="text">
+              </p>
+              <div class="program-divider"></div>
+            </li>
+
+            <li class="program-item">
+              <p class="program-time">17:00</p>
+              <p class="program-subtitle">Welcome</p>
+              <p class="program-text">
                 Холодное Prosecco, легкая обстановка и знакомство
-              </li>
-              <div class="break-conteiner"><div class="break"></div></div>
-            </ul>
-            <ul class="programm-time-info">
-              <li class="title">18:00</li>
-              <li class="subtitle">Welcome</li>
-              <li class="text">
+              </p>
+              <div class="program-divider"></div>
+            </li>
+
+            <li class="program-item">
+              <p class="program-time">18:00</p>
+              <p class="program-subtitle">Welcome</p>
+              <p class="program-text">
                 Холодное Prosecco, легкая обстановка и знакомство
-              </li>
-            </ul>
+              </p>
+            </li>
           </ul>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="section-dresscode section">
+    <!-- Дресс-код -->
+    <section class="section section-dresscode">
       <div class="container">
         <div class="container_content container_content_center">
-          <p class="title">Дресс код</p>
-          <p class="text">
+          <p class="section-title">Дресс-код</p>
+          <p class="section-text">
             Мы будем очень рады, если вы поддержите цветовую палитру нашей
             свадьбы.
           </p>
-          <ul class="dresscode-colors-list">
+
+          <ul class="dresscode-list">
             <li class="dresscode-color dresscode-color_active"></li>
             <li class="dresscode-color"></li>
             <li class="dresscode-color"></li>
@@ -141,31 +152,58 @@
           </ul>
         </div>
       </div>
-    </div>
+    </section>
 
     <div class="spacer"></div>
 
-<script>
-  let vhLocked = false;
+    <script>
+      let vhLocked = false;
 
-  function setVh() {
-    if (vhLocked) return; // если уже зафиксировали — ничего не делаем
-    const vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-  }
+      function setVh() {
+        if (vhLocked) return; // если уже зафиксировали — ничего не делаем
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty("--vh", `${vh}px`);
+      }
 
-  // выставляем высоту при загрузке
-  setVh();
+      // выставляем высоту при загрузке
+      setVh();
 
-  // обновляем до первого скролла или resize (например, при повороте экрана)
-  window.addEventListener('resize', setVh, { passive: true });
-  window.addEventListener('orientationchange', setVh, { passive: true });
+      // обновляем до первого скролла или resize (например, при повороте экрана)
+      window.addEventListener("resize", setVh, { passive: true });
+      window.addEventListener("orientationchange", setVh, { passive: true });
 
-  // как только пользователь скроллит — фиксируем значение
-  window.addEventListener('scroll', () => {
-    vhLocked = true;
-  }, { once: true, passive: true });
-</script>
+      // как только пользователь скроллит — фиксируем значение
+      window.addEventListener(
+        "scroll",
+        () => {
+          vhLocked = true;
+        },
+        { once: true, passive: true }
+      );
+    </script>
 
+    <script>
+      const heroContent = document.querySelector(".hero .container_content");
+      const heroTitle = document.querySelector(".hero-title");
+      const heroImage = document.querySelector(".hero-image");
+
+      window.addEventListener("scroll", () => {
+        const scrollY = window.scrollY;
+        const maxScroll = 150; // после какого скролла эффект заканчивается
+        const progress = Math.min(scrollY / maxScroll, 1);
+
+        // от 10px → 0px
+        const sidePadding = 10 - 10 * progress;
+        const sidePaddingTitle = 0 + 10 * progress;
+        const opacityTitle = 1 - 0.5 * progress;
+        const scaleTitle = 1 - 0.05 * progress;
+        const marginImage = 10 - 10 * progress;
+
+        heroContent.style.padding = `34px ${sidePadding}px 0 ${sidePadding}px`;
+        heroTitle.style.padding = `0px ${sidePaddingTitle}px`;
+        heroTitle.style.opacity = `${opacityTitle}`;
+        heroImage.style.margin = `${marginImage}px 0`;
+      });
+    </script>
   </body>
 </html>
