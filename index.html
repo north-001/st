@@ -215,29 +215,47 @@
       let isFixed = false;
       let imageDistanceFromTop = 0;
 
-      // === функция для пересчета позиции ===
+      // Элемент для отображения размеров (можно убрать, если нужно только в консоли)
+      const debugBox = document.createElement("div");
+      debugBox.style.position = "fixed";
+      debugBox.style.bottom = "10px";
+      debugBox.style.left = "10px";
+      debugBox.style.background = "rgba(0,0,0,0.6)";
+      debugBox.style.color = "#fff";
+      debugBox.style.padding = "6px 10px";
+      debugBox.style.fontSize = "12px";
+      debugBox.style.fontFamily = "monospace";
+      debugBox.style.borderRadius = "4px";
+      debugBox.style.zIndex = "9999";
+      document.body.appendChild(debugBox);
+
+      // функция для пересчета позиции hero-image от верха страницы
       function updateImageDistance() {
         const rect = heroImage.getBoundingClientRect();
         imageDistanceFromTop = rect.top + window.scrollY;
       }
 
-      // вычисляем при загрузке и ресайзе
-      window.addEventListener("load", updateImageDistance);
+      // функция для вывода текущих размеров hero-image
+      function logImageSize() {
+        const rect = heroImage.getBoundingClientRect();
+        const width = Math.round(rect.width);
+        const height = Math.round(rect.height);
+        debugBox.textContent = `image: ${width}px × ${height}px`;
+        // также можно вывести в консоль
+        console.log(`hero-image size: ${width}x${height}`);
+      }
+
+      // при загрузке и ресайзе
+      window.addEventListener("load", () => {
+        updateImageDistance();
+        logImageSize();
+      });
       window.addEventListener("resize", () => {
         updateImageDistance();
+        logImageSize();
       });
-
-      // оптимизация для плавности
-      let ticking = false;
 
       window.addEventListener("scroll", () => {
-        if (!ticking) {
-          window.requestAnimationFrame(updateScroll);
-          ticking = true;
-        }
-      });
-
-      function updateScroll() {
         const scrollY = window.scrollY;
         const maxScroll = 150;
         const progress = Math.min(scrollY / maxScroll, 1);
@@ -255,7 +273,7 @@
         heroTitle.style.transform = `scale(${scaleTitle})`;
         heroImage.style.margin = `${marginImage}px 0`;
 
-        // ===== фиксация через translateY =====
+        // ===== фиксация hero =====
         if (scrollY >= imageDistanceFromTop && !isFixed) {
           isFixed = true;
           hero.classList.add("hero-fixed");
@@ -268,8 +286,9 @@
           space.classList.remove("space_active");
         }
 
-        ticking = false;
-      }
+        // обновляем показ размера
+        logImageSize();
+      });
     </script>
   </body>
 </html>
