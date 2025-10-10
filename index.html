@@ -45,6 +45,8 @@
       </div>
     </header>
 
+    <div class="space"></div>
+
     <!-- Основная информация -->
     <section class="section section-intro">
       <div class="container">
@@ -186,6 +188,8 @@
       const heroContent = document.querySelector(".hero .container_content");
       const heroTitle = document.querySelector(".hero-title");
       const heroImage = document.querySelector(".hero-image");
+      const hero = document.querySelector(".hero");
+      const space = document.querySelector(".space");
 
       window.addEventListener("scroll", () => {
         const scrollY = window.scrollY;
@@ -195,14 +199,27 @@
         // от 10px → 0px
         const sidePadding = 10 - 10 * progress;
         const sidePaddingTitle = 0 + 10 * progress;
-        const opacityTitle = 1 - 0.5 * progress;
-        const scaleTitle = 1 - 0.05 * progress;
+        const opacityTitle = 1 - 0.6 * progress;
+        const scaleTitle = 1 - 0.06 * progress;
         const marginImage = 10 - 10 * progress;
 
         heroContent.style.padding = `34px ${sidePadding}px 0 ${sidePadding}px`;
         heroTitle.style.padding = `0px ${sidePaddingTitle}px`;
         heroTitle.style.opacity = `${opacityTitle}`;
+        heroTitle.style.scale = `${scaleTitle}`;
         heroImage.style.margin = `${marginImage}px 0`;
+
+        // действие при достижении 150px
+        if (scrollY >= maxScroll) {
+          // здесь делаем то, что нужно
+          hero.classList.add("hero-fixed");
+          space.classList.add("space_active");
+          // например: heroImage.style.position = "fixed";
+        } else {
+          // можно сбросить, если нужно
+          hero.classList.remove("hero-fixed");
+          space.classList.remove("space_active");
+        }
       });
     </script>
   </body>
