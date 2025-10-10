@@ -218,6 +218,7 @@ body {
   height: 100%;
   position: relative;
   margin: 10px 0;
+  top: 0;
 }
 .hero-image .hero-image-main{
   width: 100%;
