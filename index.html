@@ -213,12 +213,31 @@
       const space = document.querySelector(".space");
 
       let isFixed = false;
+      let imageDistanceFromTop = 0;
 
-      // вычисляем позицию элемента от верха страницы один раз
-      const imageDistanceFromTop =
-        heroImage.getBoundingClientRect().top + window.scrollY;
+      // === функция для пересчета позиции ===
+      function updateImageDistance() {
+        const rect = heroImage.getBoundingClientRect();
+        imageDistanceFromTop = rect.top + window.scrollY;
+      }
+
+      // вычисляем при загрузке и ресайзе
+      window.addEventListener("load", updateImageDistance);
+      window.addEventListener("resize", () => {
+        updateImageDistance();
+      });
+
+      // оптимизация для плавности
+      let ticking = false;
 
       window.addEventListener("scroll", () => {
+        if (!ticking) {
+          window.requestAnimationFrame(updateScroll);
+          ticking = true;
+        }
+      });
+
+      function updateScroll() {
         const scrollY = window.scrollY;
         const maxScroll = 150;
         const progress = Math.min(scrollY / maxScroll, 1);
@@ -236,21 +255,21 @@
         heroTitle.style.transform = `scale(${scaleTitle})`;
         heroImage.style.margin = `${marginImage}px 0`;
 
-        // ===== фиксация hero =====
+        // ===== фиксация через translateY =====
         if (scrollY >= imageDistanceFromTop && !isFixed) {
-          // фиксируем
           isFixed = true;
           hero.classList.add("hero-fixed");
           hero.style.transform = `translateY(-${imageDistanceFromTop}px)`;
           space.classList.add("space_active");
         } else if (scrollY < imageDistanceFromTop && isFixed) {
-          // убираем фиксацию
           isFixed = false;
           hero.classList.remove("hero-fixed");
           hero.style.transform = `translateY(0px)`;
           space.classList.remove("space_active");
         }
-      });
+
+        ticking = false;
+      }
     </script>
   </body>
 </html>

@@ -170,7 +170,10 @@ body {
   display: flex;
   background-color: #e7eaee;
   color: #1c2025;
-  transform: translateY(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0); /* включает GPU-ускорение */
 }
 .hero-fixed{
   position: fixed;
@@ -180,7 +183,6 @@ body {
 }
 .fake-hero{
   z-index: -999;
-  
   transform: translateY(-100%);
   visibility: hidden;
 }
