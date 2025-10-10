@@ -17,7 +17,7 @@
       <div class="container">
         <div class="container_content container_content_center">
           <div class="nav-info">
-            <p>Приглашение</p>
+            <p>Приглашение 1.1</p>
             <p>09.03</p>
           </div>
         </div>
@@ -249,7 +249,7 @@
         heroImageS.style.margin = `${marginImage}px 0`;
 
         // ===== фиксация hero =====
-        if (scrollY + 5 >= imageDistanceFromTop && !isFixed) {
+        if (scrollY + 100 >= imageDistanceFromTop && !isFixed) {
           const imageH = heroImage.offsetHeight;
           heroImage.style.height = `${imageH}px`;
 
@@ -258,7 +258,7 @@
           //  hero.classList.add("hero-fixed");
           //  hero.style.transform = `translateY(-${imageDistanceFromTop}px)`;
           //  space.classList.add("space_active");
-        } else if (scrollY + 5 < imageDistanceFromTop && isFixed) {
+        } else if (scrollY + 100 < imageDistanceFromTop && isFixed) {
           //  heroImage.style.height = `100%`;
           isFixed = false;
           hero.style.height = `100%`;
@@ -275,3 +275,4 @@
     -->
   </body>
 </html>
+
