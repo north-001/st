@@ -17,7 +17,7 @@
       <div class="container">
         <div class="container_content container_content_center">
           <div class="nav-info">
-            <p>Приглашение 1.1</p>
+            <p>Приглашение 1.3</p>
             <p>09.03</p>
           </div>
         </div>
@@ -250,7 +250,8 @@
 
         // ===== фиксация hero =====
         if (scrollY + 100 >= imageDistanceFromTop && !isFixed) {
-          const imageH = heroImage.offsetHeight;
+          //const imageH = heroImage.offsetHeight;
+          const imageH = heroImage.getBoundingClientRect().height;
           heroImage.style.height = `${imageH}px`;
 
           isFixed = true;
@@ -275,4 +276,3 @@
     -->
   </body>
 </html>
-
