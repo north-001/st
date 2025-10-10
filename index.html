@@ -17,14 +17,14 @@
       <div class="container">
         <div class="container_content container_content_center">
           <div class="nav-info">
-            <p>Приглашение 1</p>
+            <p>Приглашение</p>
             <p>09.03</p>
           </div>
         </div>
       </div>
     </div>
 
-    <header class="hero">
+    <header class="hero hero-fixed">
       <div class="container">
         <div class="container_content container_content_center">
           <div class="hero-header">
@@ -32,13 +32,14 @@
               <img src="img/PhilipStephany.svg" alt="" />
             </h1>
           </div>
-
-          <div class="hero-image">
-            <div class="hero-image-main"></div>
-            <div class="hero-image-indicators">
-              <div class="indicator active"></div>
-              <div class="indicator"></div>
-              <div class="indicator"></div>
+          <div class="hero_sticky">
+            <div class="hero-image">
+              <div class="hero-image-main"></div>
+              <div class="hero-image-indicators">
+                <div class="indicator active"></div>
+                <div class="indicator"></div>
+                <div class="indicator"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -209,6 +210,7 @@
       const heroContent = document.querySelector(".hero .container_content");
       const heroTitle = document.querySelector(".hero-title");
       const heroImage = document.querySelector(".hero-image");
+      const heroImageS = document.querySelector(".hero_sticky");
       const hero = document.querySelector(".hero");
       const space = document.querySelector(".space");
 
@@ -244,7 +246,7 @@
         heroTitle.style.padding = `0px ${sidePaddingTitle}px`;
         heroTitle.style.opacity = `${opacityTitle}`;
         heroTitle.style.transform = `scale(${scaleTitle})`;
-        heroImage.style.margin = `${marginImage}px 0`;
+        heroImageS.style.margin = `${marginImage}px 0`;
 
         // ===== фиксация hero =====
         if (scrollY >= imageDistanceFromTop && !isFixed) {
@@ -252,18 +254,22 @@
           heroImage.style.height = `${imageH}px`;
 
           isFixed = true;
-          hero.classList.add("hero-fixed");
-          hero.style.transform = `translateY(-${imageDistanceFromTop}px)`;
-          space.classList.add("space_active");
+          hero.style.height = `300%`;
+          //  hero.classList.add("hero-fixed");
+          //  hero.style.transform = `translateY(-${imageDistanceFromTop}px)`;
+          //  space.classList.add("space_active");
         } else if (scrollY < imageDistanceFromTop && isFixed) {
-          heroImage.style.height = `100%`;
+          //  heroImage.style.height = `100%`;
           isFixed = false;
-          hero.classList.remove("hero-fixed");
-          hero.style.transform = `translateY(0px)`;
-          space.classList.remove("space_active");
+          //  hero.classList.remove("hero-fixed");
+          //  hero.style.transform = `translateY(0px)`;
+          //  space.classList.remove("space_active");
         }
       });
     </script>
+
+    <!--
+
+    -->
   </body>
 </html>
-
