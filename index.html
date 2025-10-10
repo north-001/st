@@ -45,14 +45,127 @@
       </div>
     </header>
 
-    <div class="spacer">ааа</div>
+    <div class="section-main-info section">
+      <div class="container">
+        <div class="container_content container_content_center">
+          <p class="title">
+            Дорогие <span class="title-i">родные</span> и
+            <span class="title-i">близкие</span>
+          </p>
+          <p class="text">
+            Приближается очень важный и трепетный для нас день. Наша свадьба! Мы
+            будем рады разделить это событие с вами.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-date section">
+      <div class="container">
+        <div class="container_content container_content_center">
+          <p class="title">12.08.2026</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-location section">
+      <div class="container">
+        <div class="container_content container_content_center">
+          <p class="title"><span class="title-i">Место</p>
+          <p class="text">Villa Barvikha 135, посёлок Барвиха, 135.</p>
+          <img
+            class="image"
+            src="img/blue-sky-and-flower-ds-3840x2400-3235952354.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="section-programm section">
+      <div class="container">
+        <div class="container_content container_content_center">
+          <p class="title m-title">Программа дня</p>
+
+          <ul class="programm-time-list ">
+            <ul class="programm-time-info programm-time-info_active">
+              <li class="title">16:00</li>
+              <li class="subtitle">Welcome</li>
+              <li class="text">
+                Холодное Prosecco, легкая обстановка и знакомство
+              </li>
+              <div class="break-conteiner"><div class="break"></div></div>
+            </ul>
+            <ul class="programm-time-info">
+              <li class="title">16:30</li>
+              <li class="subtitle">Welcome</li>
+              <li class="text">
+                Холодное Prosecco, легкая обстановка и знакомство
+              </li>
+              <div class="break-conteiner"><div class="break"></div></div>
+            </ul>
+            <ul class="programm-time-info">
+              <li class="title">17:00</li>
+              <li class="subtitle">Welcome</li>
+              <li class="text">
+                Холодное Prosecco, легкая обстановка и знакомство
+              </li>
+              <div class="break-conteiner"><div class="break"></div></div>
+            </ul>
+            <ul class="programm-time-info">
+              <li class="title">18:00</li>
+              <li class="subtitle">Welcome</li>
+              <li class="text">
+                Холодное Prosecco, легкая обстановка и знакомство
+              </li>
+            </ul>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-dresscode section">
+      <div class="container">
+        <div class="container_content container_content_center">
+          <p class="title">Дресс код</p>
+          <p class="text">
+            Мы будем очень рады, если вы поддержите цветовую палитру нашей
+            свадьбы.
+          </p>
+          <ul class="dresscode-colors-list">
+            <li class="dresscode-color dresscode-color_active"></li>
+            <li class="dresscode-color"></li>
+            <li class="dresscode-color"></li>
+            <li class="dresscode-color"></li>
+            <li class="dresscode-color"></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="spacer"></div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+  let vhLocked = false;
+
+  function setVh() {
+    if (vhLocked) return; // если уже зафиксировали — ничего не делаем
     const vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
-  });
+  }
+
+  // выставляем высоту при загрузке
+  setVh();
+
+  // обновляем до первого скролла или resize (например, при повороте экрана)
+  window.addEventListener('resize', setVh, { passive: true });
+  window.addEventListener('orientationchange', setVh, { passive: true });
+
+  // как только пользователь скроллит — фиксируем значение
+  window.addEventListener('scroll', () => {
+    vhLocked = true;
+  }, { once: true, passive: true });
 </script>
+
   </body>
 </html>
-

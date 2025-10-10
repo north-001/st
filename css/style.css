@@ -92,7 +92,8 @@ body {
   font-family: 'C', serif;
   margin: 0;
   padding: 0;
-  color: #000;
+  background-color: #fdfcfd;
+  color: #0f0e0f;
 }
 .container{
   display: flex;
@@ -218,11 +219,11 @@ body {
 
 }
 .indicator{
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
-  margin: 0 5px;
+  margin: 0 6px;
 }
 
 .indicator.active {
@@ -236,4 +237,126 @@ body {
 .spacer {
   height: 300dvh;
   background-color: aqua;
+  display: none;
+}
+
+/* ===============================
+   Selection
+================================*/
+
+.section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1px;
+  padding: 104px 25px;
+}
+
+.section .title{
+  margin-bottom: 10px;
+  font-size: clamp(45px, 6vw, 83px);
+  text-align: center;
+  font-weight: 600;
+}
+.section .title .title-i{
+  font-family: 'Ci', serif;
+}
+.section .text{
+  font-size: clamp(14px, 2.34vw, 22.4px);
+  text-align: center;
+  font-weight: 500;
+  font-family: 'G', serif;
+    margin-bottom: 10px;
+}
+.section .subtitle{
+  font-size: clamp(22px, 3.2vw, 30px);
+  text-align: center;
+  font-weight: 500;
+  font-family: 'Ci', serif;
+    margin-bottom: 10px;
+}
+
+.section-date{
+  padding: 20px 25px 10px 0px;
+  margin: 0;
+  background-color: #e7eaee;
+  color: #1c2025;
+}
+
+
+.section-date .title{
+  margin-bottom: 0px;
+  font-family: 'D', serif;
+  font-weight: 200;
+}
+.section-location .text{
+  margin-bottom: 25px;
+}
+.section-location .image{
+  height: 100%;
+}
+
+
+.section-programm{
+  background-color: #e7eaee;
+  color: #1c2025;
+}
+.programm-time-info {
+  opacity: 0.3;
+}
+.programm-time-info_active {
+  opacity: 1;
+}
+.break-conteiner{
+  display: flex;
+  justify-content: center;
+  margin: 25px 0px;
+}
+
+.break{
+  height: 35px;
+  width: 1px;
+  background-color: #000;
+  opacity: 0.3;
+}
+.section-programm .m-title{
+  margin-bottom: 41px;
+}
+
+.section-dresscode .text{
+  margin-bottom: 25px;
+}
+.dresscode-colors-list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dresscode-color{
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin: 0px 5px;
+  background-color: rgb(228, 172, 212);
+  transition: 0.3s;
+  border: 1px solid #00000000;
+}
+.dresscode-color:nth-child(2){
+  background-color: rgb(177, 181, 236);
+}
+.dresscode-color:nth-child(3){
+  background-color: rgb(139, 161, 231);
+}
+.dresscode-color:nth-child(4){
+  background-color: rgb(226, 222, 168);
+}
+.dresscode-color:nth-child(5){
+  background-color: rgb(150, 218, 230);
+}
+
+.dresscode-color_active{
+  border: 1px solid #86909b;
+}
+
+.dresscode-color:hover{
+  border: 1px solid #86909b;
 }
