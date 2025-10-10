@@ -45,6 +45,27 @@
       </div>
     </header>
 
+    <!--   <div class="hero fake-hero">
+      <div class="container">
+        <div class="container_content container_content_center">
+          <div class="hero-header">
+            <h1 class="hero-title">
+              <img src="img/PhilipStephany.svg" alt="" />
+            </h1>
+          </div>
+
+          <div class="hero-image fake-hero-image">
+            <div class="hero-image-main"></div>
+            <div class="hero-image-indicators">
+              <div class="indicator active"></div>
+              <div class="indicator"></div>
+              <div class="indicator"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>-->
+
     <div class="space"></div>
 
     <!-- Основная информация -->
@@ -191,12 +212,18 @@
       const hero = document.querySelector(".hero");
       const space = document.querySelector(".space");
 
+      let isFixed = false;
+
+      // вычисляем позицию элемента от верха страницы один раз
+      const imageDistanceFromTop =
+        heroImage.getBoundingClientRect().top + window.scrollY;
+
       window.addEventListener("scroll", () => {
         const scrollY = window.scrollY;
-        const maxScroll = 150; // после какого скролла эффект заканчивается
+        const maxScroll = 150;
         const progress = Math.min(scrollY / maxScroll, 1);
 
-        // от 10px → 0px
+        // ===== анимации hero =====
         const sidePadding = 10 - 10 * progress;
         const sidePaddingTitle = 0 + 10 * progress;
         const opacityTitle = 1 - 0.6 * progress;
@@ -206,18 +233,21 @@
         heroContent.style.padding = `34px ${sidePadding}px 0 ${sidePadding}px`;
         heroTitle.style.padding = `0px ${sidePaddingTitle}px`;
         heroTitle.style.opacity = `${opacityTitle}`;
-        heroTitle.style.scale = `${scaleTitle}`;
+        heroTitle.style.transform = `scale(${scaleTitle})`;
         heroImage.style.margin = `${marginImage}px 0`;
 
-        // действие при достижении 150px
-        if (scrollY >= maxScroll) {
-          // здесь делаем то, что нужно
+        // ===== фиксация hero =====
+        if (scrollY >= imageDistanceFromTop && !isFixed) {
+          // фиксируем
+          isFixed = true;
           hero.classList.add("hero-fixed");
+          hero.style.transform = `translateY(-${imageDistanceFromTop}px)`;
           space.classList.add("space_active");
-          // например: heroImage.style.position = "fixed";
-        } else {
-          // можно сбросить, если нужно
+        } else if (scrollY < imageDistanceFromTop && isFixed) {
+          // убираем фиксацию
+          isFixed = false;
           hero.classList.remove("hero-fixed");
+          hero.style.transform = `translateY(0px)`;
           space.classList.remove("space_active");
         }
       });
