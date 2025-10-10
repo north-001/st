@@ -17,7 +17,7 @@
       <div class="container">
         <div class="container_content container_content_center">
           <div class="nav-info">
-            <p>Приглашение 11</p>
+            <p>Приглашение 22</p>
             <p>09.03</p>
           </div>
         </div>
@@ -215,20 +215,6 @@
       const space = document.querySelector(".space");
 
       let isFixed = false;
-      let imageDistanceFromTop; // объявляем здесь, без вычисления
-
-      // 👉 Функция, которая пересчитывает позицию картинки от верха страницы
-      function updateImageDistance() {
-        imageDistanceFromTop =
-          heroImage.getBoundingClientRect().top + window.scrollY;
-      }
-
-      // Вызываем один раз при загрузке страницы
-      updateImageDistance();
-
-      // 👉 Добавляем пересчёт при изменении размеров окна или смене ориентации
-      window.addEventListener("resize", updateImageDistance);
-      window.addEventListener("orientationchange", updateImageDistance);
 
       window.addEventListener("scroll", () => {
         const scrollY = window.scrollY;
@@ -248,24 +234,27 @@
         heroTitle.style.transform = `scale(${scaleTitle})`;
         heroImageS.style.margin = `${marginImage}px 0`;
 
+        // ===== вычисляем позицию элемента на лету =====
+        const imageDistanceFromTop =
+          heroImage.getBoundingClientRect().top + window.scrollY;
+
         // ===== фиксация hero =====
-        if (scrollY >= imageDistanceFromTop && !isFixed) {
+        if (scrollY + 100 >= imageDistanceFromTop && !isFixed) {
           const imageH = heroImage.offsetHeight;
           heroImage.style.height = `${imageH}px`;
 
           isFixed = true;
           hero.style.height = `300%`;
-          //  hero.classList.add("hero-fixed");
-          //  hero.style.transform = `translateY(-${imageDistanceFromTop}px)`;
-          //  space.classList.add("space_active");
+          // hero.classList.add("hero-fixed");
+          // hero.style.transform = `translateY(-${imageDistanceFromTop}px)`;
+          // space.classList.add("space_active");
         } else if (scrollY < imageDistanceFromTop && isFixed) {
-          //  heroImage.style.height = `100%`;
           isFixed = false;
           hero.style.height = `100%`;
           heroImage.style.height = `100%`;
-          //  hero.classList.remove("hero-fixed");
-          //  hero.style.transform = `translateY(0px)`;
-          //  space.classList.remove("space_active");
+          // hero.classList.remove("hero-fixed");
+          // hero.style.transform = `translateY(0px)`;
+          // space.classList.remove("space_active");
         }
       });
     </script>
@@ -275,4 +264,3 @@
     -->
   </body>
 </html>
-
