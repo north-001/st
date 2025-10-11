@@ -17,7 +17,7 @@
       <div class="container">
         <div class="container_content container_content_center">
           <div class="nav-info">
-            <p>Приглашение 2.2</p>
+            <p>Приглашение 2.3</p>
             <p>09.03</p>
           </div>
         </div>
@@ -222,40 +222,55 @@
       // Получаем расстояние от верха страницы до элемента target
       const start = target.getBoundingClientRect().top + window.scrollY;
 
+      const h = target.getBoundingClientRect().height;
+      target.style.height = `${h}px`;
+
+      const h2 = another.getBoundingClientRect().height;
+      const h22 = h2 * 3;
+      another.style.height = `${h22}px`;
+
       window.addEventListener("scroll", () => {
         const scrollY = window.scrollY; // Текущий скролл страницы
 
         if (scrollY >= start) {
-          // Скролл ниже target — фиксируем элемент
-          another.style.transform = `translateY(-${start}px)`;
-          another.classList.add("hero-fixed");
+          const h = target.getBoundingClientRect().height;
+          target.style.height = `${h}px`;
+          another.style.height = `${h22}px`;
         } else {
-          // Скролл выше target — возвращаем элемент
-          another.style.transform = `translateY(0)`;
-          another.classList.remove("hero-fixed");
         }
       });
     </script>
-
+    <!--
     <script>
       let scrolled = false;
-      window.addEventListener("scroll", () => {
-        const targetTrigger = start - 100; // порог, при котором запускается автоскролл
-        const targetScroll = start + 200; // позиция, до которой прокручиваем
+      // начальная точка, подставь свою
 
+      const targetTrigger = start - 100;
+      const targetScroll = start + 200;
+      let animationFrame;
+
+      function smoothScroll() {
+        const current = window.scrollY;
+        const distance = targetScroll - current;
+
+        if (Math.abs(distance) < 1) return; // остановка, когда почти дошли
+
+        window.scrollTo(0, current + distance * 1); // 0.1 — скорость, чем меньше, тем мягче
+        animationFrame = requestAnimationFrame(smoothScroll);
+      }
+
+      window.addEventListener("scroll", () => {
         if (window.scrollY < targetTrigger) {
           scrolled = false;
+          cancelAnimationFrame(animationFrame);
         }
 
         if (!scrolled && window.scrollY >= targetTrigger) {
-          scrolled = true; // чтобы срабатывало один раз
-          window.scrollTo({
-            top: targetScroll,
-            behavior: "smooth",
-          });
+          scrolled = true;
+          smoothScroll();
         }
       });
-    </script>
+    </script>-->
 
     <!---->
   </body>
