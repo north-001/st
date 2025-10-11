@@ -11,13 +11,39 @@
       content="black-translucent"
     />
     <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+      /* Preloader */
+      #preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #f3ede9; /* цвет экрана загрузки */
+        display: flex;
+        color: #38302a;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        opacity: 1;
+        transition-duration: 1s;
+      }
+      #preloader.hidden {
+        opacity: 0;
+      }
+    </style>
   </head>
   <body>
+    <div id="preloader">
+      <p>Загрузка...</p>
+    </div>
+
     <div class="navbar">
       <div class="container">
         <div class="container_content container_content_center">
           <div class="nav-info">
-            <p>Приглашение 2.5</p>
+            <p>Приглашение 2.6</p>
             <p>09.03</p>
           </div>
         </div>
@@ -167,6 +193,83 @@
     <div class="spacer"></div>
 
     <script>
+      // Скрипт для preloader
+      window.addEventListener("load", () => {
+        // запускаем все скрипты после загрузки
+        runScriptsAfterLoad();
+
+        // добавляем класс для плавного исчезновения
+        preloader.classList.add("hidden");
+
+        // после окончания transition ставим display: none
+        preloader.addEventListener("transitionend", () => {
+          preloader.style.display = "none";
+        });
+      });
+
+      function runScriptsAfterLoad() {
+        // Здесь можно перенести все твои скрипты, которые должны выполняться после полной загрузки
+        console.log("Все скрипты теперь выполняются после загрузки!");
+
+        // Например, твой vh и scroll скрипт
+        let vhLocked = false;
+
+        function setVh() {
+          if (vhLocked) return;
+          const vh = window.innerHeight * 0.01;
+          document.documentElement.style.setProperty("--vh", `${vh}px`);
+        }
+
+        setVh();
+        window.addEventListener("resize", setVh, { passive: true });
+        window.addEventListener("orientationchange", setVh, { passive: true });
+        window.addEventListener(
+          "scroll",
+          () => {
+            vhLocked = true;
+          },
+          { once: true, passive: true }
+        );
+
+        // ...сюда же остальные твои скрипты
+
+        // Получаем расстояние от верха страницы до элемента target
+
+        const target = document.querySelector(".hero-image");
+        const another = document.querySelector(".hero");
+
+        const start = target.getBoundingClientRect().top + window.scrollY;
+
+        const h = target.getBoundingClientRect().height;
+        target.style.height = `${h}px`;
+
+        const h2 = another.getBoundingClientRect().height;
+        const h22 = h2 * 3;
+        another.style.height = `${h22}px`;
+
+        // AUTOSCROL
+        let scrolled = false;
+        window.addEventListener("scroll", () => {
+          const targetTrigger = 180; // порог, при котором запускается автоскролл
+          const targetScroll = start + 200; // позиция, до которой прокручиваем
+
+          if (window.scrollY < targetTrigger) {
+            scrolled = false;
+          }
+
+          if (!scrolled && window.scrollY >= targetTrigger) {
+            scrolled = true; // чтобы срабатывало один раз
+            window.scrollTo({
+              top: targetScroll,
+              behavior: "smooth",
+            });
+          }
+        });
+      }
+    </script>
+
+    <!--
+    <script>
       let vhLocked = false;
 
       function setVh() {
@@ -191,6 +294,7 @@
         { once: true, passive: true }
       );
     </script>
+-->
 
     <script>
       const heroContent = document.querySelector(".hero .container_content");
@@ -222,18 +326,18 @@
     -->
 
     <script>
-      const target = document.querySelector(".hero-image");
-      const another = document.querySelector(".hero");
+      // const target = document.querySelector(".hero-image");
+      // const another = document.querySelector(".hero");
 
       // Получаем расстояние от верха страницы до элемента target
-      const start = target.getBoundingClientRect().top + window.scrollY;
+      // const start = target.getBoundingClientRect().top + window.scrollY;
 
-      const h = target.getBoundingClientRect().height;
-      target.style.height = `${h}px`;
+      // const h = target.getBoundingClientRect().height;
+      //  target.style.height = `${h}px`;
 
-      const h2 = another.getBoundingClientRect().height;
-      const h22 = h2 * 3;
-      another.style.height = `${h22}px`;
+      //  const h2 = another.getBoundingClientRect().height;
+      //  const h22 = h2 * 3;
+      //  another.style.height = `${h22}px`;
 
       window.addEventListener("scroll", () => {
         const scrollY = window.scrollY; // Текущий скролл страницы
@@ -281,7 +385,7 @@
       targetClasses.forEach((cls) => {
         document.querySelectorAll(`.${cls}`).forEach((el) => elements.push(el));
       });
-      const strength = 0.7; // <--- сила эффекта, >1 = медленнее появление, <1 = быстрее
+      const strength = 0.8; // <--- сила эффекта, >1 = медленнее появление, <1 = быстрее
 
       function handleScroll() {
         const windowHeight = window.innerHeight;
