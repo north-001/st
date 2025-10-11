@@ -124,6 +124,7 @@ body {
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px); /* Safari support */
   background-color: rgba(255, 255, 255, 0.02);
+  color: #1B0D14;
 }
 
 .nav-info {
@@ -168,8 +169,8 @@ body {
   width: 100%;
   height: calc(var(--vh) * 100);
   display: flex;
-  background-color: #e7eaee;
-  color: #1c2025;
+  background-color: #f3ede9;
+  color: #38302A;
   transform: translateY();
   position: absolute;
   top: 0;
@@ -273,7 +274,8 @@ height: calc(var(--vh) * 100);
   justify-content: center;
   align-items: center;
   padding: 104px 25px;
-  background-color: #fdfcfd;
+  background-color: #FFFDFE;
+  color: #1B0D14;
 }
 
 /* Общие элементы текста */
@@ -333,8 +335,8 @@ height: calc(var(--vh) * 100);
 
 /* Программа */
 .section-program {
-  background-color: #e7eaee;
-  color: #1c2025;
+  background-color: #f3ede9;
+  color: #241E1A;
 }
 
 .program-list {
@@ -349,14 +351,12 @@ height: calc(var(--vh) * 100);
   transition: opacity 0.3s ease;
 }
 
-.program-item_active {
-  opacity: 1;
-}
-
 .program-time {
   font-size: clamp(22px, 3.2vw, 30px);
   font-family: 'C', serif;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
+  font-size: clamp(45px, 6vw, 83px);
+  font-weight: 500;
 }
 
 .program-subtitle {
@@ -397,22 +397,22 @@ height: calc(var(--vh) * 100);
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: rgb(228, 172, 212);
+  background-color: #383139;
   border: 1px solid transparent;
   transition: border 0.3s;
 }
 
 .dresscode-color:nth-child(2) {
-  background-color: rgb(177, 181, 236);
+  background-color: #783B5A;
 }
 .dresscode-color:nth-child(3) {
-  background-color: rgb(139, 161, 231);
+  background-color: #AA6A6A;
 }
 .dresscode-color:nth-child(4) {
-  background-color: rgb(226, 222, 168);
+  background-color: #CFB4A1;
 }
 .dresscode-color:nth-child(5) {
-  background-color: rgb(150, 218, 230);
+  background-color: #727E6A;
 }
 
 .dresscode-color_active,
@@ -426,5 +426,14 @@ height: calc(var(--vh) * 100);
   background-color: aqua;
   position: sticky;
   top: 0;
+  display: none;
 }
-
+.section-fotter{
+  padding: 104px 0 0 30px;
+  background-color: #383139;
+  display: flex;
+  height: 700px;
+}
+.section-fotter .container_content{
+  padding: 0px;
+}

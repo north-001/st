@@ -17,7 +17,7 @@
       <div class="container">
         <div class="container_content container_content_center">
           <div class="nav-info">
-            <p>Приглашение 2.4</p>
+            <p>Приглашение 2.5</p>
             <p>09.03</p>
           </div>
         </div>
@@ -158,6 +158,12 @@
       </div>
     </section>
 
+    <section class="section section-fotter">
+      <div class="container">
+        <div class="container_content container_content_center"></div>
+      </div>
+    </section>
+
     <div class="spacer"></div>
 
     <script>
@@ -259,6 +265,46 @@
           });
         }
       });
+    </script>
+
+    <script>
+      // Список классов, к которым применять эффект
+      const targetClasses = [
+        "section-text",
+        "section-title",
+        "section-image",
+        "program-item",
+      ];
+
+      // Получаем все элементы этих классов
+      const elements = [];
+      targetClasses.forEach((cls) => {
+        document.querySelectorAll(`.${cls}`).forEach((el) => elements.push(el));
+      });
+      const strength = 0.7; // <--- сила эффекта, >1 = медленнее появление, <1 = быстрее
+
+      function handleScroll() {
+        const windowHeight = window.innerHeight;
+
+        elements.forEach((el) => {
+          const rect = el.getBoundingClientRect();
+          const elementCenter = rect.top + rect.height / 2;
+          const distance = Math.abs(windowHeight / 2 - elementCenter);
+
+          // Регулируем силу эффекта
+          let opacity = 1 - (distance / (windowHeight / 2)) * strength;
+          opacity = Math.max(0, Math.min(1, opacity)); // Ограничиваем от 0 до 1
+          el.style.opacity = opacity;
+
+          // Для slide-element добавляем смещение
+          if (el.classList.contains("slide-element")) {
+            el.style.transform = `translateY(${50 * (1 - opacity)}px)`;
+          }
+        });
+      }
+
+      window.addEventListener("scroll", handleScroll);
+      window.addEventListener("load", handleScroll);
     </script>
 
     <!---->
