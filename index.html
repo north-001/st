@@ -17,7 +17,7 @@
       <div class="container">
         <div class="container_content container_content_center">
           <div class="nav-info">
-            <p>Приглашение 2.3</p>
+            <p>Приглашение 2.4</p>
             <p>09.03</p>
           </div>
         </div>
@@ -240,37 +240,26 @@
         }
       });
     </script>
-    <!--
+
     <script>
       let scrolled = false;
-      // начальная точка, подставь свою
-
-      const targetTrigger = start - 100;
-      const targetScroll = start + 200;
-      let animationFrame;
-
-      function smoothScroll() {
-        const current = window.scrollY;
-        const distance = targetScroll - current;
-
-        if (Math.abs(distance) < 1) return; // остановка, когда почти дошли
-
-        window.scrollTo(0, current + distance * 1); // 0.1 — скорость, чем меньше, тем мягче
-        animationFrame = requestAnimationFrame(smoothScroll);
-      }
-
       window.addEventListener("scroll", () => {
+        const targetTrigger = 180; // порог, при котором запускается автоскролл
+        const targetScroll = start + 200; // позиция, до которой прокручиваем
+
         if (window.scrollY < targetTrigger) {
           scrolled = false;
-          cancelAnimationFrame(animationFrame);
         }
 
         if (!scrolled && window.scrollY >= targetTrigger) {
-          scrolled = true;
-          smoothScroll();
+          scrolled = true; // чтобы срабатывало один раз
+          window.scrollTo({
+            top: targetScroll,
+            behavior: "smooth",
+          });
         }
       });
-    </script>-->
+    </script>
 
     <!---->
   </body>
