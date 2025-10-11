@@ -17,7 +17,7 @@
       <div class="container">
         <div class="container_content container_content_center">
           <div class="nav-info">
-            <p>Приглашение 1.3</p>
+            <p>Приглашение 2.0</p>
             <p>09.03</p>
           </div>
         </div>
@@ -32,30 +32,8 @@
               <img src="img/PhilipStephany.svg" alt="" />
             </h1>
           </div>
-          <div class="hero_sticky">
-            <div class="hero-image">
-              <div class="hero-image-main"></div>
-              <div class="hero-image-indicators">
-                <div class="indicator active"></div>
-                <div class="indicator"></div>
-                <div class="indicator"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
 
-    <!--   <div class="hero fake-hero">
-      <div class="container">
-        <div class="container_content container_content_center">
-          <div class="hero-header">
-            <h1 class="hero-title">
-              <img src="img/PhilipStephany.svg" alt="" />
-            </h1>
-          </div>
-
-          <div class="hero-image fake-hero-image">
+          <div class="hero-image" id="box">
             <div class="hero-image-main"></div>
             <div class="hero-image-indicators">
               <div class="indicator active"></div>
@@ -65,7 +43,7 @@
           </div>
         </div>
       </div>
-    </div>-->
+    </header>
 
     <div class="space"></div>
 
@@ -181,61 +159,17 @@
     <div class="spacer"></div>
 
     <script>
-      let vhLocked = false;
-
-      function setVh() {
-        if (vhLocked) return; // если уже зафиксировали — ничего не делаем
-        const vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty("--vh", `${vh}px`);
-      }
-
-      // выставляем высоту при загрузке
-      setVh();
-
-      // обновляем до первого скролла или resize (например, при повороте экрана)
-      window.addEventListener("resize", setVh, { passive: true });
-      window.addEventListener("orientationchange", setVh, { passive: true });
-
-      // как только пользователь скроллит — фиксируем значение
-      window.addEventListener(
-        "scroll",
-        () => {
-          vhLocked = true;
-        },
-        { once: true, passive: true }
-      );
-    </script>
-
-    <script>
       const heroContent = document.querySelector(".hero .container_content");
       const heroTitle = document.querySelector(".hero-title");
       const heroImage = document.querySelector(".hero-image");
-      const heroImageS = document.querySelector(".hero_sticky");
       const hero = document.querySelector(".hero");
       const space = document.querySelector(".space");
-
-      let isFixed = false;
-      let imageDistanceFromTop; // объявляем здесь, без вычисления
-
-      // 👉 Функция, которая пересчитывает позицию картинки от верха страницы
-      function updateImageDistance() {
-        imageDistanceFromTop =
-          heroImage.getBoundingClientRect().top + window.scrollY;
-      }
-
-      // Вызываем один раз при загрузке страницы
-      updateImageDistance();
-
-      // 👉 Добавляем пересчёт при изменении размеров окна или смене ориентации
-      window.addEventListener("resize", updateImageDistance);
-      window.addEventListener("orientationchange", updateImageDistance);
 
       window.addEventListener("scroll", () => {
         const scrollY = window.scrollY;
         const maxScroll = 150;
         const progress = Math.min(scrollY / maxScroll, 1);
 
-        // ===== анимации hero =====
         const sidePadding = 10 - 10 * progress;
         const sidePaddingTitle = 0 + 10 * progress;
         const opacityTitle = 1 - 0.6 * progress;
@@ -246,27 +180,35 @@
         heroTitle.style.padding = `0px ${sidePaddingTitle}px`;
         heroTitle.style.opacity = `${opacityTitle}`;
         heroTitle.style.transform = `scale(${scaleTitle})`;
-        heroImageS.style.margin = `${marginImage}px 0`;
+        heroImage.style.margin = `${marginImage}px 0`;
+      });
+    </script>
 
-        // ===== фиксация hero =====
-        if (scrollY + 100 >= imageDistanceFromTop && !isFixed) {
-          //const imageH = heroImage.offsetHeight;
-          const imageH = heroImage.getBoundingClientRect().height;
-          heroImage.style.height = `${imageH}px`;
+    <script>
+      const box = document.getElementById("box");
+      const start = box.offsetTop;
+      let lastScroll = 0;
+      let ticking = false;
 
-          isFixed = true;
-          hero.style.height = `300%`;
-          //  hero.classList.add("hero-fixed");
-          //  hero.style.transform = `translateY(-${imageDistanceFromTop}px)`;
-          //  space.classList.add("space_active");
-        } else if (scrollY + 100 < imageDistanceFromTop && isFixed) {
-          //  heroImage.style.height = `100%`;
-          isFixed = false;
-          hero.style.height = `100%`;
-          heroImage.style.height = `100%`;
-          //  hero.classList.remove("hero-fixed");
-          //  hero.style.transform = `translateY(0px)`;
-          //  space.classList.remove("space_active");
+      function update() {
+        const scrollY = lastScroll;
+
+        if (scrollY > start) {
+          const offset = scrollY - start;
+          box.style.transform = `translateY(${offset}px)`;
+        } else {
+          box.style.transform = `translateY(0)`;
+        }
+
+        ticking = false;
+      }
+
+      window.addEventListener("scroll", () => {
+        lastScroll = window.scrollY;
+
+        if (!ticking) {
+          requestAnimationFrame(update);
+          ticking = true;
         }
       });
     </script>
