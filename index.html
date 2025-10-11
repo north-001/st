@@ -43,7 +43,7 @@
       <div class="container">
         <div class="container_content container_content_center">
           <div class="nav-info">
-            <p>Приглашение 2.6.2</p>
+            <p>Приглашение 2.6.3</p>
             <p>09.03</p>
           </div>
         </div>
@@ -248,69 +248,37 @@
         another.style.height = `${h22}px`;
 
                // AUTOSCROL
-        let scrolled = false;
-        window.addEventListener("scroll", () => {
-          if (window.matchMedia("(pointer: fine)").matches) {
-            // ПК, мышь, трекпад
-            console.log("Desktop scroll behavior");
-            window.addEventListener("scroll", onDesktopScroll);
-          } else {
-            // Мобильные, сенсор
-            console.log("Touch scroll behavior");
-            window.addEventListener("touchmove", onMobileScroll);
-          }
+let scrolled = false;
 
-          function onDesktopScroll(e) {
-            // Твоя логика для ПК
+window.addEventListener("scroll", () => {
+  const targetTrigger = 180; // порог, при котором запускается автоскролл
+  const targetScroll = start + 200; // позиция, до которой прокручиваем
 
-            const targetTrigger = 180; // порог, при котором запускается автоскролл
-            const targetScroll = start + 200; // позиция, до которой прокручиваем
+  // Когда пользователь вернулся выше порога — сбрасываем флаг
+  if (window.scrollY < targetTrigger) {
+    scrolled = false;
+  }
 
-            if (window.scrollY < targetTrigger) {
-              scrolled = false;
-            }
+  // Когда достигли порога — срабатывает автоскролл
+  if (!scrolled && window.scrollY >= targetTrigger) {
+    scrolled = true;
 
-            if (!scrolled && window.scrollY >= targetTrigger) {
-              scrolled = true; // чтобы срабатывало один раз
-              window.scrollTo({
-                top: targetScroll,
-                behavior: "smooth",
-              });
-            }
-          }
+    // ⛔️ 1. Временно блокируем прокрутку, чтобы убрать инерцию
+    document.body.style.overflow = "hidden";
 
-          function onMobileScroll(e) {
-            // Твоя логика для тач
+    // ⏩ 2. Выполняем плавный скролл
+    window.scrollTo({
+      top: targetScroll,
+      behavior: "smooth",
+    });
 
-            const targetTrigger = 180; // порог, при котором запускается автоскролл
-            const targetScroll = start + 200; // позиция, до которой прокручиваем
-
-            // Когда пользователь вернулся выше порога — сбрасываем флаг
-            if (window.scrollY < targetTrigger) {
-              scrolled = false;
-            }
-
-            // Когда достигли порога — срабатывает автоскролл
-            if (!scrolled && window.scrollY >= targetTrigger) {
-              scrolled = true;
-
-              // ⛔️ 1. Временно блокируем прокрутку, чтобы убрать инерцию
-              document.body.style.overflow = "hidden";
-
-              // ⏩ 2. Выполняем плавный скролл
-              window.scrollTo({
-                top: targetScroll,
-                behavior: "smooth",
-              });
-
-              // ✅ 3. Через короткое время возвращаем возможность скролла
-              setTimeout(() => {
-                document.body.style.overflow = "";
-                window.scrollTo(0, targetScroll); // повторно фиксируем позицию
-              }, 400); // 400 мс = длительность scrollTo
-            }
-          }
-        });
+    // ✅ 3. Через короткое время возвращаем возможность скролла
+    setTimeout(() => {
+      document.body.style.overflow = "";
+      window.scrollTo(0, targetScroll); // повторно фиксируем позицию
+    }, 400); // 400 мс = длительность scrollTo
+  }
+});
       }
     </script>
 
@@ -460,5 +428,6 @@
     <!---->
   </body>
 </html>
+
 
 
