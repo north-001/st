@@ -17,14 +17,14 @@
       <div class="container">
         <div class="container_content container_content_center">
           <div class="nav-info">
-            <p>Приглашение 2.0</p>
+            <p>Приглашение 2.1</p>
             <p>09.03</p>
           </div>
         </div>
       </div>
     </div>
 
-    <header class="hero hero-fixed">
+    <header class="hero">
       <div class="container">
         <div class="container_content container_content_center">
           <div class="hero-header">
@@ -62,6 +62,8 @@
         </div>
       </div>
     </section>
+
+    <div class="sti"><p>dfgsdsdg</p></div>
 
     <!-- Дата -->
     <section class="section section-date">
@@ -159,6 +161,32 @@
     <div class="spacer"></div>
 
     <script>
+      let vhLocked = false;
+
+      function setVh() {
+        if (vhLocked) return; // если уже зафиксировали — ничего не делаем
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty("--vh", `${vh}px`);
+      }
+
+      // выставляем высоту при загрузке
+      setVh();
+
+      // обновляем до первого скролла или resize (например, при повороте экрана)
+      window.addEventListener("resize", setVh, { passive: true });
+      window.addEventListener("orientationchange", setVh, { passive: true });
+
+      // как только пользователь скроллит — фиксируем значение
+      window.addEventListener(
+        "scroll",
+        () => {
+          vhLocked = true;
+        },
+        { once: true, passive: true }
+      );
+    </script>
+
+    <script>
       const heroContent = document.querySelector(".hero .container_content");
       const heroTitle = document.querySelector(".hero-title");
       const heroImage = document.querySelector(".hero-image");
@@ -183,38 +211,32 @@
         heroImage.style.margin = `${marginImage}px 0`;
       });
     </script>
+    <!--
+    const box = document.getElementById("box");
+    -->
 
     <script>
-      const box = document.getElementById("box");
-      const start = box.offsetTop;
-      let lastScroll = 0;
-      let ticking = false;
+      const target = document.querySelector(".hero-image");
+      const another = document.querySelector(".hero");
 
-      function update() {
-        const scrollY = lastScroll;
-
-        if (scrollY > start) {
-          const offset = scrollY - start;
-          box.style.transform = `translateY(${offset}px)`;
-        } else {
-          box.style.transform = `translateY(0)`;
-        }
-
-        ticking = false;
-      }
+      // Получаем расстояние от верха страницы до элемента target
+      const start = target.getBoundingClientRect().top + window.scrollY;
 
       window.addEventListener("scroll", () => {
-        lastScroll = window.scrollY;
+        const scrollY = window.scrollY; // Текущий скролл страницы
 
-        if (!ticking) {
-          requestAnimationFrame(update);
-          ticking = true;
+        if (scrollY >= start) {
+          // Скролл ниже target — фиксируем элемент
+          another.style.transform = `translateY(-${start}px)`;
+          another.classList.add("hero-fixed");
+        } else {
+          // Скролл выше target — возвращаем элемент
+          another.style.transform = `translateY(0)`;
+          another.classList.remove("hero-fixed");
         }
       });
     </script>
 
-    <!--
-
-    -->
+    <!---->
   </body>
 </html>
