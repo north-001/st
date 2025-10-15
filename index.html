@@ -11,55 +11,40 @@
       content="black-translucent"
     />
     <link rel="stylesheet" href="css/style.css" />
-
-    <style>
-      /* Preloader */
-      #preloader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #f3ede9; /* цвет экрана загрузки */
-        display: flex;
-        color: #38302a;
-        align-items: center;
-        justify-content: center;
-        z-index: 9999;
-        opacity: 1;
-        transition-duration: 1s;
-      }
-      #preloader.hidden {
-        opacity: 0;
-      }
-    </style>
   </head>
   <body>
+    <!-- Прелоадер -->
     <div id="preloader">
       <p>Загрузка...</p>
     </div>
 
+    <!-- Навигация -->
     <div class="navbar">
       <div class="container">
         <div class="container_content container_content_center">
           <div class="nav-info">
-            <p>Приглашение 2.6.3</p>
+            <p>Приглашение 3</p>
             <p>09.03</p>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- Главное -->
     <header class="hero">
       <div class="container">
         <div class="container_content container_content_center">
           <div class="hero-header">
+            <p class="hero-subtitle">the Wedding</p>
             <h1 class="hero-title">
               <img src="img/PhilipStephany.svg" alt="" />
             </h1>
+            <p class="hero-text">
+              <span>l</span><span>o</span><span>v</span><span>e</span>
+            </p>
           </div>
 
-          <div class="hero-image" id="box">
+          <div class="hero-image">
             <div class="hero-image-main"></div>
             <div class="hero-image-indicators">
               <div class="indicator active"></div>
@@ -71,7 +56,7 @@
       </div>
     </header>
 
-    <div class="space"></div>
+    <div class="spacer"></div>
 
     <!-- Основная информация -->
     <section class="section section-intro">
@@ -88,8 +73,6 @@
         </div>
       </div>
     </section>
-
-    <div class="sti"><p>dfgsdsdg</p></div>
 
     <!-- Дата -->
     <section class="section section-date">
@@ -190,244 +173,14 @@
       </div>
     </section>
 
-    <div class="spacer"></div>
-
-    <script>
-      // Скрипт для preloader
-      window.addEventListener("load", () => {
-        // запускаем все скрипты после загрузки
-        runScriptsAfterLoad();
-
-        // добавляем класс для плавного исчезновения
-        preloader.classList.add("hidden");
-
-        // после окончания transition ставим display: none
-        preloader.addEventListener("transitionend", () => {
-          preloader.style.display = "none";
-        });
-      });
-
-      function runScriptsAfterLoad() {
-        // Здесь можно перенести все твои скрипты, которые должны выполняться после полной загрузки
-        console.log("Все скрипты теперь выполняются после загрузки!");
-
-        // Например, твой vh и scroll скрипт
-        let vhLocked = false;
-
-        function setVh() {
-          if (vhLocked) return;
-          const vh = window.innerHeight * 0.01;
-          document.documentElement.style.setProperty("--vh", `${vh}px`);
-        }
-
-        setVh();
-        window.addEventListener("resize", setVh, { passive: true });
-        window.addEventListener("orientationchange", setVh, { passive: true });
-        window.addEventListener(
-          "scroll",
-          () => {
-            vhLocked = true;
-          },
-          { once: true, passive: true }
-        );
-
-        // ...сюда же остальные твои скрипты
-
-        // Получаем расстояние от верха страницы до элемента target
-
-        const target = document.querySelector(".hero-image");
-        const another = document.querySelector(".hero");
-
-        const start = target.getBoundingClientRect().top + window.scrollY;
-
-        const h = target.getBoundingClientRect().height;
-        target.style.height = `${h}px`;
-
-        const h2 = another.getBoundingClientRect().height;
-        const h22 = h2 * 3;
-        another.style.height = `${h22}px`;
-
-               // AUTOSCROL
-let scrolled = false;
-
-window.addEventListener("scroll", () => {
-  const targetTrigger = 180; // порог, при котором запускается автоскролл
-  const targetScroll = start + 200; // позиция, до которой прокручиваем
-
-  // Когда пользователь вернулся выше порога — сбрасываем флаг
-  if (window.scrollY < targetTrigger) {
-    scrolled = false;
-  }
-
-  // Когда достигли порога — срабатывает автоскролл
-  if (!scrolled && window.scrollY >= targetTrigger) {
-    scrolled = true;
-
-    // ⛔️ 1. Временно блокируем прокрутку, чтобы убрать инерцию
-    document.body.style.overflow = "hidden";
-
-    // ⏩ 2. Выполняем плавный скролл
-    window.scrollTo({
-      top: targetScroll,
-      behavior: "smooth",
-    });
-
-    // ✅ 3. Через короткое время возвращаем возможность скролла
-    setTimeout(() => {
-      document.body.style.overflow = "";
-      window.scrollTo(0, targetScroll); // повторно фиксируем позицию
-    }, 400); // 400 мс = длительность scrollTo
-  }
-});
-      }
-    </script>
-
-    <!--
-    <script>
-      let vhLocked = false;
-
-      function setVh() {
-        if (vhLocked) return; // если уже зафиксировали — ничего не делаем
-        const vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty("--vh", `${vh}px`);
-      }
-
-      // выставляем высоту при загрузке
-      setVh();
-
-      // обновляем до первого скролла или resize (например, при повороте экрана)
-      window.addEventListener("resize", setVh, { passive: true });
-      window.addEventListener("orientationchange", setVh, { passive: true });
-
-      // как только пользователь скроллит — фиксируем значение
-      window.addEventListener(
-        "scroll",
-        () => {
-          vhLocked = true;
-        },
-        { once: true, passive: true }
-      );
-    </script>
--->
-
-    <script>
-      const heroContent = document.querySelector(".hero .container_content");
-      const heroTitle = document.querySelector(".hero-title");
-      const heroImage = document.querySelector(".hero-image");
-      const hero = document.querySelector(".hero");
-      const space = document.querySelector(".space");
-
-      window.addEventListener("scroll", () => {
-        const scrollY = window.scrollY;
-        const maxScroll = 150;
-        const progress = Math.min(scrollY / maxScroll, 1);
-
-        const sidePadding = 10 - 10 * progress;
-        const sidePaddingTitle = 0 + 10 * progress;
-        const opacityTitle = 1 - 0.6 * progress;
-        const scaleTitle = 1 - 0.06 * progress;
-        const marginImage = 10 - 10 * progress;
-
-        heroContent.style.padding = `34px ${sidePadding}px 0 ${sidePadding}px`;
-        heroTitle.style.padding = `0px ${sidePaddingTitle}px`;
-        heroTitle.style.opacity = `${opacityTitle}`;
-        heroTitle.style.transform = `scale(${scaleTitle})`;
-        heroImage.style.margin = `${marginImage}px 0`;
-      });
-    </script>
-    <!--
-    const box = document.getElementById("box");
-    -->
-
-    <script>
-      // const target = document.querySelector(".hero-image");
-      // const another = document.querySelector(".hero");
-
-      // Получаем расстояние от верха страницы до элемента target
-      // const start = target.getBoundingClientRect().top + window.scrollY;
-
-      // const h = target.getBoundingClientRect().height;
-      //  target.style.height = `${h}px`;
-
-      //  const h2 = another.getBoundingClientRect().height;
-      //  const h22 = h2 * 3;
-      //  another.style.height = `${h22}px`;
-
-      window.addEventListener("scroll", () => {
-        const scrollY = window.scrollY; // Текущий скролл страницы
-
-        if (scrollY >= start) {
-          const h = target.getBoundingClientRect().height;
-          target.style.height = `${h}px`;
-          another.style.height = `${h22}px`;
-        } else {
-        }
-      });
-    </script>
- <!--
-    <script>
-      let scrolled = false;
-      window.addEventListener("scroll", () => {
-        const targetTrigger = 180; // порог, при котором запускается автоскролл
-        const targetScroll = start + 200; // позиция, до которой прокручиваем
-
-        if (window.scrollY < targetTrigger) {
-          scrolled = false;
-        }
-
-        if (!scrolled && window.scrollY >= targetTrigger) {
-          scrolled = true; // чтобы срабатывало один раз
-          window.scrollTo({
-            top: targetScroll,
-            behavior: "smooth",
-          });
-        }
-      });
-    </script>
--->
-    <script>
-      // Список классов, к которым применять эффект
-      const targetClasses = [
-        "section-text",
-        "section-title",
-        "section-image",
-        "program-item",
-      ];
-
-      // Получаем все элементы этих классов
-      const elements = [];
-      targetClasses.forEach((cls) => {
-        document.querySelectorAll(`.${cls}`).forEach((el) => elements.push(el));
-      });
-      const strength = 0.8; // <--- сила эффекта, >1 = медленнее появление, <1 = быстрее
-
-      function handleScroll() {
-        const windowHeight = window.innerHeight;
-
-        elements.forEach((el) => {
-          const rect = el.getBoundingClientRect();
-          const elementCenter = rect.top + rect.height / 2;
-          const distance = Math.abs(windowHeight / 2 - elementCenter);
-
-          // Регулируем силу эффекта
-          let opacity = 1 - (distance / (windowHeight / 2)) * strength;
-          opacity = Math.max(0, Math.min(1, opacity)); // Ограничиваем от 0 до 1
-          el.style.opacity = opacity;
-
-          // Для slide-element добавляем смещение
-          if (el.classList.contains("slide-element")) {
-            el.style.transform = `translateY(${50 * (1 - opacity)}px)`;
-          }
-        });
-      }
-
-      window.addEventListener("scroll", handleScroll);
-      window.addEventListener("load", handleScroll);
-    </script>
-
-    <!---->
+    <script src="js/preloader.js"></script>
+    <script src="js/viewport-fix.js"></script>
+    <script src="js/hero-autoscroll.js"></script>
+    <script src="js/hero-animations.js"></script>
+    <script src="js/scroll-appearance.js"></script>
   </body>
 </html>
 
+<!--
 
-
+-->
