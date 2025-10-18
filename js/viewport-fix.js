@@ -1,20 +1,29 @@
 // viewport-fix.js
 // ================================
-// Исправляет проблему 100vh на мобильных устройствах.
-// Устанавливает CSS-переменную --vh равной 1% от внутренней высоты окна.
-// После первого скролла высота «фиксируется».
+// Устанавливает CSS-переменную --vh равной высоте окна минус высоту .hero-main.
+// После первого скролла значение фиксируется.
 // ================================
 
 let isVhLocked = false;
 
 function updateVhVariable() {
   if (isVhLocked) return;
-  const vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty("--vh", `${vh}px`);
+
+  const hero = document.querySelector(".hero-main");
+  if (!hero) return;
+
+  const windowHeight = window.innerHeight;
+  const heroHeight = hero.offsetHeight;
+  const remainingHeight = windowHeight - heroHeight;
+
+  // Не даём уйти в отрицательные значения
+  const safeHeight = Math.max(0, remainingHeight);
+
+  document.documentElement.style.setProperty("--vh", `${safeHeight}px`);
 }
 
-// Первичная установка
-updateVhVariable();
+// Первичная установка после загрузки
+window.addEventListener("DOMContentLoaded", updateVhVariable);
 
 // Обновляем при изменении ориентации или ресайзе
 window.addEventListener("resize", updateVhVariable, { passive: true });

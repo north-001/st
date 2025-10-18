@@ -5,17 +5,11 @@
 // ================================
 
 window.addEventListener("load", () => {
-  const heroImage = document.querySelector(".hero-image");
-  const heroSection = document.querySelector(".hero");
-
-  if (!heroImage || !heroSection) return;
+  const heroImage = document.querySelector(".hero-add");
 
   const heroStart = heroImage.getBoundingClientRect().top + window.scrollY;
   const heroHeight = heroImage.getBoundingClientRect().height;
   heroImage.style.height = `${heroHeight}px`;
-
-  const heroContainerHeight = heroSection.getBoundingClientRect().height;
-  heroSection.style.height = `${heroContainerHeight * 3}px`;
 
   let autoScrolled = false;
 
