@@ -272,7 +272,6 @@ body {
   min-height: calc(100dvh - var(--hero-main-height));
   display: flex;
   background-color: #F3EDE8;
-  background-color: aqua;
   color: #463A27;
   position: sticky;
   top: 0;
@@ -536,3 +535,4 @@ height: calc(var(--vh) * 100);
 .section-fotter .container_content{
   padding: 0px;
 }
+
