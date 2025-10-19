@@ -276,6 +276,7 @@ body {
   position: sticky;
   top: 0;
   z-index: -1;
+  transition:  min-height 0.6s ease;
 }
 
 .hero-add .container_content {
