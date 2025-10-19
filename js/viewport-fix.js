@@ -17,6 +17,7 @@ function updateHeroAddHeight() {
 
   // Устанавливаем сразу в min-height
   heroAdd.style.minHeight = `${remainingHeight}px`;
+  heroAdd.style.background = `red`;
 }
 
 // Первичная установка после загрузки
