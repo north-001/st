@@ -18,7 +18,7 @@ function updateHeroAddHeight() {
   const remainingHeight = Math.max(0, viewportHeight - heroMainHeight);
 
   heroAdd.style.minHeight = `${remainingHeight}px`;
-  heroAdd.style.background = `green`;
+  heroAdd.style.background = `yellow`;
 }
 
 // Первичная установка после полной загрузки
