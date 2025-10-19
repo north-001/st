@@ -18,7 +18,7 @@ function updateHeroAddHeight() {
   const remainingHeight = Math.max(0, viewportHeight - heroMainHeight);
 
   heroAdd.style.minHeight = `${remainingHeight}px`;
-  heroAdd.style.background = `yellow`;
+  heroAdd.style.background = `pink`;
 }
 
 // Первичная установка после полной загрузки
@@ -30,6 +30,6 @@ window.addEventListener("load", () => {
 // Обновляем при изменении размеров окна, ориентации и видимой области
 window.addEventListener("resize", updateHeroAddHeight, { passive: true });
 window.addEventListener("orientationchange", updateHeroAddHeight, { passive: true });
-window.visualViewport?.addEventListener("resize", updateHeroAddHeight);
+//window.visualViewport?.addEventListener("resize", updateHeroAddHeight);
 //window.visualViewport?.addEventListener("scroll", updateHeroAddHeight);
 
