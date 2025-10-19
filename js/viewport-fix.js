@@ -5,31 +5,21 @@
 // Работает корректно на мобильных (учитывает top bar) и десктопах.
 // ================================
 
-function updateHeroAddHeight() {
-  const heroMain = document.querySelector(".hero-main");
-  const heroAdd = document.querySelector(".hero-add");
-  if (!heroMain || !heroAdd) return;
+// Устанавливаем переменную --hero-main-height один раз
+function updateHeroMainHeight() {
+  const heroMain = document.querySelector('.hero-main');
+  if (!heroMain) return;
 
-  // Используем visualViewport для мобильных, fallback на innerHeight
-  const viewportHeight = window.visualViewport?.height || window.innerHeight;
-  const heroMainHeight = heroMain.offsetHeight;
-
-  // Без отрицательных значений
-  const remainingHeight = Math.max(0, viewportHeight - heroMainHeight);
-
-  heroAdd.style.minHeight = `${remainingHeight}px`;
-  heroAdd.style.background = `pink`;
+  const heroHeight = heroMain.offsetHeight;
+  document.documentElement.style.setProperty('--hero-main-height', `${heroHeight}px`);
 }
 
-// Первичная установка после полной загрузки
-window.addEventListener("load", () => {
-  // Даем небольшую задержку для мобильных браузеров, чтобы top bar точно учелся
-  setTimeout(updateHeroAddHeight, 50);
+// Первичная установка после загрузки страницы
+window.addEventListener('load', () => {
+  setTimeout(updateHeroMainHeight, 50); // небольшая задержка для мобильных
 });
 
-// Обновляем при изменении размеров окна, ориентации и видимой области
-window.addEventListener("resize", updateHeroAddHeight, { passive: true });
-window.addEventListener("orientationchange", updateHeroAddHeight, { passive: true });
-//window.visualViewport?.addEventListener("resize", updateHeroAddHeight);
-//window.visualViewport?.addEventListener("scroll", updateHeroAddHeight);
+// Обновление при изменении размеров окна или смене ориентации
+window.addEventListener('resize', updateHeroMainHeight, { passive: true });
+window.addEventListener('orientationchange', updateHeroMainHeight, { passive: true });
 
