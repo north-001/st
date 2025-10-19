@@ -23,7 +23,7 @@ function updateVhVariable() {
 }
 
 // Первичная установка после загрузки
-window.addEventListener("DOMContentLoaded", updateVhVariable);
+window.addEventListener("load", updateVhVariable);
 
 // Обновляем при изменении ориентации или ресайзе
 window.addEventListener("resize", updateVhVariable, { passive: true });
