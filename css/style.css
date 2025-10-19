@@ -269,7 +269,6 @@ body {
 
 .hero-add {
   width: 100%;
-  height: var(--vh);
   display: flex;
   background-color: #F3EDE8;
   color: #463A27;

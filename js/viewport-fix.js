@@ -4,36 +4,24 @@
 // После первого скролла значение фиксируется.
 // ================================
 
-let isVhLocked = false;
-
-function updateVhVariable() {
-  if (isVhLocked) return;
-
-  const hero = document.querySelector(".hero-main");
-  if (!hero) return;
+function updateHeroAddHeight() {
+  const heroMain = document.querySelector(".hero-main");
+  const heroAdd = document.querySelector(".hero-add");
+  if (!heroMain || !heroAdd) return;
 
   const windowHeight = window.innerHeight;
-  const heroHeight = hero.offsetHeight;
-  const remainingHeight = windowHeight - heroHeight;
+  const heroMainHeight = heroMain.offsetHeight;
 
-  // Не даём уйти в отрицательные значения
-  const safeHeight = Math.max(0, remainingHeight);
+  // Без отрицательных значений
+  const remainingHeight = Math.max(0, windowHeight - heroMainHeight);
 
-  document.documentElement.style.setProperty("--vh", `${safeHeight}px`);
+  // Устанавливаем сразу в min-height
+  heroAdd.style.minHeight = `${remainingHeight}px`;
 }
 
 // Первичная установка после загрузки
-window.addEventListener("load", updateVhVariable);
+window.addEventListener("load", updateHeroAddHeight);
 
-// Обновляем при изменении ориентации или ресайзе
-window.addEventListener("resize", updateVhVariable, { passive: true });
-window.addEventListener("orientationchange", updateVhVariable, { passive: true });
-
-// После первого скролла фиксируем значение
-window.addEventListener(
-  "scroll",
-  () => {
-    isVhLocked = true;
-  },
-  { once: true, passive: true }
-);
+// Обновляем при ресайзе/смене ориентации
+window.addEventListener("resize", updateHeroAddHeight, { passive: true });
+window.addEventListener("orientationchange", updateHeroAddHeight, { passive: true });
