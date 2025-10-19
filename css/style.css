@@ -117,6 +117,18 @@ body {
   align-items: center;
 }
 
+:root {
+  --main-color-dark: #58543F;
+  --main-color-light: #FFF5ED;
+  --main-color-light-add: #fffbf7;
+  
+  --basic-color-dark: #6B654C;
+  --basic-color-light: #ffffff;
+
+  --add1-color-dark: #C2B2A6;
+  --add1-color-light: #746E61;
+}
+
 /* ===============================
   Preloader
 ================================*/
@@ -126,9 +138,9 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #f3ede9; /* цвет экрана загрузки */
+  background-color: var(--main-color-light);
   display: flex;
-  color: #38302a;
+  color: var(--main-color-dark);
   align-items: center;
   justify-content: center;
   z-index: 9999;
@@ -152,7 +164,7 @@ body {
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px); /* Safari support */
   background-color: rgba(255, 255, 255, 0.02);
-  color: #463A27;
+  color: var(--main-color-dark);
 }
 
 .nav-info {
@@ -169,7 +181,7 @@ body {
   position: absolute;
   width: 12px;
   height: 18px;
-  border: 1px solid #463A27;
+  border: 1px solid var(--main-color-dark);
   border-radius: 50%;
   opacity: 0.6;
   top: 50%;
@@ -197,8 +209,8 @@ body {
   width: 100%;
   height: auto;
   display: flex;
-  background-color: #F3EDE8;
-  color: #463A27;
+  background-color: var(--main-color-light);
+  color: var(--main-color-dark);
 }
 
 .hero-main .container_content{
@@ -231,12 +243,13 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 16px 0px 16px 0px;
+  width: 100%;
 }
 
 .hero-title{
   padding: 0px 0px;
   opacity: 1;
-  
+  width: 100%;     
 }
 .hero-subtitle{
   font-family: 'B', sans-serif;
@@ -257,10 +270,11 @@ body {
   opacity: 0.6;
 }
 
-.header_title img{
-  padding: 0 13px;
-  max-width: 100%;
+.hero-logo {
+  width: 100%;
   height: auto;
+  display: block;
+  fill: var(--main-color-dark);
 }
 
 /* ===============================
@@ -271,8 +285,8 @@ body {
   width: 100%;
   min-height: calc(100dvh - var(--hero-main-height));
   display: flex;
-  background-color: #F3EDE8;
-  color: #463A27;
+  background-color: var(--main-color-light);
+  color: var(--main-color-dark);
   position: sticky;
   top: 0;
   z-index: -1;
@@ -331,7 +345,7 @@ body {
   content: '';
   width: var(--progress-width, 0%);
   height: 1px;
-  background-color: #fff;
+  background-color: var(--main-color-light);
   position: absolute;
   top: 0;
   left: 0;
@@ -340,7 +354,8 @@ body {
   content: '';
   width: 100%;
   height: 1px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--main-color-light);
+  opacity: 0.2;
   position: absolute;
   top: 0;
 }
@@ -348,7 +363,8 @@ body {
 .indicator {
   width: 6px;
   height: 6px;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: var(--main-color-light);
+  opacity: 0.6;
   border-radius: 50%;
   margin: 0 6px;
   transition: background-color 1s;
@@ -356,7 +372,8 @@ body {
 }
 
 .indicator.active {
-  background-color: #fff;
+  background-color: var(--main-color-light);
+  opacity: 1;
 }
 
 
@@ -377,8 +394,8 @@ height: calc(var(--vh) * 100);
   justify-content: center;
   align-items: center;
   padding: 104px 25px;
-  background-color: #FFFDFE;
-  color: #1B0D14;
+  background-color: var(--basic-color-light);
+  color: var(--basic-color-dark);
 }
 
 /* Общие элементы текста */
@@ -411,8 +428,8 @@ height: calc(var(--vh) * 100);
 
 /* Дата */
 .section-date {
-  background-color: #e7eaee;
-  color: #1c2025;
+  background-color: var(--add1-color-light);
+  color: var(--add1-color-dark);
   padding: 20px 25px 10px;
   margin: 0;
 }
@@ -438,8 +455,8 @@ height: calc(var(--vh) * 100);
 
 /* Программа */
 .section-program {
-  background-color: #f3ede9;
-  color: #241E1A;
+  background-color: var(--main-color-light);
+  color: var(--main-color-dark);
 }
 
 .program-list {
@@ -535,4 +552,3 @@ height: calc(var(--vh) * 100);
 .section-fotter .container_content{
   padding: 0px;
 }
-
