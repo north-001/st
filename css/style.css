@@ -225,9 +225,13 @@ body {
 ================================*/
 .languages_conteiner{
   width: 100%;
+  height: 100%;
   position: fixed;
   left: 0;
-  top: 50%;
+  top: 0;
+
+  display: flex;
+  align-items: center;
 }
 .languages_conteiner .container_content{
   max-width: 790px;
@@ -236,12 +240,12 @@ body {
 }
 
 .languages{
-
   display: flex;
   flex-direction: column;
   overflow: hidden;
   border-radius: 0px;
   height: auto;
+
 }
 .languages button{
   cursor: pointer;
