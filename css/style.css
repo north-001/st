@@ -290,9 +290,8 @@ body {
   position: sticky;
   top: 0;
   z-index: -1;
-  overflow: hidden;
   transition: max-height 0.6s ease;
-  background-color: #783B5A;
+  background-color: #503b78;
 }
 
 .hero-add .container_content {
