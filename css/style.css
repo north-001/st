@@ -292,7 +292,6 @@ body {
   top: 0;
   z-index: -1;
   transition:  min-height 0.6s ease;
-  background-color: #6B654C;
 }
 
 .hero-add .container_content {
@@ -556,3 +555,4 @@ height: calc(var(--vh) * 100);
 .section-fotter .container_content{
   padding: 0px;
 }
+
