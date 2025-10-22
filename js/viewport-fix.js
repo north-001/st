@@ -5,21 +5,24 @@
 // Работает корректно на мобильных (учитывает top bar) и десктопах.
 // ================================
 
-// Устанавливаем переменную --hero-main-height один раз
-function updateHeroMainHeight() {
+function updateHeroAddHeight() {
   const heroMain = document.querySelector('.hero-main');
-  if (!heroMain) return;
+  const heroAdd = document.querySelector('.hero-add');
+  if (!heroMain || !heroAdd) return;
 
-  const heroHeight = heroMain.offsetHeight;
-  document.documentElement.style.setProperty('--hero-main-height', `${heroHeight}px`);
+  const heroMainHeight = heroMain.offsetHeight;
+  const viewportHeight = window.innerHeight; // учитывает мобильную top bar
+  const remainingHeight = viewportHeight - heroMainHeight;
+
+  heroAdd.style.minHeight = `${remainingHeight}px`;
 }
 
 // Первичная установка после загрузки страницы
 window.addEventListener('load', () => {
-  setTimeout(updateHeroMainHeight, 50); // небольшая задержка для мобильных
+  // Небольшая задержка для мобильных браузеров
+  setTimeout(updateHeroAddHeight, 50);
 });
 
-// Обновление при изменении размеров окна или смене ориентации
-//window.addEventListener('resize', updateHeroMainHeight, { passive: true });
-//window.addEventListener('orientationchange', updateHeroMainHeight, { passive: true });
-
+// Обновление при изменении размеров окна или ориентации
+//window.addEventListener('resize', updateHeroAddHeight, { passive: true });
+//window.addEventListener('orientationchange', updateHeroAddHeight, { passive: true });
