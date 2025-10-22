@@ -7,11 +7,6 @@
   box-sizing: border-box;
 }
 
-/*html, body {
-  height: 100%;
-  width: 100%;
-}*/
-
 body {
   line-height: 1;
 }
@@ -357,14 +352,15 @@ body {
 
 .hero-add {
   width: 100%;
-  min-height: calc(100dvh - var(--hero-main-height));
+  height: calc(100dvh - var(--hero-main-height));
   display: flex;
   background-color: var(--main-color-light);
   color: var(--main-color-dark);
   position: sticky;
   top: 0;
   z-index: -1;
-  transition:  min-height 0.6s ease;
+  transition:  height 0.6s ease;
+  background-color: #783B5A;
 }
 
 .hero-add .container_content {
