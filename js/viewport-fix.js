@@ -20,6 +20,6 @@ window.addEventListener('load', () => {
 });
 
 // Обновление при изменении размеров окна или смене ориентации
-window.addEventListener('resize', updateHeroMainHeight, { passive: true });
-window.addEventListener('orientationchange', updateHeroMainHeight, { passive: true });
+//window.addEventListener('resize', updateHeroMainHeight, { passive: true });
+//window.addEventListener('orientationchange', updateHeroMainHeight, { passive: true });
 

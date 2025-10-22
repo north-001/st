@@ -229,9 +229,9 @@ body {
   position: fixed;
   left: 0;
   top: 0;
-
   display: flex;
   align-items: center;
+  display: none;
 }
 .languages_conteiner .container_content{
   max-width: 790px;
@@ -258,7 +258,6 @@ body {
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px); /* Safari support */
   background-color: rgba(209, 209, 209, 0.7);
-  background-color: rgb(245, 245, 245);
   display: flex;
   justify-content: center;
   align-items: center;
