@@ -8,7 +8,7 @@ let lastWidth = window.innerWidth;
 let lastHeight = window.innerHeight;
 
   const hI = window.innerHeight;
-  const hO = window.outerHeight;
+  const hO = window.screen.height;
   const Tb = hO - hI;
 
 
@@ -39,7 +39,7 @@ window.addEventListener('resize', () => {
 
 
 
-    console.log(`innerHeight: ${hI}px | outerHeight: ${hO}px | top bar ≈ ${Tb}px`);
+    //console.log(`innerHeight: ${hI}px | outerHeight: ${hO}px | top bar ≈ ${Tb}px`);
 
   // если окно реально изменилось по высоте более чем на 100px
   if (heightDiff > Tb || widthDiff > Tb) {
