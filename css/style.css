@@ -352,15 +352,15 @@ body {
 
 .hero-add {
   width: 100%;
-  height: calc(100dvh - var(--hero-main-height));
+  /*height: calc(100dvh - var(--hero-main-height));*/
   display: flex;
   background-color: var(--main-color-light);
   color: var(--main-color-dark);
   position: sticky;
   top: 0;
   z-index: -1;
-  transition:  height 0.6s ease;
-  background-color: #783B5A;
+  transition: min-height 0.6s ease;
+  background-color: #727E6A;
 }
 
 .hero-add .container_content {

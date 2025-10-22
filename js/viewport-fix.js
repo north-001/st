@@ -1,9 +1,16 @@
 // viewport-fix.js
 // ================================
-// Устанавливает min-height для .hero-add равной оставшейся видимой высоте окна
-// после вычитания высоты .hero-main.
-// Работает корректно на мобильных (учитывает top bar) и десктопах.
+// Вычисляет и задаёт min-height для .hero-add как (innerHeight - .hero-main.height)
+// Пересчитывает ТОЛЬКО если resize по высоте больше 100px
 // ================================
+
+let lastWidth = window.innerWidth;
+let lastHeight = window.innerHeight;
+
+  const hI = window.innerHeight;
+  const hO = window.outerHeight;
+  const Tb = hO - hI;
+
 
 function updateHeroAddHeight() {
   const heroMain = document.querySelector('.hero-main');
@@ -11,18 +18,35 @@ function updateHeroAddHeight() {
   if (!heroMain || !heroAdd) return;
 
   const heroMainHeight = heroMain.offsetHeight;
-  const viewportHeight = window.innerHeight; // учитывает мобильную top bar
+  const viewportHeight = window.innerHeight;
   const remainingHeight = viewportHeight - heroMainHeight;
 
   heroAdd.style.minHeight = `${remainingHeight}px`;
+  // обновляем сохранённые размеры
+  lastWidth = window.innerWidth;
+  lastHeight = window.innerHeight;
 }
 
 // Первичная установка после загрузки страницы
 window.addEventListener('load', () => {
-  // Небольшая задержка для мобильных браузеров
   setTimeout(updateHeroAddHeight, 50);
 });
 
-// Обновление при изменении размеров окна или ориентации
-//window.addEventListener('resize', updateHeroAddHeight, { passive: true });
-//window.addEventListener('orientationchange', updateHeroAddHeight, { passive: true });
+// Обновление при resize — только если изменение больше 100px
+window.addEventListener('resize', () => {
+  const widthDiff = Math.abs(window.innerWidth - lastWidth);
+  const heightDiff = Math.abs(window.innerHeight - lastHeight);
+
+
+
+    console.log(`innerHeight: ${hI}px | outerHeight: ${hO}px | top bar ≈ ${Tb}px`);
+
+  // если окно реально изменилось по высоте более чем на 100px
+  if (heightDiff > Tb || widthDiff > Tb) {
+    updateHeroAddHeight();
+  }
+}, { passive: true });
+
+// При смене ориентации всегда пересчитываем
+window.addEventListener('orientationchange', updateHeroAddHeight, { passive: true });
+
