@@ -255,9 +255,6 @@ body {
   visibility: hidden;
 
 }
-.nav-info-lang-ru-but:hover, .nav-info-lang-lv-but:hover{
-  opacity: 0.7;
-}
 
 .ruBut_show{
   transform: translateY(0%);
@@ -595,3 +592,4 @@ height: calc(var(--vh) * 100);
 .section-fotter .container_content{
   padding: 0px;
 }
+
