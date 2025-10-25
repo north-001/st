@@ -236,9 +236,6 @@ body {
   transform: translateY(-100%);
   visibility: hidden;
 }
-.nav-info-lang-ru-but:hover{
-  opacity: 1;
-}
 .nav-info-lang-lv-but{
   position: absolute;
   top: 0;
@@ -592,4 +589,5 @@ height: calc(var(--vh) * 100);
 .section-fotter .container_content{
   padding: 0px;
 }
+
 
