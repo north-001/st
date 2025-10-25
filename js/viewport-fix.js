@@ -20,7 +20,6 @@ function updateHeroAddHeight() {
   const remainingHeight = viewportHeight - heroMainHeight;
 
   heroAdd.style.minHeight = `${remainingHeight}px`;
-  heroAdd.style.background = `pink`;
   // обновляем сохранённые размеры
   lastWidth = window.innerWidth;
   lastHeight = window.innerHeight;
@@ -62,4 +61,5 @@ window.addEventListener('load', () => {
 
 // При смене ориентации всегда пересчитываем
 window.addEventListener('orientationchange', updateHeroAddHeight, { passive: true });
+
 
