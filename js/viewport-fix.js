@@ -20,6 +20,7 @@ function updateHeroAddHeight() {
   const remainingHeight = viewportHeight - heroMainHeight;
 
   heroAdd.style.minHeight = `${remainingHeight}px`;
+  heroAdd.style.background = `pink`;
   // обновляем сохранённые размеры
   lastWidth = window.innerWidth;
   lastHeight = window.innerHeight;
@@ -45,19 +46,19 @@ window.addEventListener('load', () => {
 });
 
 // Обновление при resize — только если изменение больше 100px
-window.addEventListener('resize', () => {
-  const widthDiff = Math.abs(window.innerWidth - lastWidth);
-  const heightDiff = Math.abs(window.innerHeight - lastHeight);
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    window.addEventListener('resize', () => {
+      const widthDiff = Math.abs(window.innerWidth - lastWidth);
+      const heightDiff = Math.abs(window.innerHeight - lastHeight);
 
-
-
-    //console.log(`innerHeight: ${hI}px | outerHeight: ${hO}px | top bar ≈ ${Tb}px`);
-
-  // если окно реально изменилось по высоте более чем на 100px
-  if (heightDiff > Tb || widthDiff > Tb) {
-    updateHeroAddHeight();
-  }
-}, { passive: true });
+      // проверяем, реально ли изменилось окно
+      if (heightDiff > Tb || widthDiff > Tb) {
+        updateHeroAddHeight();
+      }
+    }, { passive: true });
+  }, 50);
+});
 
 // При смене ориентации всегда пересчитываем
 window.addEventListener('orientationchange', updateHeroAddHeight, { passive: true });
