@@ -236,6 +236,7 @@ body {
   transform: translateY(-100%);
   visibility: hidden;
 }
+
 .nav-info-lang-lv-but{
   position: absolute;
   top: 0;
@@ -266,6 +267,17 @@ body {
   transition-delay: 0.1s;
 }
 
+.n1 p{
+  font-family: 'C', sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.n3{
+  display: none;
+}
+
+
 
 /* ===============================
    Hero Section
@@ -282,6 +294,7 @@ body {
 .hero-main .container_content{
   height: 100%;
   padding: 34px 10px 0px 10px;
+  position: relative;
 }
 /*
 .hero {
@@ -302,6 +315,24 @@ body {
   padding-top: 34px;
   padding: 34px 10px 0px 10px;
 }*/
+#BA{
+  position: fixed;
+  bottom: 0;
+  margin: 10px;
+  padding: 6px;
+  background-color: #383139;
+  color: #ebebeb;
+  transition: 0.3s;
+}
+#BA:hover{
+  position: fixed;
+  bottom: 0;
+  margin: 10px;
+  padding: 6px;
+  background-color: #514e52;
+  color: #b4b4b4;
+}
+
 
 .hero-header{
   text-align: center;
@@ -334,6 +365,29 @@ body {
   justify-content: space-between;
   margin-top: 10px;
   opacity: 0.6;
+  align-items: center;
+}
+.ch{
+  justify-content: center;
+}
+.ch::after{
+  content: '';
+  height: 1px;
+  width: 65px;
+  background-color: var(--main-color-dark);
+  opacity: 0.6;
+  margin-left: 10px;
+}
+.ch::before{
+  content: '';
+  height: 1px;
+  width: 65px;
+  background-color: var(--main-color-dark);
+  opacity: 0.6;
+  margin-right: 10px;
+}
+.ch3{
+  display: none;
 }
 
 .hero-logo {
@@ -589,5 +643,3 @@ height: calc(var(--vh) * 100);
 .section-fotter .container_content{
   padding: 0px;
 }
-
-

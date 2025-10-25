@@ -17,12 +17,18 @@
     <div id="preloader">
       <p>Загрузка...</p>
     </div>
-
+    <button id="BA">Before/After</button>
     <!-- Навигация -->
     <div class="navbar" id="nav">
       <div class="container">
         <div class="container_content container_content_center">
-          <div class="nav-info">
+          <div class="nav-info n1">
+            <p id="nav-Invitation">Приглашение</p>
+            <p class="nav-info-lang" id="nav-langActive">русский</p>
+            <p class="nav-info-lang-ru-but" id="ruBut">русский</p>
+            <p class="nav-info-lang-lv-but" id="lvBut">latviski</p>
+          </div>
+          <div class="nav-info n2 n3">
             <p id="nav-Invitation">Приглашение</p>
             <p class="nav-info-lang" id="nav-langActive">русский</p>
             <p class="nav-info-lang-ru-but" id="ruBut">русский</p>
@@ -49,8 +55,11 @@
                 />
               </svg>
             </h1>
-            <p class="hero-text">
+            <p class="hero-text ch1 ch3">
               <span>I</span><span>o</span><span>v</span><span>e</span>
+            </p>
+            <p class="hero-text ch">
+              <span class="e1">приглашение на свадьбу</span>
             </p>
           </div>
         </div>
@@ -255,6 +264,23 @@
 
       // 6️⃣ Применяем язык при загрузке страницы
       updateLanguage(currentLang);
+    </script>
+
+    <script>
+      const ba = document.getElementById("BA");
+      const htt = document.querySelector(".ch");
+      const htt2 = document.querySelector(".ch1");
+      const nn1 = document.querySelector(".n1");
+      const nn2 = document.querySelector(".n2");
+
+      ba.addEventListener("click", bab);
+
+      function bab() {
+        htt.classList.toggle("ch3");
+        htt2.classList.toggle("ch3");
+        nn1.classList.toggle("n3");
+        nn2.classList.toggle("n3");
+      }
     </script>
   </body>
 </html>
