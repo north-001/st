@@ -19,24 +19,14 @@
     </div>
 
     <!-- Навигация -->
-    <div class="navbar">
+    <div class="navbar" id="nav">
       <div class="container">
         <div class="container_content container_content_center">
           <div class="nav-info">
-            <p>Приглашение</p>
-            <p>23.01</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Язык -->
-    <div class="languages_conteiner">
-      <div class="container">
-        <div class="container_content container_content_center">
-          <div class="languages">
-            <button class="">LV</button>
-            <button class="languages_active">RU</button>
+            <p id="nav-Invitation">Приглашение</p>
+            <p class="nav-info-lang">русский</p>
+            <p class="nav-info-lang-ru-but" id="ruBut">русский</p>
+            <p class="nav-info-lang-lv-but" id="lvBut">latviski</p>
           </div>
         </div>
       </div>
@@ -203,6 +193,61 @@
     <!--<script src="js/hero-autoscroll.js"></script>-->
     <script src="js/hero-animations.js"></script>
     <script src="js/scroll-appearance.js"></script>
+
+    <script>
+      const nav = document.getElementById("nav");
+      const ruBut = document.getElementById("ruBut");
+      const lvBut = document.getElementById("lvBut");
+      let open = false;
+
+      // Открытие/закрытие кнопок выбора языка
+      nav.addEventListener("click", langChange);
+
+      function langChange() {
+        ruBut.classList.toggle("ruBut_show");
+        lvBut.classList.toggle("lvBut_show");
+        open = !open;
+      }
+
+      // Объект переводов
+      const translations = {
+        ru: { title: "Приглашение" },
+        lv: { title: "Ielūgums" },
+      };
+
+      // 1️⃣ Получаем язык из ссылки (например ?lang=lv)
+      const params = new URLSearchParams(window.location.search);
+      const langFromUrl = params.get("lang");
+
+      // 2️⃣ Если есть в localStorage — используем его
+      const savedLang = localStorage.getItem("lang");
+
+      // 3️⃣ Определяем текущий язык
+      let currentLang = langFromUrl || savedLang || "ru";
+
+      // 4️⃣ Функция обновления текста
+      function updateLanguage(lang) {
+        if (!translations[lang]) return; // если язык не найден — ничего не делаем
+        currentLang = lang;
+        document.getElementById("nav-Invitation").textContent =
+          translations[lang].title;
+        localStorage.setItem("lang", lang); // сохраняем язык
+      }
+
+      // 5️⃣ Навешиваем обработчики на кнопки
+      ruBut.addEventListener("click", () => {
+        updateLanguage("ru");
+        history.replaceState(null, "", "?lang=ru"); // меняем URL без перезагрузки
+      });
+
+      lvBut.addEventListener("click", () => {
+        updateLanguage("lv");
+        history.replaceState(null, "", "?lang=lv");
+      });
+
+      // 6️⃣ Применяем язык при загрузке страницы
+      updateLanguage(currentLang);
+    </script>
   </body>
 </html>
 

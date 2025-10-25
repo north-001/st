@@ -180,6 +180,7 @@ body {
   -webkit-backdrop-filter: blur(4px); /* Safari support */
   background-color: rgba(255, 255, 255, 0.02);
   color: var(--main-color-dark);
+  cursor: pointer;
 }
 
 .nav-info {
@@ -208,7 +209,6 @@ body {
 .nav-info p {
   font-family: 'D', sans-serif;
   font-size: 14px;
-
 }
 
 @keyframes spin {
@@ -218,55 +218,57 @@ body {
 /* ===============================
    Lenguages
 ================================*/
-.languages_conteiner{
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  left: 0;
-  top: 0;
-  display: flex;
-  align-items: center;
-  display: none;
-}
-.languages_conteiner .container_content{
-  max-width: 790px;
-  align-items: start;
-  padding: 0px;
-}
-
-.languages{
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  border-radius: 0px;
-  height: auto;
-
-}
-.languages button{
+.nav-info-lang{
   cursor: pointer;
-  padding: 6px;
-  background-color: var(--main-color-light-add);
-  color: var(--main-color-dark);
-  font-weight: 500;
-  font-size: 14px;
-  transition-duration: 0.3s;
+}
+.nav-info-lang-ru-but{
+  position: absolute;
+  top: 0;
+  right:0;
+  margin-top: 34px;
+  padding: 0px 0 0 0;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px); /* Safari support */
-  background-color: rgba(209, 209, 209, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: rgba(255, 255, 255, 0.02);
+  opacity: 0;
+  cursor: pointer;
+  transition: 0.3s;
+  transform: translateY(-100%);
+  visibility: hidden;
 }
-.languages button:hover{
-  background-color: rgba(71, 71, 71, 0.3);
+.nav-info-lang-ru-but:hover{
+  opacity: 1;
 }
-.languages .languages_active{
-  background-color: rgba(116, 116, 116, 0.3);
+.nav-info-lang-lv-but{
+  position: absolute;
+  top: 0;
+  right:0;
+  margin-top: 58px;
+  padding: 0px 0 0 0;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px); /* Safari support */
+  background-color: rgba(255, 255, 255, 0.02);
+  opacity: 0;
+  cursor: pointer;
+  transition: 0.3s;
+  transform: translateY(-100%);
+  visibility: hidden;
+
 }
-@media (max-width: 790px) {
-.languages{
-  border-radius: 0 10px 10px 0;
+.nav-info-lang-lv-but:hover{
+  opacity: 1;
 }
+.ruBut_show{
+  transform: translateY(0%);
+  opacity: 0.6;
+  visibility: visible;
+  transition-delay: 0s;
+}
+.lvBut_show{
+  transform: translateY(0%);
+  opacity: 0.6;
+  visibility: visible;
+  transition-delay: 0.1s;
 }
 
 
@@ -592,4 +594,3 @@ height: calc(var(--vh) * 100);
 .section-fotter .container_content{
   padding: 0px;
 }
-
