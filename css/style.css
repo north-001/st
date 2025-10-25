@@ -255,9 +255,10 @@ body {
   visibility: hidden;
 
 }
-.nav-info-lang-lv-but:hover{
-  opacity: 1;
+.nav-info-lang-ru-but:hover, .nav-info-lang-lv-but:hover{
+  opacity: 0.7;
 }
+
 .ruBut_show{
   transform: translateY(0%);
   opacity: 0.6;

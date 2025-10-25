@@ -24,7 +24,7 @@
         <div class="container_content container_content_center">
           <div class="nav-info">
             <p id="nav-Invitation">Приглашение</p>
-            <p class="nav-info-lang">русский</p>
+            <p class="nav-info-lang" id="nav-langActive">русский</p>
             <p class="nav-info-lang-ru-but" id="ruBut">русский</p>
             <p class="nav-info-lang-lv-but" id="lvBut">latviski</p>
           </div>
@@ -211,8 +211,14 @@
 
       // Объект переводов
       const translations = {
-        ru: { title: "Приглашение" },
-        lv: { title: "Ielūgums" },
+        ru: {
+          title: "Приглашение",
+          langActive: "Русский",
+        },
+        lv: {
+          title: "Ielūgums",
+          langActive: "Latviski",
+        },
       };
 
       // 1️⃣ Получаем язык из ссылки (например ?lang=lv)
@@ -231,6 +237,8 @@
         currentLang = lang;
         document.getElementById("nav-Invitation").textContent =
           translations[lang].title;
+        document.getElementById("nav-langActive").textContent =
+          translations[lang].langActive;
         localStorage.setItem("lang", lang); // сохраняем язык
       }
 
