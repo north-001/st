@@ -30,19 +30,20 @@ window.addEventListener('load', () => {
   setTimeout(updateHeroAddHeight, 50);
 });
 
-  const hI = window.innerHeight;
-  const hO = window.screen.height;
-  const Tb = hO - hI;
+let hI = window.innerHeight;
+let hO = window.screen.height;
+let Tb = hO - hI;
 
 function resizeRemember() {
-  const hI = window.innerHeight;
-  const hO = window.screen.height;
-  const Tb = hO - hI;
+  hI = window.innerHeight;
+  hO = window.screen.height;
+  Tb = hO - hI;
 }
 
 window.addEventListener('load', () => {
   setTimeout(resizeRemember, 50);
 });
+
 // Обновление при resize — только если изменение больше 100px
 window.addEventListener('resize', () => {
   const widthDiff = Math.abs(window.innerWidth - lastWidth);
