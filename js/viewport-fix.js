@@ -62,4 +62,3 @@ window.addEventListener('load', () => {
 // При смене ориентации всегда пересчитываем
 window.addEventListener('orientationchange', updateHeroAddHeight, { passive: true });
 
-

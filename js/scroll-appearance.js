@@ -10,6 +10,7 @@ const observedClasses = [
   "section-title",
   "section-image",
   "program-item",
+  "section-decor-text",
 ];
 
 const animatedElements = [];
