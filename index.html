@@ -89,7 +89,7 @@
     <section class="section section-intro">
       <div class="container">
         <div class="container_content container_content_center">
-          <p class="section-decor-text"><span>DecorText</span></p>
+          <p class="section-decor-text"><span>Welcome</span></p>
           <p class="section-title">
             Дорогие <span class="section-title-accent">родные</span> и
             <span class="section-title-accent">близкие</span>
@@ -106,8 +106,9 @@
     <section class="section section-date">
       <div class="container">
         <div class="container_content container_content_center">
-          <p class="section-decor-text"><span>(ДАТА)</span></p>
+          <p class="section-decor-text"><span>Дата</span></p>
           <p class="section-title">23.01.2026</p>
+          <a href="#program" class="section-date-link">программа</a>
         </div>
       </div>
     </section>
@@ -119,7 +120,12 @@
           <p class="section-title">
             <span class="section-title-accent">Место</span>
           </p>
-          <p class="section-text">Villa Barvikha 135, посёлок Барвиха, 135.</p>
+          <div class="location-copy">
+            <p class="section-text" id="textToCopy">
+              Villa Barvikha 135, посёлок Барвиха, 135.
+            </p>
+            <button id="copyBtn">Копировать</button>
+          </div>
           <img
             class="section-image"
             src="img/blue-sky-and-flower-ds-3840x2400-3235952354.jpg"
@@ -138,7 +144,7 @@
     </section>
 
     <!-- Программа -->
-    <section class="section section-program">
+    <section class="section section-program" id="program">
       <div class="container">
         <div class="container_content container_content_center">
           <p class="section-title section-title-main">Программа дня</p>
@@ -293,6 +299,18 @@
         nn1.classList.toggle("hin3");
         nn2.classList.toggle("hin3");
       }
+    </script>
+    <script>
+      const copyBtn = document.getElementById("copyBtn");
+      const textToCopy = document.getElementById("textToCopy");
+
+      copyBtn.addEventListener("click", () => {
+        // Используем современный API clipboard
+        navigator.clipboard
+          .writeText(textToCopy.textContent)
+          .then(() => {})
+          .catch((err) => {});
+      });
     </script>
   </body>
 </html>

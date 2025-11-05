@@ -470,13 +470,6 @@ body {
 .hin3{
   display: none;
 }
-/* ===============================
-   Spacer
-================================*/
-/* .spacer{
-height: calc(var(--vh) * 100);
-}*/
-
 
 /* ===============================
    Base Section Styles
@@ -530,7 +523,7 @@ height: calc(var(--vh) * 100);
 ================================*/
 
 .section-intro .section-decor-text{
-  font-family: 'B', serif;
+  font-family: 'B', serif; 
 }
 
 /* Дата */
@@ -539,18 +532,38 @@ height: calc(var(--vh) * 100);
   color: var(--add1-color-dark);
   padding: 20px 25px 10px;
   margin: 0;
+  
 }
 .section-date {
   background-color: var(--add1-color-light);
   color: var(--add1-color-dark);
   padding: 0px 25px;
   margin: 0;
-}
 
+}
 .section-date .section-title {
   margin-bottom: 0;
   font-family: 'D', serif;
   font-weight: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.section-date .section-date-link{
+  padding: 1.3px 10px 5px;
+  font-size: clamp(12px, 1.8vw, 18px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  opacity: 0.35;
+  color: var(--add1-color-dark);
+  border: 1px solid var(--add1-color-dark);
+  transition: 0.3s;
+}
+.section-date .section-date-link:hover{
+  opacity: 0.25;
 }
 .section-date .section-decor-text{
   margin-bottom: 20px;
@@ -558,7 +571,7 @@ height: calc(var(--vh) * 100);
 
 /* Локация */
 .section-location .section-text {
-  margin-bottom: 25px;
+  margin-bottom: 16px;
 }
 
 .section-location .section-image {
@@ -568,25 +581,28 @@ height: calc(var(--vh) * 100);
   border-radius: 2px;
   object-fit: cover;
   padding: 6px;
-  background-color: var(--main-color-light);
+  border: 1px solid var(--add1-color-dark);
+  transition: 0.3s;
+}
+.section-location .section-image:hover {
 }
 
 .section-location-maps-button button{
-  margin-top: 25px;
+  margin-top: 35px;
   padding: 10px 16px;
   font-size: clamp(16px, 2.54vw, 24.4px);
   text-align: center;
-  font-weight: 00;
+  font-weight: 500;
   font-family: 'C', serif;
-  background-color: var(--add1-color-dark);
-  color: var(--add1-color-light);
+  color:var(--add1-color-dark);
   cursor: pointer;
-  opacity: 1;
+  opacity: 0.8;
   transition: 0.3s;
   border-radius: 2px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid var(--add1-color-dark);
 }
 .section-location-maps-button button:hover{
   opacity: 0.6;
@@ -594,21 +610,34 @@ height: calc(var(--vh) * 100);
 
 .section-location-maps-button button::after{
   content: '';
-  width: 3.75px;
-  height: 3.75px;
-  background-color: var(--add1-color-light);
+  width: 2.75px;
+  height: 2.75px;
+  background-color: var(--add1-color-dark);
   display: flex;
   margin-left: 6px;
   border-radius: 50%;
 }
 .section-location-maps-button button::before{
   content: '';
-  width: 3.75px;
-  height: 3.75px;
-  background-color: var(--add1-color-light);
+  width: 2.75px;
+  height: 2.75px;
+  background-color: var(--add1-color-dark);
   display: flex;
   margin-right: 6px;
   border-radius: 50%;
+}
+.location-copy{
+  position: relative;
+}
+#copyBtn{
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: clamp(12px, 1.8vw, 18px);
+  opacity: 0.35;
+  color: var(--add1-color-dark);
+  transform: translate(0%, -150%);
+  cursor: copy;
 }
 /* Программа */
 .section-program {
