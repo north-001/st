@@ -131,6 +131,8 @@ body {
 }
 ================================*/
 /* ===============================
+
+================================*/
 :root {
   --main-color-dark: #585858;
   --main-color-light: #ebebeb;
@@ -140,24 +142,22 @@ body {
   --basic-color-light: #ffffff;
 
   --add1-color-dark: #585858;
-  --add1-color-light: #ffffff;}
-================================*/
-
+  --add1-color-light: rgba(255, 255, 255, 0.8);}
 /* ===============================
 
-
-================================*/
 :root {
-  --main-color-dark: #585858;
-  --main-color-light: #ebebeb;
+  --main-color-dark: #524F40;
+  --main-color-light: #eeeee7;
   --main-color-light-add: #ffffff;
   
-  --basic-color-dark: #585858;
+  --basic-color-dark: #7c7968;
   --basic-color-light: #ffffff;
 
-  --add1-color-dark: #585858;
+  --add1-color-dark: #7c7968;
   --add1-color-light: rgba(255, 255, 255, 0.8);
 }
+================================*/
+
 /* ===============================
   Preloader
 ================================*/
@@ -336,9 +336,11 @@ body {
   bottom: 0;
   margin: 10px;
   padding: 6px;
-  background-color: #383139;
+  background-color: #474747;
   color: #ebebeb;
   transition: 0.3s;
+  z-index: 999;
+  opacity: 0.1;
 }
 #BA:hover{
   position: fixed;
@@ -672,8 +674,8 @@ body {
   color: var(--main-color-dark);
   padding: 0px 25px;
   background-color: var(--add1-color-light);
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px); /* Safari support */
+  backdrop-filter: blur(29px);
+  -webkit-backdrop-filter: blur(29px); /* Safari support */
 }
 .section-program .container{
 }
