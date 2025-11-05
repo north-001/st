@@ -561,7 +561,7 @@ body {
 .section-date::after {
   content: '';
   width: 100%;
-  height: 100%;
+  height: 99%;
   position: absolute;
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
@@ -690,7 +690,7 @@ body {
 .section-program::after {
   content: '';
   width: 100%;
-  height: 100%;
+  height: 99.9%;
   position: absolute;
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
@@ -881,3 +881,4 @@ body {
 .section-fotter .container_content{
   padding: 0px;
 }
+
