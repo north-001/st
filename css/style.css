@@ -912,12 +912,17 @@ body {
   text-align: center;
   font-weight: 500;
   font-family: 'G', serif;
-  color: rgb(143, 143, 143);
+  color: var(--main-color-light);
   text-decoration: underline #ffffff36;
   margin: 0;
   padding: 0;
   text-align: left;
   margin-bottom: 6px;
+  opacity: 0.3;
+  transition: 0.3s;
+}
+.section-text-a:hover{
+  opacity: 0.6;
 }
 
 
