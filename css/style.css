@@ -130,7 +130,7 @@ body {
   --add1-color-light: #746E61;
 }
 ================================*/
-
+/* ===============================
 :root {
   --main-color-dark: #585858;
   --main-color-light: #ebebeb;
@@ -140,9 +140,24 @@ body {
   --basic-color-light: #ffffff;
 
   --add1-color-dark: #585858;
-  --add1-color-light: #ffffff;
-}
+  --add1-color-light: #ffffff;}
+================================*/
 
+/* ===============================
+
+
+================================*/
+:root {
+  --main-color-dark: #585858;
+  --main-color-light: #ebebeb;
+  --main-color-light-add: #ffffff;
+  
+  --basic-color-dark: #585858;
+  --basic-color-light: #ffffff;
+
+  --add1-color-dark: #585858;
+  --add1-color-light: rgba(255, 255, 255, 0.8);
+}
 /* ===============================
   Preloader
 ================================*/
@@ -537,9 +552,10 @@ body {
 .section-date {
   background-color: var(--add1-color-light);
   color: var(--add1-color-dark);
-  padding: 0px 25px;
+  padding: 10px 25px;
   margin: 0;
-
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px); /* Safari support */
 }
 .section-date .section-title {
   margin-bottom: 0;
@@ -655,7 +671,9 @@ body {
   background-color: var(--main-color-light);
   color: var(--main-color-dark);
   padding: 0px 25px;
-  
+  background-color: var(--add1-color-light);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px); /* Safari support */
 }
 .section-program .container{
 }
