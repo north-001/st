@@ -340,7 +340,7 @@ body {
   color: #ebebeb;
   transition: 0.3s;
   z-index: 999;
-  opacity: 0.1;
+  opacity: 0;
 }
 #BA:hover{
   position: fixed;
@@ -556,7 +556,6 @@ body {
   color: var(--add1-color-dark);
   padding: 10px 25px;
   margin: 0;
- /* Safari support */
   position: relative;
 }
 .section-date::after {
@@ -686,8 +685,16 @@ body {
   color: var(--main-color-dark);
   padding: 0px 25px;
   background-color: var(--add1-color-light);
+  position: relative;
+}
+.section-program::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
   backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px); /* Safari support */
+  -webkit-backdrop-filter: blur(30px);
+  z-index: -1;
 }
 .section-program .container{
 }
