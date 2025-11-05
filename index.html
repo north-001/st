@@ -37,7 +37,7 @@
       <div class="container">
         <div class="container_content container_content_center">
           <div class="hero-header">
-            <p class="hero-subtitle">the Wedding</p>
+            <p class="hero-subtitle dech">the Wedding</p>
 
             <h1 class="hero-title">
               <svg
@@ -89,11 +89,8 @@
     <section class="section section-intro">
       <div class="container">
         <div class="container_content container_content_center">
-          <p class="section-decor-text"><span>Welcome</span></p>
-          <p class="section-title">
-            Дорогие <span class="section-title-accent">родные</span> и
-            <span class="section-title-accent">близкие</span>
-          </p>
+          <p class="section-decor-text dech"><span>Welcome</span></p>
+          <p class="section-title">Дорогие родные и близкие</p>
           <p class="section-text">
             Приближается очень важный и трепетный для нас день. Наша свадьба! Мы
             будем рады разделить это событие с вами.
@@ -106,25 +103,11 @@
     <section class="section section-date">
       <div class="container">
         <div class="container_content container_content_center">
-          <p class="section-decor-text"><span>Дата</span></p>
-          <p class="section-title">
-            <svg
-              viewBox="0 0 582 142"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M0 0H505.526L581.6 69L505.526 142H0L76.0743 69L0 0Z" />
-            </svg>
-            23.01.2026
-            <svg
-              viewBox="0 0 582 142"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M0 0H505.526L581.6 69L505.526 142H0L76.0743 69L0 0Z" />
-            </svg>
+          <p class="section-decor-text dech"><span>Дата</span></p>
+          <p class="section-title">23.01.2026</p>
+          <p class="dech">
+            <a href="#program" class="section-date-link">программа</a>
           </p>
-          <a href="#program" class="section-date-link">программа</a>
         </div>
       </div>
     </section>
@@ -133,14 +116,12 @@
     <section class="section section-location">
       <div class="container">
         <div class="container_content container_content_center">
-          <p class="section-title">
-            <span class="section-title-accent">Место</span>
-          </p>
+          <p class="section-title">Место</p>
           <div class="location-copy">
             <p class="section-text" id="textToCopy">
               Villa Barvikha 135, посёлок Барвиха, 135.
             </p>
-            <button id="copyBtn">Копировать</button>
+            <button class="dech" id="copyBtn">Копировать</button>
           </div>
           <img
             class="section-image"
@@ -163,7 +144,7 @@
     <section class="section section-program" id="program">
       <div class="container">
         <div class="container_content container_content_center">
-          <p class="program-decor-text-top">
+          <p class="program-decor-text-top dech">
             <span>Program List</span>
           </p>
           <p class="section-title section-title-main">Программа дня</p>
@@ -231,7 +212,7 @@
             <li class="dresscode-color"></li>
             <li class="dresscode-color"></li>
           </ul>
-          <p class="section-decor-text">
+          <p class="section-decor-text dech">
             <span>Style</span>
           </p>
         </div>
@@ -240,7 +221,25 @@
 
     <section class="section section-fotter">
       <div class="container">
-        <div class="container_content container_content_center"></div>
+        <div class="container_content container_content_center">
+          <p class="section-text">Контакты</p>
+          <div class="section-fotter-contact-info">
+            <div class="contact-info-s">
+              <p class="section-text">Филип</p>
+              <a href="#" class="section-text-a">Instagram</a>
+              <a href="#" class="section-text-a">+371 XX XXX XXX</a>
+            </div>
+            <div class="contact-info-s">
+              <p class="section-text">Стефания</p>
+              <a href="#" class="section-text-a">Instagram</a>
+              <a href="#" class="section-text-a">+371 XX XXX XXX</a>
+            </div>
+          </div>
+          <div class="img-fotter">
+            <img src="img/image 7.jpg" alt="" class="img-fotter-img" />
+            <p class="img-fotter-text">До Встречи</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -315,16 +314,17 @@
 
     <script>
       const ba = document.getElementById("BA");
-      const nn1 = document.querySelector(".hin1");
-      const nn2 = document.querySelector(".hin2");
+      const elementsddd = document.querySelectorAll(".dech");
 
       ba.addEventListener("click", bab);
 
       function bab() {
-        nn1.classList.toggle("hin3");
-        nn2.classList.toggle("hin3");
+        elementsddd.forEach((el) => {
+          el.classList.toggle("dech-hiden");
+        });
       }
     </script>
+
     <script>
       const copyBtn = document.getElementById("copyBtn");
       const textToCopy = document.getElementById("textToCopy");
