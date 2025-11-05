@@ -340,7 +340,7 @@ body {
   color: #ebebeb;
   transition: 0.3s;
   z-index: 999;
-  opacity: 0;
+  opacity: 0.1;
 }
 #BA:hover{
   position: fixed;
@@ -558,7 +558,8 @@ body {
   margin: 0;
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px); /* Safari support */
-  border-bottom: 1px solid var(--basic-color-light);
+   background-clip: padding-box;
+  overflow: hidden;
 }
 .section-date .section-title {
   margin-bottom: 0;
@@ -677,7 +678,8 @@ body {
   background-color: var(--add1-color-light);
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px); /* Safari support */
-  border-bottom: 1px solid var(--basic-color-light);
+  background-clip: padding-box;
+  overflow: hidden;
 }
 .section-program .container{
 }
