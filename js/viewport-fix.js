@@ -13,7 +13,7 @@ let lastHeight = window.innerHeight;
 function updateHeroAddHeight() {
   const heroMain = document.querySelector('.hero-main');
   const heroAdd = document.querySelector('.hero-add');
-  const fotterImg = document.querySelector('.img-fotter');
+  //const fotterImg = document.querySelector('.img-fotter');
   if (!heroMain || !heroAdd) return;
 
   const heroMainHeight = heroMain.offsetHeight;
@@ -21,7 +21,7 @@ function updateHeroAddHeight() {
   const remainingHeight = viewportHeight - heroMainHeight;
 
   heroAdd.style.minHeight = `${remainingHeight}px`;
-  fotterImg.style.minHeight = `${viewportHeight}px`;
+  //fotterImg.style.minHeight = `${viewportHeight}px`;
   // обновляем сохранённые размеры
   lastWidth = window.innerWidth;
   lastHeight = window.innerHeight;
