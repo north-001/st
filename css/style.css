@@ -543,6 +543,7 @@ body {
 /* Интро */
 .section-intro .section-text{
   margin: 0;
+  margin-top: 6px;
 }
 
 /* Дата */
@@ -567,17 +568,21 @@ body {
   margin-bottom: 16px;
 }
 
-.section-location .section-image {
+/*.section-location .section-image {
   width: 100%;
   height: auto;
   display: block;
   border-radius: 2px;
   object-fit: cover;
-  /*padding: 6px;
-  border: 1px solid var(--add1-color-dark);*/
   transition: 0.3s;
+}*/
+.section-location-map-conteiner{
+  width: 100%;
+  height: 100%;
 }
-.section-location .section-image:hover {
+.section-location-map{
+  width: 100%;
+  height: 400px;
 }
 
 .section-location-maps-button button{
@@ -600,7 +605,6 @@ body {
 .section-location-maps-button button:hover{
   opacity: 0.6;
 }
-
 .section-location-maps-button button::after{
   content: '';
   width: 2.75px;
@@ -619,19 +623,7 @@ body {
   margin-right: 6px;
   border-radius: 50%;
 }
-.location-copy{
-  position: relative;
-}
-#copyBtn{
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: clamp(12px, 1.8vw, 18px);
-  opacity: 0.35;
-  color: var(--add1-color-dark);
-  transform: translate(0%, -150%);
-  cursor: copy;
-}
+
 
 /* Программа */
 .section-program {
