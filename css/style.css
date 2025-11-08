@@ -807,7 +807,7 @@ body {
   align-items: center;
 }
 .img-fotter-img {
-  padding: 6px;
+  padding: 25px 6px;
   background-color: var(--main-color-light);
   width: 100%;
   aspect-ratio: 100 / 127;
