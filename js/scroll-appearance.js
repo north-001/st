@@ -11,11 +11,17 @@ const observedClasses = [
   "section-image",
   "program-item",
   "section-decor-text",
+  "section-location-map",
+  "section-location-maps-button",
+  "dresscode-list",
+  "img-fotter",
 ];
 
 const animatedElements = [];
 observedClasses.forEach((cls) => {
-  document.querySelectorAll(`.${cls}`).forEach((el) => animatedElements.push(el));
+  document
+    .querySelectorAll(`.${cls}`)
+    .forEach((el) => animatedElements.push(el));
 });
 
 const fadeStrength = 0.8; // Чем больше, тем медленнее проявление

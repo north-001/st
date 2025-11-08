@@ -696,27 +696,33 @@ body {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: #3a3a3a;
+  background-color: #a98b71;
   border: 1px solid transparent;
   transition: border 0.3s;
 }
 
 .dresscode-color:nth-child(2) {
-  background-color: #747474;
+  background-color: #a29d89;
 }
 .dresscode-color:nth-child(3) {
-  background-color: #9c9c9c;
+  background-color: #c7bead;
 }
 .dresscode-color:nth-child(4) {
-  background-color: #d4d4d4;
+  background-color: #e6cfc7;
 }
 .dresscode-color:nth-child(5) {
-  background-color: #8d8d8d;
+  background-color: #eee8da;
 }
 
 .dresscode-color_active,
 .dresscode-color:hover {
   border: 1px solid #86909b;
+}
+
+.dresscode-color-addtext {
+  margin-top: 6px;
+  opacity: 0.6;
+  font-size: clamp(14px, 2vw, 18px);
 }
 
 /* ===============================
@@ -774,7 +780,9 @@ body {
   opacity: 0.6;
 }
 
+/* Fotter Image*/
 .section-fotter-image {
+  /*padding: 0;*/
   padding: 0;
   position: relative;
   z-index: -1;
@@ -818,7 +826,22 @@ body {
   text-transform: uppercase;
   display: none;
 }
+.hero-logo-fotter {
+  fill: var(--main-color-light);
+  margin-bottom: 25px;
+  display: none;
+}
 
+.section-text-fotter {
+  color: var(--main-color-light);
+  margin-bottom: 25px;
+  font-size: clamp(22px, 3.2vw, 30px);
+  display: none;
+}
+
+/*.section-fotter-image .container_content {
+  padding: 0;
+}*/
 .dech-hiden {
   display: none;
 }
