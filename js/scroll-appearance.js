@@ -14,7 +14,6 @@ const observedClasses = [
   "section-location-map",
   "section-location-maps-button",
   "dresscode-list",
-  "img-fotter",
 ];
 
 const animatedElements = [];
@@ -47,3 +46,4 @@ function updateScrollAnimations() {
 
 window.addEventListener("scroll", updateScrollAnimations);
 window.addEventListener("load", updateScrollAnimations);
+
