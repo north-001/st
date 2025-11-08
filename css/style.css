@@ -45,7 +45,6 @@ a {
   font-family: "D";
   src: url("../font/DRUZHOK.woff2") format("woff2"),
     url("../font/DRUZHOK.woff") format("woff");
-  font-weight: 500;
   font-style: normal;
 }
 @font-face {
@@ -58,7 +57,11 @@ a {
 @font-face {
   font-family: "C";
   src: url("../font/CormorantGaramond-VariableFont_wght.ttf") format("truetype");
-
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ct";
+  src: url("../font/Cormorant-VariableFont_wght.ttf") format("truetype");
   font-style: normal;
 }
 @font-face {
@@ -71,13 +74,11 @@ a {
 @font-face {
   font-family: "AD";
   src: url("../font/Ade-Display.otf") format("truetype");
-  font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: "A";
   src: url("../font/Amored.ttf") format("truetype");
-  font-weight: 600;
   font-style: normal;
 }
 @font-face {
@@ -231,6 +232,9 @@ body {
 .nav-info p {
   font-family: "D", sans-serif;
   font-size: 14px;
+}
+.nav-initials {
+  font-family: "AD", sans-serif;
 }
 
 @keyframes spin {
@@ -544,6 +548,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transform: scale(1.05);
 }
 
 /* Локация */
@@ -816,6 +821,7 @@ body {
   margin: 10px;
   flex-direction: column;
   z-index: 99;
+  display: none;
 }
 
 .set-data-size {
