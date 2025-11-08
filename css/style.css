@@ -795,7 +795,7 @@ body {
   position: sticky;
   top: 0;
   top: calc(50% - 200px); /* прилипает к центру окна */
-  transform: 0.3s;
+    transition: 0.3s;
 }
 .section-fotter-image .container_content {
   padding: 0;
@@ -882,3 +882,4 @@ body {
   background-color: #514e52;
   color: #b4b4b4;
 }
+
