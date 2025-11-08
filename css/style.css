@@ -787,14 +787,11 @@ body {
   position: relative;
   z-index: -1;
   background-color: var(--main-color-dark);
-  height: 200vh;
+
   justify-content: start;
   align-items: start;
 }
 .sticky-wrapper {
-  position: sticky;
-  top: 0;
-  top: calc(50% - 200px); /* прилипает к центру окна */
 }
 .section-fotter-image .container_content {
   padding: 0;

@@ -247,7 +247,10 @@
     <script src="js/scroll-appearance.js"></script>
     <script src="js/language.js"></script>
     <script src="js/ba.js"></script>
+  </body>
+</html>
 
+<!--
     <script>
       const img = document.querySelector(".img-fotter-img");
 
@@ -258,10 +261,24 @@
         ).style.top = `calc(50% - ${halfHeight}px)`;
       }
 
+      window.addEventListener("scroll", () => {
+        const rect = img.getBoundingClientRect(); // позиция картинки относительно окна
+        const imgCenter = rect.top + rect.height / 2;
+        const screenCenter = window.innerHeight / 2;
+
+        // Вычисляем расстояние от центра картинки до центра экрана
+        const distance = Math.abs(screenCenter - imgCenter);
+
+        // Определяем диапазон, на котором будет происходить масштабирование
+        const maxDistance = window.innerHeight / 0.4; // можно подкорректировать
+
+        // Интерполируем scale: distance=0 → scale=0.6, distance=maxDistance → scale=1
+        let scale = 0.95 + (distance / maxDistance) * 0.4;
+
+        // Ограничиваем значения от 0.6 до 1
+        scale = Math.min(Math.max(scale, 0.95), 1);
+
+        img.style.transform = `scale(${scale})`;
+      });
     </script>
-  </body>
-</html>
-
-<!--
 -->
-
