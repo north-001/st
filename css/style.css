@@ -533,7 +533,6 @@ body {
 /* Интро */
 .section-intro .section-text {
   margin: 0;
-  margin-top: 6px;
 }
 
 /* Дата */
@@ -733,6 +732,16 @@ body {
   margin: 0;
   padding: 0;
   margin-bottom: 10px;
+  font-weight: 400;
+}
+.section-fotter .section-title {
+  color: var(--main-color-light);
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
+  font-size: clamp(18px, 3.2vw, 30px);
+  font-family: "C", serif;
+  font-weight: 500;
 }
 .section-fotter-contact-info {
   margin-top: 10px;
