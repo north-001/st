@@ -258,9 +258,6 @@
         ).style.top = `calc(50% - ${halfHeight}px)`;
       }
 
-      window.addEventListener("load", () => {
-        setTimeout(updateStickyPosition, 50); // выполнится один раз через 50ms
-      });
       window.addEventListener("scroll", () => {
         const rect = img.getBoundingClientRect(); // позиция картинки относительно окна
         const imgCenter = rect.top + rect.height / 2;
