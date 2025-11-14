@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Visit</title>
+    <title>Invitation / Filip & Stefania</title>
     <meta name="theme-color" content="transparent" />
     <meta name="msapplication-navbutton-color" content="transparent" />
     <meta
@@ -18,18 +18,11 @@
       <p>Загрузка...</p>
     </div>
 
-    <div class="set-data">
-      <div class="set-data-size">
-        <button id="smin">-</button>
-        <button id="splus">+</button>
-      </div>
-    </div>
-
     <!-- Навигация -->
     <div class="navbar" id="nav">
       <div class="container">
         <div class="container_content container_content_center">
-          <div class="nav-info n1">
+          <div class="nav-info">
             <p id="nav-Invitation">Приглашение</p>
             <p class="nav-info-lang" id="nav-langActive">русский</p>
             <p class="nav-info-lang-ru-but" id="ruBut">русский</p>
@@ -125,13 +118,6 @@
               referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
-
-          <!--<img
-            class="section-image"
-            src="img/blue-sky-and-flower-ds-3840x2400-3235952354.jpg"
-            alt="Локация свадьбы"
-          />-->
-
           <a
             class="section-location-maps-button"
             href="https://www.google.com/maps?q=56.9496,24.1052"
@@ -274,81 +260,15 @@
     </section>
     <script src="js/preloader.js"></script>
     <script src="js/viewport-fix.js"></script>
-    <!--<script src="js/hero-autoscroll.js"></script>-->
     <script src="js/copy.js"></script>
     <script src="js/hero-animations.js"></script>
     <script src="js/scroll-appearance.js"></script>
     <script src="js/language.js"></script>
-    <script src="js/ba.js"></script>
-
-    <script>
-  // Укажи дату до которой считаем (ГГГГ-ММ-ДД ЧЧ:ММ:СС)
-  const targetDate = new Date("2026-01-23T00:00:00").getTime();
-
-  const daysEl = document.getElementById("days");
-  const hoursEl = document.getElementById("hours");
-  const minutesEl = document.getElementById("minutes");
-  const secondsEl = document.getElementById("seconds");
-
-  function updateCounter() {
-    const now = new Date().getTime();
-    const diff = targetDate - now;
-
-    if (diff <= 0) {
-      daysEl.textContent = "000";
-      hoursEl.textContent = "00";
-      minutesEl.textContent = "00";
-      secondsEl.textContent = "00";
-      return;
-    }
-
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff / (1000 * 60)) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
-
-    daysEl.textContent = String(days).padStart(3, "0");
-    hoursEl.textContent = String(hours).padStart(2, "0");
-    minutesEl.textContent = String(minutes).padStart(2, "0");
-    secondsEl.textContent = String(seconds).padStart(2, "0");
-  }
-
-  updateCounter();
-  setInterval(updateCounter, 1000);
-</script>
+    <script src="js/time-counter.js"></script>
 
   </body>
 </html>
 
 <!--
-    <script>
-      const img = document.querySelector(".img-fotter-img");
 
-      function updateStickyPosition() {
-        const halfHeight = img.offsetHeight / 2;
-        document.querySelector(
-          ".sticky-wrapper"
-        ).style.top = `calc(50% - ${halfHeight}px)`;
-      }
-
-      window.addEventListener("scroll", () => {
-        const rect = img.getBoundingClientRect(); // позиция картинки относительно окна
-        const imgCenter = rect.top + rect.height / 2;
-        const screenCenter = window.innerHeight / 2;
-
-        // Вычисляем расстояние от центра картинки до центра экрана
-        const distance = Math.abs(screenCenter - imgCenter);
-
-        // Определяем диапазон, на котором будет происходить масштабирование
-        const maxDistance = window.innerHeight / 0.4; // можно подкорректировать
-
-        // Интерполируем scale: distance=0 → scale=0.6, distance=maxDistance → scale=1
-        let scale = 0.95 + (distance / maxDistance) * 0.4;
-
-        // Ограничиваем значения от 0.6 до 1
-        scale = Math.min(Math.max(scale, 0.95), 1);
-
-        img.style.transform = `scale(${scale})`;
-      });
-    </script>
 -->
