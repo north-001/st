@@ -9,8 +9,8 @@ let lastWidth = window.innerWidth;
 let lastHeight = window.innerHeight;
 
 // Ограничения по высоте hero-add
-const MIN_HERO_ADD = 250; // можешь поменять
-const MAX_HERO_ADD = 670; // можешь поменять
+const MIN_HERO_ADD = 400; // можешь поменять
+const MAX_HERO_ADD = 750; // можешь поменять
 
 function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
@@ -78,6 +78,7 @@ window.addEventListener("load", () => {
 window.addEventListener("orientationchange", updateHeroAddHeight, {
   passive: true,
 });
+
 
 
 
