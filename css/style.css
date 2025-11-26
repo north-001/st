@@ -463,7 +463,7 @@ body {
   margin-bottom: 10px;
   font-size: clamp(45px, 6vw, 83px);
   text-align: center;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .section-title-accent {
@@ -871,3 +871,4 @@ body {
   justify-content: center;
   align-items: center;
 }
+
