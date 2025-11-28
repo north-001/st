@@ -196,6 +196,57 @@
       </div>
     </section>
 
+    <section class="section section-question">
+      <div class="container">
+        <div class="container_content container_content_center">
+          <p class="section-title">Анкета</p>
+          <p class="section-text">
+            Заполните дальнейшую анкету. Нам важно знать придете вы или нет так
+            как нам надо знать количество людей для их удобного расположения в
+            зале.
+          </p>
+
+          <label for="name" class="section-question_title"
+            >Имя + Фамилия (ваше и лиц которые будут с вами):</label
+          >
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="section-question_input"
+            placeholder="Вводить здесь"
+          />
+
+          <p class="section-question_title">Вы:</p>
+          <div class="section-question_ratio-conteiner">
+            <label class="radio">
+              <input
+                type="radio"
+                name="gender"
+                value="male"
+                class="section-question_ratio"
+              />
+              <span class="ratio-custom"></span>
+              Придете
+            </label>
+
+            <label class="radio">
+              <input
+                type="radio"
+                name="gender"
+                value="female"
+                class="section-question_ratio"
+              />
+              <span class="ratio-custom"></span>
+              Не придете
+            </label>
+          </div>
+
+          <button class="question_send">Отправить</button>
+        </div>
+      </div>
+    </section>
+
     <section class="section section-fotter">
       <div class="container">
         <div class="container_content container_content_center">
@@ -216,48 +267,47 @@
       </div>
     </section>
 
-<section class="section section-fotter-image">
-  <img src="img/image 7.jpg" alt="" class="img-fotter-img-bg" />
-  <div class="container sticky-wrapper">
-    <div class="container_content container_content_center">
-      <div class="img-fotter">
-        <div class="fotter-black-screen"></div>
-        <img src="img/image 7.jpg" alt="" class="img-fotter-img" />
-        <div class="counter">
-          <p class="counter-title">до торжества осталось...</p>
-          <ul class="counter-group">
-            <li class="counter-section">
-              <div class="counter-section-conteiner">
-                <p id="days" class="counter-section-time">000</p>
-                <p class="counter-section-title">Дни</p>
-              </div>
-            </li>
-            <li class="counter-section">
-              <div class="counter-section-conteiner">
-                <p id="hours" class="counter-section-time">00</p>
-                <p class="counter-section-title">Часы</p>
-              </div>
-            </li>
-            <li class="counter-section">
-              <div class="counter-section-conteiner">
-                <p id="minutes" class="counter-section-time">00</p>
-                <p class="counter-section-title">Минуты</p>
-              </div>
-            </li>
-            <li class="counter-section">
-              <div class="counter-section-conteiner">
-                <p id="seconds" class="counter-section-time">00</p>
-                <p class="counter-section-title">Секунды</p>
-              </div>
-            </li>
-          </ul>
+    <section class="section section-fotter-image">
+      <img src="img/image 7.jpg" alt="" class="img-fotter-img-bg" />
+      <div class="container sticky-wrapper">
+        <div class="container_content container_content_center">
+          <div class="img-fotter">
+            <div class="fotter-black-screen"></div>
+            <img src="img/image 7.jpg" alt="" class="img-fotter-img" />
+            <div class="counter">
+              <p class="counter-title">до торжества осталось...</p>
+              <ul class="counter-group">
+                <li class="counter-section">
+                  <div class="counter-section-conteiner">
+                    <p id="days" class="counter-section-time">000</p>
+                    <p class="counter-section-title">Дни</p>
+                  </div>
+                </li>
+                <li class="counter-section">
+                  <div class="counter-section-conteiner">
+                    <p id="hours" class="counter-section-time">00</p>
+                    <p class="counter-section-title">Часы</p>
+                  </div>
+                </li>
+                <li class="counter-section">
+                  <div class="counter-section-conteiner">
+                    <p id="minutes" class="counter-section-time">00</p>
+                    <p class="counter-section-title">Минуты</p>
+                  </div>
+                </li>
+                <li class="counter-section">
+                  <div class="counter-section-conteiner">
+                    <p id="seconds" class="counter-section-time">00</p>
+                    <p class="counter-section-title">Секунды</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
     </section>
+
     <script src="js/preloader.js"></script>
     <script src="js/viewport-fix.js"></script>
     <script src="js/copy.js"></script>
@@ -265,7 +315,6 @@
     <script src="js/scroll-appearance.js"></script>
     <script src="js/language.js"></script>
     <script src="js/time-counter.js"></script>
-
   </body>
 </html>
 
