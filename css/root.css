@@ -1,0 +1,58 @@
+@font-face {
+  font-family: "D";
+  src: url("../font/DRUZHOK.woff2") format("woff2"),
+    url("../font/DRUZHOK.woff") format("woff");
+  font-style: normal;
+}
+@font-face {
+  font-family: "G";
+  src: url("../font/GolosText.ttf") format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "C";
+  src: url("../font/CormorantGaramond-VariableFont_wght.ttf") format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ci";
+  src: url("../font/CormorantGaramond-Italic-VariableFont_wght.ttf")
+    format("truetype");
+  font-style: normal;
+}
+@font-face {
+  font-family: "AD";
+  src: url("../font/Ade-Display.otf") format("truetype");
+  font-style: normal;
+}
+@font-face {
+  font-family: "B";
+  src: url("../font/BurguesScriptRegular.otf") format("truetype");
+  font-style: normal;
+}
+
+:root {
+  --main-color-dark: #585858;
+  --main-color-light: #ebebeb;
+  --main-color-light-add: #ffffff;
+
+  --basic-color-dark: #585858;
+  --basic-color-light: #ffffff;
+
+  --add1-color-dark: #585858;
+  --add1-color-light: rgba(255, 255, 255, 0.8);
+}
+
+:root {
+  --main-color-dark-dt: #f1f1f1;
+  --main-color-light-dt: #4a4a4d;
+  --main-color-light-add-dt: #ffffff;
+
+  --basic-color-dark-dt: #f1f1f1;
+  --basic-color-light-dt: #3d3d41;
+
+  --add1-color-dark-dt: #585858;
+  --add1-color-light-dt: rgba(255, 255, 255, 0.8);
+}

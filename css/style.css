@@ -113,22 +113,7 @@ body {
 .container_content_center {
   align-items: center;
 }
-/* ===============================
-:root {
-  --main-color-dark: #58543F;
-  --main-color-light: #FFF5ED;
-  --main-color-light-add: #ffffff;
-  
-  --basic-color-dark: #6B654C;
-  --basic-color-light: #ffffff;
 
-  --add1-color-dark: #C2B2A6;
-  --add1-color-light: #746E61;
-}
-================================*/
-/* ===============================
-
-================================*/
 :root {
   --main-color-dark: #585858;
   --main-color-light: #ebebeb;
@@ -140,20 +125,6 @@ body {
   --add1-color-dark: #585858;
   --add1-color-light: rgba(255, 255, 255, 0.8);
 }
-/* ===============================
-
-:root {
-  --main-color-dark: #524F40;
-  --main-color-light: #eeeee7;
-  --main-color-light-add: #ffffff;
-  
-  --basic-color-dark: #7c7968;
-  --basic-color-light: #ffffff;
-
-  --add1-color-dark: #7c7968;
-  --add1-color-light: rgba(255, 255, 255, 0.8);
-}
-================================*/
 
 /* ===============================
   Preloader
