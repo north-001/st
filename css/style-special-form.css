@@ -58,6 +58,7 @@ body {
   width: 100%;
   background-color: var(--basic-color-light-dt);
   padding: 10px;
+  padding-top: 6px;
 }
 
 /* ===============================
@@ -108,5 +109,60 @@ body {
   transition: 0.3s;
 }
 .form-button-send:hover {
+  opacity: 0.6;
+}
+
+/* ===============================
+  Fotter
+================================*/
+.section-fotter {
+  padding: 10px 0px;
+  margin-top: 40px;
+}
+.section-fotter .section-text {
+  color: var(--main-color-light);
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+.section-fotter .section-title {
+  color: var(--main-color-light);
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
+  font-size: clamp(18px, 3.2vw, 30px);
+  font-family: "C", serif;
+  font-weight: 500;
+}
+.section-fotter-contact-info {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-info-s,
+.contact-info-f {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.section-text-a {
+  font-size: clamp(14px, 2.34vw, 22.4px);
+  text-align: center;
+  font-weight: 500;
+  font-family: "G", serif;
+  color: var(--main-color-light);
+  text-decoration: underline #ffffff25;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  margin-bottom: 6px;
+  opacity: 0.3;
+  transition: 0.3s;
+  font-weight: 100;
+}
+.section-text-a:hover {
   opacity: 0.6;
 }
