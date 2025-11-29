@@ -78,8 +78,3 @@ window.addEventListener("load", () => {
 window.addEventListener("orientationchange", updateHeroAddHeight, {
   passive: true,
 });
-
-
-
-
-
