@@ -43,6 +43,9 @@
 
   --add1-color-dark: #585858;
   --add1-color-light: rgba(255, 255, 255, 0.8);
+
+  --add2-color-light: rgba(255, 255, 255, 0.05);
+  --add3-color-light: rgba(255, 255, 255, 0.35);
 }
 
 :root {
@@ -55,4 +58,6 @@
 
   --add1-color-dark-dt: #585858;
   --add1-color-light-dt: rgba(255, 255, 255, 0.8);
+  --add2-color-light-dt: rgba(255, 255, 255, 0.05);
+  --add3-color-light-dt: rgba(255, 255, 255, 0.35);
 }
