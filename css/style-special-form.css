@@ -88,10 +88,25 @@ body {
   background-color: var(--add2-color-light-dt);
   caret-color: var(--add3-color-light-dt);
   font-weight: 400;
+  transition: 0.3s;
+  opacity: 0.6;
+}
+.text-input:hover {
+  opacity: 1;
 }
 .radio-custom {
   border: 1px solid var(--add3-color-light-dt);
 }
 .radio-input:checked + .radio-custom {
   background-color: var(--add3-color-light-dt);
+}
+.form-button-send {
+  font-weight: 400;
+  margin-top: 25px;
+  padding: 6px 10px;
+  background-color: var(--add2-color-light-dt);
+  transition: 0.3s;
+}
+.form-button-send:hover {
+  opacity: 0.6;
 }

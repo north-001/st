@@ -305,8 +305,8 @@ body {
   flex-direction: column;
   margin-bottom: 16px;
 }
-.input-container:last-child {
-  margin-bottom: 0;
+.input-container:last-of-type {
+  margin-bottom: 0px;
 }
 .input-container label {
   color: var(--main-color-dark);
@@ -370,4 +370,11 @@ body {
 .radio-input:checked + .radio-custom {
   background-color: var(--main-color-dark);
   margin-right: 10px;
+}
+
+.form-button-send {
+  font-size: clamp(18px, 3.2vw, 30px);
+  font-family: "C", serif;
+  font-weight: 500;
+  cursor: pointer;
 }
