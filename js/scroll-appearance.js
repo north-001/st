@@ -14,6 +14,7 @@ const observedClasses = [
   "section-location-map",
   "section-location-maps-button",
   "dresscode-list",
+  "scroll-appearance",
 ];
 
 const animatedElements = [];
