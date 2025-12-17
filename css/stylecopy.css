@@ -287,10 +287,30 @@
 .program-part-title {
   font-size: calc(clamp(22px, 3.2vw, 30px) * 1.25);
   font-family: "Ci", serif;
-  font-weight: 400;
+  font-weight: 500;
   margin-top: 44px;
   margin-bottom: 25px;
+  display: flex;
+  align-items: center;
 }
+.icon-rings {
+  display: flex;
+  margin-left: 3.5px;
+}
+
+.icon-ring {
+  content: "0";
+  width: calc(clamp(22px, 3.2vw, 30px) * 0.67);
+  height: calc(clamp(22px, 3.2vw, 30px) * 0.67);
+  border: 1px solid var(--main-color-dark);
+  border-radius: 10000px;
+  transform: translateY(15%);
+  opacity: 0.65;
+}
+.icon-rings .icon-ring:last-of-type {
+  transform: translateX(-50%) translateY(15%);
+}
+
 .program-place {
   display: flex;
   flex-direction: column;
