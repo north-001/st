@@ -129,6 +129,7 @@
 /* Дата */
 .section-date {
   padding: 0 25px;
+  padding-bottom: 104px;
 }
 .section-date .section-title {
   margin: 0;
@@ -259,13 +260,36 @@
 }
 
 /* Программа Доп */
+
+.program-part-title {
+  background: linear-gradient(
+    90deg,
+    var(--main-color-dark),
+    #000000b0,
+    #00000060,
+    #0000009a
+  );
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 5s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 300% 50%;
+  }
+}
+
 .program-part-title {
   font-size: clamp(22px, 3.2vw, 30px);
   font-family: "C", serif;
-  font-size: clamp(45px, 6vw, 83px);
   font-weight: 400;
-  margin-top: 65px;
-  margin-bottom: 41px;
+  margin-top: 44px;
+  margin-bottom: 25px;
 }
 .program-place {
   display: flex;
@@ -275,9 +299,7 @@
 .program-place-title {
   text-align: center;
   font-size: clamp(22px, 3.2vw, 30px);
-  font-family: "C", serif;
-  font-size: clamp(45px, 6vw, 83px);
-  font-weight: 400;
+  font-family: "Ci", serif;
   margin-bottom: 10px;
 }
 .program-place-text {
@@ -302,7 +324,7 @@
   justify-content: center;
   align-items: center;
   margin-top: 25px;
-  margin-bottom: 40px;
+  margin-bottom: 15px;
 }
 .program-place-button button:hover {
   opacity: 0.6;
