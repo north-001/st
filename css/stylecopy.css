@@ -296,8 +296,11 @@
 .icon-rings {
   display: flex;
   margin-left: 3.5px;
+  position: relative;
+  width: calc((clamp(22px, 3.2vw, 30px) * 0.67) * 1.5);
+  height: 100%;
 }
-
+/***
 .icon-ring {
   content: "0";
   width: calc(clamp(22px, 3.2vw, 30px) * 0.67);
@@ -309,6 +312,21 @@
 }
 .icon-rings .icon-ring:last-of-type {
   transform: translateX(-50%) translateY(15%);
+}
+***/
+
+.icon-ring {
+  content: "0";
+  width: calc(clamp(22px, 3.2vw, 30px) * 0.67);
+  height: calc(clamp(22px, 3.2vw, 30px) * 0.67);
+  border: 1px solid var(--main-color-dark);
+  border-radius: 10000px;
+  position: absolute;
+  bottom: 15%;
+  opacity: 0.65;
+}
+.icon-rings .icon-ring:last-of-type {
+  right: 0;
 }
 
 .program-place {
