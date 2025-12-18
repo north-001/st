@@ -271,6 +271,7 @@
   );
   background-size: 300%;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shimmer 5s infinite linear;
 }

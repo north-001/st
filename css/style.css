@@ -361,7 +361,7 @@
   color: var(--main-color-light);
   margin: 0;
   padding: 0;
-  margin-bottom: 10px;
+
   font-weight: 400;
 }
 .section-fotter .section-title {
@@ -404,7 +404,22 @@
 .section-text-a:hover {
   opacity: 0.6;
 }
-
+.contact-info {
+  color: var(--main-color-light);
+  margin: 0;
+  padding: 0;
+  font-size: clamp(18px, 3.2vw, 30px);
+  font-family: "C", serif;
+  font-weight: 100;
+  opacity: 0.65;
+}
+.contact-info a {
+  text-decoration: underline 1px #ffffff27;
+  transition: 0.3s;
+}
+.contact-info a:hover {
+  opacity: 0.6;
+}
 /* Fotter Image*/
 .section-fotter-image {
   padding: 0;
