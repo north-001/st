@@ -295,6 +295,7 @@
   margin-bottom: 25px;
   display: flex;
   align-items: center;
+  text-align: center;
 }
 .program-part-title:first-of-type {
   margin-top: 53px;
