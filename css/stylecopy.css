@@ -312,6 +312,7 @@
   font-family: "G", serif;
   text-align: center;
   margin-bottom: 16px;
+  cursor: pointer;
 }
 
 .program-place-button button {
@@ -453,6 +454,20 @@
 }
 .question_send-conteiner {
   display: flex;
+}
+
+.text-input-checkbox {
+  color: var(--main-color-dark);
+  background-color: transparent;
+  caret-color: var(--add3-color-light);
+  margin: 0;
+  width: auto;
+  padding: 0;
+  font-size: clamp(18px, 3.2vw, 30px);
+  font-family: "C", serif;
+  font-weight: 500;
+  line-height: 30%;
+  margin-top: 0;
 }
 /* ===============================
    Footer

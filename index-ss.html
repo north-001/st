@@ -151,8 +151,8 @@
           <div class="program-place">
             <div class="program-place-title scroll-appearance">Место</div>
 
-            <div class="program-place-text scroll-appearance">
-              <p>
+            <div class="program-place-text scroll-appearance copy-location">
+              <p class="text-copy-location">
                 Hotel Bergs Suites, Elizabetes iela 83/85, Rīga, Stikla zāle
               </p>
             </div>
@@ -240,7 +240,7 @@
             <li class="dresscode-color"></li>
             <li class="dresscode-color"></li>
           </ul>
-          <p class="dresscode-color-addtext">+ монохромные и ахромные цвета</p>
+          <p class="dresscode-color-addtext">+ ахроматические цвета</p>
         </div>
       </div>
     </section>
@@ -288,6 +288,169 @@
                 />
                 <span class="radio-custom"></span>
                 Не прийдете
+              </label>
+            </div>
+          </div>
+
+          <div class="input-container">
+            <label class="label-main"
+              >Хотели бы вы остаться на ночь в месте проведения банкета?</label
+            >
+            <div class="radio-input-conteiner">
+              <label class="radio">
+                <input
+                  type="radio"
+                  name="stayonnight"
+                  value="yes"
+                  class="radio-input"
+                />
+                <span class="radio-custom"></span>
+                Да
+              </label>
+
+              <label class="radio">
+                <input
+                  type="radio"
+                  name="stayonnight"
+                  value="no"
+                  class="radio-input"
+                />
+                <span class="radio-custom"></span>
+                Нет
+              </label>
+            </div>
+          </div>
+
+          <div class="input-container">
+            <label class="label-main"
+              >Пожалуйста, выберите предпочитаемый вариант мяса для банкетного
+              меню:</label
+            >
+            <div class="radio-input-conteiner">
+              <label class="radio">
+                <input
+                  type="radio"
+                  name="typeofmeat"
+                  value="willcome"
+                  class="radio-input"
+                />
+                <span class="radio-custom"></span>
+                Курица
+              </label>
+
+              <label class="radio">
+                <input
+                  type="radio"
+                  name="typeofmeat"
+                  value="wontcome"
+                  class="radio-input"
+                />
+                <span class="radio-custom"></span>
+                Свинина
+              </label>
+
+              <label class="radio">
+                <input
+                  type="radio"
+                  name="typeofmeat"
+                  value="wontcome"
+                  class="radio-input"
+                />
+                <span class="radio-custom"></span>
+                Рыба
+              </label>
+            </div>
+          </div>
+
+          <div class="input-container">
+            <label for="allergy" class="label-main"
+              >Есть ли у вас пищевые аллергии или продукты, которые вы не
+              едите?</label
+            >
+            <input
+              type="text"
+              id="allergy"
+              name="allergy"
+              class="text-input"
+              placeholder="Вводить здесь"
+            />
+          </div>
+
+          <div class="input-container">
+            <label class="label-main"
+              >Пожалуйста, укажите предпочитаемые алкогольные напитки (можно
+              выбрать несколько):</label
+            >
+            <div class="radio-input-conteiner">
+              <label class="radio">
+                <input
+                  type="checkbox"
+                  name="typeofalk"
+                  value="willcome"
+                  class="radio-input"
+                />
+                <span class="radio-custom"></span>
+                Шампанское
+              </label>
+
+              <label class="radio">
+                <input
+                  type="checkbox"
+                  name="typeofalk"
+                  value="wontcome"
+                  class="radio-input"
+                />
+                <span class="radio-custom"></span>
+                Вино
+              </label>
+
+              <label class="radio">
+                <input
+                  type="checkbox"
+                  name="typeofalk"
+                  value="wontcome"
+                  class="radio-input"
+                />
+                <span class="radio-custom"></span>
+                Виски
+              </label>
+              <label class="radio">
+                <input
+                  type="checkbox"
+                  name="typeofalk"
+                  value="wontcome"
+                  class="radio-input"
+                />
+                <span class="radio-custom"></span>
+                Коньяк
+              </label>
+              <label class="radio">
+                <input
+                  type="checkbox"
+                  name="typeofalk"
+                  value="wontcome"
+                  class="radio-input"
+                />
+                <span class="radio-custom"></span>
+                Водка
+              </label>
+              <label class="radio">
+                <input
+                  type="checkbox"
+                  name="typeofalk"
+                  value="wontcome"
+                  class="radio-input"
+                />
+                <span class="radio-custom"></span>
+                <div class="input-container">
+                  <input
+                    type="text"
+                    id="namespalkcoustom"
+                    name="typeofalk"
+                    class="text-input text-input-checkbox"
+                    placeholder="Свой вариант"
+                  />
+                </div>
               </label>
             </div>
           </div>

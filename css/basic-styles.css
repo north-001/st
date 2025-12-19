@@ -361,6 +361,8 @@ body {
 .radio-custom {
   width: 10px;
   height: 10px;
+  min-height: 10px;
+  min-width: 10px;
   border: 1px solid var(--main-color-dark);
   display: inline-block;
   margin-right: 6px;
