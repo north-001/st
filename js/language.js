@@ -348,12 +348,12 @@ function updateLanguage(lang) {
 // 5️⃣ Навешиваем обработчики на кнопки
 ruBut.addEventListener("click", () => {
   updateLanguage("ru");
-  history.replaceState(null, "", "?lang=ru"); // меняем URL без перезагрузки
+  history.replaceState(null, "", "/ru"); // меняем URL без перезагрузки
 });
 
 lvBut.addEventListener("click", () => {
   updateLanguage("lv");
-  history.replaceState(null, "", "?lang=lv");
+  history.replaceState(null, "", "/lv");
 });
 
 // 6️⃣ Применяем язык при загрузке страницы
