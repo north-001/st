@@ -237,30 +237,33 @@ function updateLanguage(lang) {
   if (!translations[lang]) return; // если язык не найден — ничего не делаем
   currentLang = lang;
 
-  // --- Nav ---
   document.getElementById("nav-Invitation").textContent =
     translations[lang].title;
+
   document.getElementById("nav-langActive").textContent =
     translations[lang].langActive;
 
-  // --- Header ---
   document.getElementById("h-subtext").textContent =
     translations[lang].hSubtext;
-
-  // --- Welcome ---
+  // section title
   document.getElementById("s1-title").textContent = translations[lang].s1Title;
   document.getElementById("s1-text").textContent = translations[lang].s1Text;
 
-  // --- Place ---
+  // section title
+  document.getElementById("s4-title").textContent = translations[lang].s4Title;
+
+  // --- PART 1 : CEREMONY ---
+  document.getElementById("s4-p1-title").textContent =
+    translations[lang].s4P1Title;
+
   document.getElementById("s4-p1-p-title").textContent =
     translations[lang].s4P1PTitle;
+
   document.getElementById("s4-p1-p-text").textContent =
     translations[lang].s4P1PText;
+
   document.getElementById("s4-p1-p-but").textContent =
     translations[lang].s4P1PBut;
-
-  // --- Program ---
-  document.getElementById("s4-title").textContent = translations[lang].s4Title;
 
   document.getElementById("s4-p1-t1-subtitle").textContent =
     translations[lang].s4P1T1Subtitle;
@@ -286,11 +289,43 @@ function updateLanguage(lang) {
   document.getElementById("s4-p1-t4-text").textContent =
     translations[lang].s4P1T4Text;
 
-  // --- Dresscode ---
-  document.getElementById("s5-title").textContent = translations[lang].s5Title;
-  document.getElementById("s5-text").textContent = translations[lang].s5Text;
-  document.getElementById("s5-add").textContent = translations[lang].s5Add;
+  // --- PART 2 : SPEECH ---
+  document.getElementById("s4-p2-title").textContent =
+    translations[lang].s4P2Title;
 
+  document.getElementById("s4-p2-p-title").textContent =
+    translations[lang].s4P2PTitle;
+
+  document.getElementById("s4-p2-p-text").textContent =
+    translations[lang].s4P2PText;
+
+  document.getElementById("s4-p2-p-but").textContent =
+    translations[lang].s4P2PBut;
+
+  document.getElementById("s4-p2-t1-subtitle").textContent =
+    translations[lang].s4P2T1Subtitle;
+
+  document.getElementById("s4-p2-t1-text").textContent =
+    translations[lang].s4P2T1Text;
+
+  // --- PART 3 : BANQUET ---
+  document.getElementById("s4-p3-title").textContent =
+    translations[lang].s4P2Title;
+
+  document.getElementById("s4-p3-p-title").textContent =
+    translations[lang].s4P3PTitle;
+
+  document.getElementById("s4-p3-p-text").textContent =
+    translations[lang].s4P3PText;
+
+  document.getElementById("s4-p3-p-but").textContent =
+    translations[lang].s4P3PBut;
+
+  document.getElementById("s4-p3-t1-subtitle").textContent =
+    translations[lang].s4P3T1Subtitle;
+
+  document.getElementById("s4-p3-t1-text").textContent =
+    translations[lang].s4P3T1Text;
   // section Q
   const guestInput = document.querySelector(".placeholder-change-1");
   if (guestInput) {
@@ -323,14 +358,63 @@ function updateLanguage(lang) {
   document.querySelector("#s6-l2-a2").lastChild.textContent =
     translations[lang].s6L2A2;
 
+  // label 3
+  document.getElementById("s6-l3-title").textContent =
+    translations[lang].s6L3Title;
+
+  document.querySelector("#s6-l3-a1").lastChild.textContent =
+    translations[lang].s6L3A1;
+
+  document.querySelector("#s6-l3-a2").lastChild.textContent =
+    translations[lang].s6L3A2;
+
+  // label 4
+  document.getElementById("s6-l4-title").textContent =
+    translations[lang].s6L4Title;
+
+  document.querySelector("#s6-l4-a1").lastChild.textContent =
+    translations[lang].s6L4A1;
+
+  document.querySelector("#s6-l4-a2").lastChild.textContent =
+    translations[lang].s6L4A2;
+
+  document.querySelector("#s6-l4-a3").lastChild.textContent =
+    translations[lang].s6L4A3;
+
+  // label 5
+  document.getElementById("s6-l5-title").textContent =
+    translations[lang].s6L5Title;
+
+  // label 6
+  document.getElementById("s6-l6-title").textContent =
+    translations[lang].s6L6Title;
+
+  document.querySelector("#s6-l6-a1").lastChild.textContent =
+    translations[lang].s6L6A1;
+
+  document.querySelector("#s6-l6-a2").lastChild.textContent =
+    translations[lang].s6L6A2;
+
+  document.querySelector("#s6-l6-a3").lastChild.textContent =
+    translations[lang].s6L6A3;
+
+  document.querySelector("#s6-l6-a4").lastChild.textContent =
+    translations[lang].s6L6A4;
+
+  document.querySelector("#s6-l6-a5").lastChild.textContent =
+    translations[lang].s6L6A5;
+
   // button
   document.getElementById("s6-but").textContent = translations[lang].s6But;
 
+  // section dresscode
+  document.getElementById("s5-title").textContent = translations[lang].s5Title;
+  document.getElementById("s5-text").textContent = translations[lang].s5Text;
+  document.getElementById("s5-add").textContent = translations[lang].s5Add;
   // section contacts
   document.getElementById("s7-title").textContent = translations[lang].s7Title;
   document.getElementById("s7-text").textContent = translations[lang].s7Text;
   document.getElementById("s7-text-2").textContent = translations[lang].s7Text2;
-
   // section fotter
   document.getElementById("f-title").textContent = translations[lang].fTitle;
   document.getElementById("f-title-w1").textContent =
