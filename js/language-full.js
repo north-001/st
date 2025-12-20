@@ -220,15 +220,10 @@ const translations = {
   },
 };
 
-// 1️⃣ Получаем язык из ссылки (например ?lang=lv)
-const params = new URLSearchParams(window.location.search);
-const langFromUrl = params.get("lang");
-
-// 2️⃣ Если есть в localStorage — используем его
+// 1️⃣ Получаем язык из хэша (#ru или #lv)
+const langFromHash = window.location.hash.substring(1);
 const savedLang = localStorage.getItem("lang");
-
-// 3️⃣ Определяем текущий язык
-let currentLang = langFromUrl || savedLang || "ru";
+let currentLang = langFromHash || savedLang || "ru";
 
 // 4️⃣ Функция обновления текста
 
@@ -428,17 +423,17 @@ function updateLanguage(lang) {
 
   localStorage.setItem("lang", lang); // сохраняем язык
 }
-//TODO
-// 5️⃣ Навешиваем обработчики на кнопки
+
+// --- Обработчики кнопок ---
 ruBut.addEventListener("click", () => {
   updateLanguage("ru");
-  history.replaceState(null, "", "?lang=ru"); // меняем URL без перезагрузки
+  history.replaceState(null, "", "#ru");
 });
 
 lvBut.addEventListener("click", () => {
   updateLanguage("lv");
-  history.replaceState(null, "", "?lang=lv");
+  history.replaceState(null, "", "#lv");
 });
 
-// 6️⃣ Применяем язык при загрузке страницы
+// --- Применяем язык при загрузке страницы ---
 updateLanguage(currentLang);
