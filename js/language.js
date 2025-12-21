@@ -156,7 +156,7 @@ const translations = {
     s7Text:
       "Ja plānojat pārsteigumu vai jums ir jautājumi, lūdzu, sazinieties ar Martu Godļevsku,",
     s7Text2: "tālr. 25855499",
-    fTitle: "Līdz svinīgajam notikumam atlicis…",
+    fTitle: "līdz svinīgajam notikumam atlicis…",
     fTitleW1: "Dienas",
     fTitleW2: "Stundas",
     fTitleW3: "Minūtes",
