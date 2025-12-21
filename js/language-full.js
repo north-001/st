@@ -19,7 +19,7 @@ const translations = {
     langActive: "Русский",
 
     hSubtext: "приглашение на свадьбу",
-    s1Title: "Дорогие друзья!",
+    s1Title: "Дорогие родные и друзья!",
     s1Text:
       "Приближается важный и радостный для нас день - день нашей свадьбы. Мы будем счастливы разделить его с вами.",
     // section 4
@@ -118,7 +118,7 @@ const translations = {
   },
   lv: {
     title: "Ielūgums",
-    langActive: "Latviski",
+    langActive: "LATVIEŠU",
 
     hSubtext: "kāzu ielūgums",
 
