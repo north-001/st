@@ -19,7 +19,7 @@ const translations = {
     langActive: "Русский",
 
     hSubtext: "приглашение на свадьбу",
-
+    s1Title: "Дорогие друзья!",
     s1Text:
       "Приближается важный и радостный для нас день - день нашей свадьбы. Мы будем счастливы разделить его с вами.",
     // section 4
@@ -120,7 +120,7 @@ const translations = {
     title: "Ielūgums",
     langActive: "Latviski",
 
-    hSubtext: "Kāzu ielūgums",
+    hSubtext: "kāzu ielūgums",
 
     s1Title: "Mīļie radi un draugi!",
     s1Text:
@@ -164,7 +164,7 @@ const translations = {
     s4P3PText: "Alberta Muiža, “Gavari”, Mārupe",
     s4P3PBut: "Atvērt Google Maps",
 
-    s4P3T1Subtitle: "Bankets",
+    s4P3T1Subtitle: "Sākums",
     s4P3T1Text: "Laiks gardai ēdienreizei, dejām un jautrībai",
     // Q
     c1Placeholder: "Ievadīt šeit",
@@ -305,7 +305,7 @@ function updateLanguage(lang) {
 
   // --- PART 3 : BANQUET ---
   document.getElementById("s4-p3-title").textContent =
-    translations[lang].s4P2Title;
+    translations[lang].s4P3Title;
 
   document.getElementById("s4-p3-p-title").textContent =
     translations[lang].s4P3PTitle;

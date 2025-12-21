@@ -91,7 +91,7 @@ const translations = {
   lv: {
     title: "Ielūgums",
     langActive: "Latviski",
-    hSubtext: "Kāzu ielūgums",
+    hSubtext: "kāzu ielūgums",
     s1Title: "Mīļie radi un draugi!",
     s1Text:
       "Mūsu dzīvē tuvojas svarīga un priecīga diena — mūsu kāzu diena. Mēs būsim ļoti priecīgi to pavadīt kopā ar jums.",
