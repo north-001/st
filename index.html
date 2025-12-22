@@ -152,22 +152,18 @@
     </div>
     <script src="js/preloader.js"></script>
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        setTimeout(() => {
-          const cards = document.querySelectorAll(".card");
-          let maxHeight = 0;
+      window.onload = () => {
+        const cards = document.querySelectorAll(".card");
+        let maxHeight = 0;
 
-          // находим максимальную высоту карточки
-          cards.forEach((card) => {
-            maxHeight = Math.max(maxHeight, card.offsetHeight);
-          });
+        cards.forEach((card) => {
+          maxHeight = Math.max(maxHeight, card.offsetHeight);
+        });
 
-          // применяем её ко всем карточкам
-          cards.forEach((card) => {
-            card.style.height = maxHeight + "px";
-          });
-        }, 100); // задержка 100 мс
-      });
+        cards.forEach((card) => {
+          card.style.height = maxHeight + "px";
+        });
+      };
     </script>
   </body>
 </html>
