@@ -12,6 +12,7 @@
     />
     <link rel="stylesheet" href="css/clean.css" />
     <link rel="stylesheet" href="css/root.css" />
+    <link rel="stylesheet" href="css/basic-styles.css" />
 
     <link rel="icon" type="image/png" href="/web-icon.png" />
     <link rel="apple-touch-icon" href="/web-icon.png" />
@@ -29,6 +30,10 @@
         align-items: center;
         justify-content: center;
       }
+      #preloader {
+        background-color: var(--main-color-dark);
+        color: var(--main-color-light);
+      }
       .container {
         display: flex;
         width: 100%;
@@ -44,7 +49,7 @@
       }
       .card {
         background-color: var(--main-color-light);
-        padding: 25px;
+        padding: 16px;
         opacity: 0.3;
         transition: 0.8s;
         cursor: pointer;
@@ -94,8 +99,6 @@
         }
       }
       .card:hover {
-        background-color: var(--main-color-light);
-        padding: 25px;
         opacity: 1;
       }
 
@@ -119,6 +122,11 @@
     </style>
   </head>
   <body>
+    <!-- Прелоадер -->
+    <div id="preloader">
+      <p>Загрузка...</p>
+    </div>
+
     <div class="container">
       <div class="card card-1">
         <p class="text title">
@@ -142,18 +150,23 @@
         </p>
       </div>
     </div>
+    <script src="js/preloader.js"></script>
     <script>
-      const cards = document.querySelectorAll(".card");
-      let maxHeight = 0;
+      document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(() => {
+          const cards = document.querySelectorAll(".card");
+          let maxHeight = 0;
 
-      // находим максимальную высоту карточки
-      cards.forEach((card) => {
-        maxHeight = Math.max(maxHeight, card.offsetHeight);
-      });
+          // находим максимальную высоту карточки
+          cards.forEach((card) => {
+            maxHeight = Math.max(maxHeight, card.offsetHeight);
+          });
 
-      // применяем её ко всем карточкам
-      cards.forEach((card) => {
-        card.style.height = maxHeight + "px";
+          // применяем её ко всем карточкам
+          cards.forEach((card) => {
+            card.style.height = maxHeight + "px";
+          });
+        }, 100); // задержка 100 мс
       });
     </script>
   </body>
