@@ -339,13 +339,13 @@
           </p>
 
           <div class="input-container">
-            <label for="namespguest" class="label-main" id="s6-l1-title"
+            <label for="nameandlastname" class="label-main" id="s6-l1-title"
               >Имя и Фамилия:</label
             >
             <input
               type="text"
-              id="namespguest"
-              name="namespguest"
+              id="nameandlastname"
+              name="nameandlastname"
               class="text-input placeholder-change-1"
               placeholder="Вводить здесь"
             />
@@ -357,8 +357,8 @@
               <label class="radio" id="s6-l2-a1">
                 <input
                   type="radio"
-                  name="comestatus"
-                  value="willcome"
+                  name="attendancestatus"
+                  value="coming"
                   class="radio-input"
                 />
                 <span class="radio-custom"></span>
@@ -368,8 +368,8 @@
               <label class="radio" id="s6-l2-a2">
                 <input
                   type="radio"
-                  name="comestatus"
-                  value="wontcome"
+                  name="attendancestatus"
+                  value="notcoming"
                   class="radio-input"
                 />
                 <span class="radio-custom"></span>
@@ -386,7 +386,7 @@
               <label class="radio" id="s6-l3-a1">
                 <input
                   type="radio"
-                  name="stayonnight"
+                  name="stayovernight"
                   value="yes"
                   class="radio-input"
                 />
@@ -397,7 +397,7 @@
               <label class="radio" id="s6-l3-a2">
                 <input
                   type="radio"
-                  name="stayonnight"
+                  name="stayovernight"
                   value="no"
                   class="radio-input"
                 />
@@ -417,7 +417,7 @@
                 <input
                   type="radio"
                   name="typeofmeat"
-                  value="willcome"
+                  value="chicken"
                   class="radio-input"
                 />
                 <span class="radio-custom"></span>
@@ -428,7 +428,7 @@
                 <input
                   type="radio"
                   name="typeofmeat"
-                  value="wontcome"
+                  value="pork"
                   class="radio-input"
                 />
                 <span class="radio-custom"></span>
@@ -439,7 +439,7 @@
                 <input
                   type="radio"
                   name="typeofmeat"
-                  value="wontcome"
+                  value="fish"
                   class="radio-input"
                 />
                 <span class="radio-custom"></span>
@@ -471,8 +471,8 @@
               <label class="radio" id="s6-l6-a1">
                 <input
                   type="checkbox"
-                  name="typeofalk"
-                  value="willcome"
+                  name="alcohol"
+                  value="champagne"
                   class="radio-input"
                 />
                 <span class="radio-custom"></span>
@@ -482,8 +482,8 @@
               <label class="radio" id="s6-l6-a2">
                 <input
                   type="checkbox"
-                  name="typeofalk"
-                  value="wontcome"
+                  name="alcohol"
+                  value="wine"
                   class="radio-input"
                 />
                 <span class="radio-custom"></span>
@@ -493,8 +493,8 @@
               <label class="radio" id="s6-l6-a3">
                 <input
                   type="checkbox"
-                  name="typeofalk"
-                  value="wontcome"
+                  name="alcohol"
+                  value="whiskey"
                   class="radio-input"
                 />
                 <span class="radio-custom"></span>
@@ -503,8 +503,8 @@
               <label class="radio" id="s6-l6-a4">
                 <input
                   type="checkbox"
-                  name="typeofalk"
-                  value="wontcome"
+                  name="alcohol"
+                  value="cognac"
                   class="radio-input"
                 />
                 <span class="radio-custom"></span>
@@ -513,8 +513,8 @@
               <label class="radio" id="s6-l6-a5">
                 <input
                   type="checkbox"
-                  name="typeofalk"
-                  value="wontcome"
+                  name="alcohol"
+                  value="vodka"
                   class="radio-input"
                 />
                 <span class="radio-custom"></span>
@@ -523,8 +523,8 @@
               <label class="radio">
                 <input
                   type="checkbox"
-                  name="typeofalk"
-                  value="wontcome"
+                  name="alcohol"
+                  value="ownversion"
                   class="radio-input"
                 />
                 <span class="radio-custom"></span>
@@ -532,7 +532,7 @@
                   <input
                     type="text"
                     id="namespalkcoustom"
-                    name="typeofalk"
+                    name="alcohol"
                     class="text-input text-input-checkbox placeholder-change-3"
                     placeholder="Свой вариант"
                   />
@@ -611,6 +611,97 @@
     <script src="js/scroll-appearance.js"></script>
     <script src="js/language-full.js"></script>
     <script src="js/time-counter.js"></script>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+      import {
+        getFirestore,
+        collection,
+        addDoc,
+      } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyC6q8LPU13Cwv34yWfhIUif2Gn-zuzA4G0",
+        authDomain: "stweb-f096d.firebaseapp.com",
+        projectId: "stweb-f096d",
+        storageBucket: "stweb-f096d.firebasestorage.app",
+        messagingSenderId: "323160494150",
+        appId: "1:323160494150:web:9133f651e0c0cb558dfa47",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+
+      document.getElementById("s6-but").addEventListener("click", async () => {
+        try {
+          const name = document.getElementById("nameandlastname").value.trim();
+          const allergy = document.getElementById("allergy").value.trim();
+
+          const attendance = document.querySelector(
+            'input[name="attendancestatus"]:checked'
+          )?.value;
+
+          const stayOvernight = document.querySelector(
+            'input[name="stayovernight"]:checked'
+          )?.value;
+
+          const meat = document.querySelector(
+            'input[name="typeofmeat"]:checked'
+          )?.value;
+
+          // алкоголь (checkbox)
+          const alcohol = Array.from(
+            document.querySelectorAll('input[name="alcohol"]:checked')
+          ).map((input) => input.value);
+
+          // свой вариант алкоголя
+          const customAlcohol = document
+            .getElementById("namespalkcoustom")
+            .value.trim();
+          if (customAlcohol) {
+            alcohol.push(customAlcohol);
+          }
+
+          // минимальная валидация
+          if (
+            !name ||
+            !attendance ||
+            !stayOvernight ||
+            !meat ||
+            !allergy ||
+            !alcohol
+          ) {
+            alert("Пожалуйста, заполните все поля");
+            return;
+          }
+
+          await addDoc(collection(db, "answers"), {
+            name,
+            attendance,
+            stayOvernight: stayOvernight || null,
+            meat: meat || null,
+            allergy: allergy || null,
+            alcohol,
+            createdAt: new Date(),
+          });
+
+          alert("Спасибо! Анкета отправлена ❤️");
+
+          // очистка формы
+          document.querySelectorAll("input").forEach((input) => {
+            if (input.type === "radio" || input.type === "checkbox") {
+              input.checked = false;
+            } else {
+              input.value = "";
+            }
+          });
+        } catch (e) {
+          console.error("Ошибка:", e);
+          alert("Ошибка отправки анкеты");
+        }
+      });
+    </script>
   </body>
 </html>
 
