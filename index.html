@@ -44,9 +44,7 @@
         padding: 25px;
         max-width: 700px;
       }
-      :root {
-        --scale: 1.6;
-      }
+
       .card {
         background-color: var(--main-color-light);
         padding: 16px;
@@ -101,23 +99,32 @@
       .card:hover {
         opacity: 1;
       }
-
+      :root {
+        --scale: 1.6;
+        --scale1: 1;
+      }
       .text {
         font-family: "Ci", serif;
         font-size: 16px;
         color: var(--main-color-dark);
         font-size: clamp(
-          calc(14px * var(--scale)),
-          calc(2.34vw * var(--scale)),
-          calc(22.4px * var(--scale))
+          calc(14px * var(--scale1)),
+          calc(2.34vw * var(--scale1)),
+          calc(22.4px * var(--scale1))
         );
-        text-align: center;
+        width: 100%;
       }
       .lv-card {
         margin-top: 41px;
       }
       .title {
-        margin-bottom: 16px;
+        margin-bottom: 10px;
+        font-size: clamp(
+          calc(14px * var(--scale)),
+          calc(2.34vw * var(--scale)),
+          calc(22.4px * var(--scale))
+        );
+        width: 100%;
       }
     </style>
   </head>
