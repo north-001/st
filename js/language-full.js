@@ -241,7 +241,7 @@ let currentLang = langFromHash || savedLang || "ru";
 // 4️⃣ Функция обновления текста
 
 // IMPORTANT
-function updateLanguage(lang) {
+export function updateLanguage(lang) {
   if (!translations[lang]) return; // если язык не найден — ничего не делаем
   currentLang = lang;
 
