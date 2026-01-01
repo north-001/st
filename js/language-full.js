@@ -455,21 +455,17 @@ function updateLanguage(lang) {
 
 // --- form ---
 export function updateLanguageForm(lang) {
+  // Если язык не передан — используем текущий сохранённый или русский
   const language = lang || localStorage.getItem("lang") || "ru";
-  if (!translations[language]) return; // если язык не найден — ничего не делаем
 
   const formS = document.getElementById("form-send-info-s");
-  if (formS) {
-    formS.textContent = translations[lang].formSendInfoS;
-  }
+  if (formS) formS.textContent = translations[language].formSendInfoS;
+
   const formE = document.getElementById("form-send-info-e");
-  if (formE) {
-    formE.textContent = translations[lang].formSendInfoE;
-  }
+  if (formE) formE.textContent = translations[language].formSendInfoE;
+
   const formF = document.getElementById("form-send-info-f");
-  if (formF) {
-    formF.textContent = translations[lang].formSendInfoF;
-  }
+  if (formF) formF.textContent = translations[language].formSendInfoF;
 }
 
 // --- Обработчики кнопок ---
@@ -485,4 +481,3 @@ lvBut.addEventListener("click", () => {
 
 // --- Применяем язык при загрузке страницы ---
 updateLanguage(currentLang);
-
