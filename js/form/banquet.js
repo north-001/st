@@ -85,7 +85,7 @@ document.getElementById("s6-but").addEventListener("click", async () => {
       return;
     }
 
-    await addDoc(collection(db, "banquet"), {
+    await addDoc(collection(db, "banquetd"), {
       name,
       attendance,
       stayOvernight: stayOvernight || null,
@@ -97,6 +97,7 @@ document.getElementById("s6-but").addEventListener("click", async () => {
 
     //alert("Спасибо! Анкета отправлена ❤️");
     // window
+
     const formConteiner = document.getElementById("form-send-status");
     const formSendInfo = document.querySelector(".form-send-status-text");
 
@@ -133,11 +134,13 @@ document.getElementById("s6-but").addEventListener("click", async () => {
 
     // сразу меняем id
     formSendInfo.id = "form-send-info-e";
-    updateLanguageForm(lang);
+    updateLanguageForm();
     // анимация
-    requestAnimationFrame(() => {
-      formConteiner.style.opacity = "1";
-      formSendInfo.style.transform = "scale(1)";
-    });
+    setTimeout(() => {
+      requestAnimationFrame(() => {
+        formConteiner.style.opacity = "1";
+        formSendInfo.style.transform = "scale(1)";
+      });
+    }, 3000);
   }
 });
