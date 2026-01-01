@@ -115,6 +115,9 @@ const translations = {
     fTitleW2: "Часы",
     fTitleW3: "Минуты",
     fTitleW4: "Секунды",
+
+    formSendInfoS: "Анкета успешно отправлена, спасибо за ваше участие.",
+    formSendInfoCB: "закрыть",
   },
   lv: {
     title: "Ielūgums",
@@ -217,6 +220,10 @@ const translations = {
     fTitleW2: "Stundas",
     fTitleW3: "Minūtes",
     fTitleW4: "Sekundes",
+
+    formSendInfoS:
+      "Pieteikuma veidlapa ir veiksmīgi iesniegta, paldies par piedalīšanos.",
+    formSendInfoCB: "aizvērt",
   },
 };
 
@@ -420,6 +427,12 @@ function updateLanguage(lang) {
     translations[lang].fTitleW3;
   document.getElementById("f-title-w4").textContent =
     translations[lang].fTitleW4;
+
+  // form send info
+  document.getElementById("form-send-info-s").textContent =
+    translations[lang].formSendInfoS;
+  document.getElementById("form-send-info-close-button").textContent =
+    translations[lang].formSendInfoCB;
 
   localStorage.setItem("lang", lang); // сохраняем язык
 }

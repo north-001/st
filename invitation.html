@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/root.css" />
     <link rel="stylesheet" href="css/basic-styles.css" />
     <link rel="stylesheet" href="css/stylecopy.css" />
+    <link rel="stylesheet" href="css/form/form-send-status.css" />
     <link rel="icon" type="image/png" href="/web-icon.png" />
     <link rel="apple-touch-icon" href="/web-icon.png" />
     <link rel="icon" href="web-icon.png?v=2" />
@@ -604,6 +605,23 @@
       </div>
     </section>
 
+    <div class="form-send-status form-send-status-hidden" id="form-send-status">
+      <div class="container sticky-wrapper">
+        <div
+          class="container_content container_content_center form-send-status-grid"
+        >
+          <p class="form-send-status-text" id="form-send-info-s">
+            Анкета успешно отправлена, спасибо за ваше участие.
+          </p>
+          <a
+            class="form-send-status-text form-send-status-text-close-button"
+            id="form-send-info-close-button"
+            >закрыть</a
+          >
+        </div>
+      </div>
+    </div>
+
     <script src="js/preloader.js"></script>
     <script src="js/viewport-fix.js"></script>
     <script src="js/copy-multiplace.js"></script>
@@ -612,96 +630,8 @@
     <script src="js/language-full.js"></script>
     <script src="js/time-counter.js"></script>
 
-    <script type="module">
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-      import {
-        getFirestore,
-        collection,
-        addDoc,
-      } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-
-      // Your web app's Firebase configuration
-      const firebaseConfig = {
-        apiKey: "AIzaSyC6q8LPU13Cwv34yWfhIUif2Gn-zuzA4G0",
-        authDomain: "stweb-f096d.firebaseapp.com",
-        projectId: "stweb-f096d",
-        storageBucket: "stweb-f096d.firebasestorage.app",
-        messagingSenderId: "323160494150",
-        appId: "1:323160494150:web:9133f651e0c0cb558dfa47",
-      };
-
-      const app = initializeApp(firebaseConfig);
-      const db = getFirestore(app);
-
-      document.getElementById("s6-but").addEventListener("click", async () => {
-        try {
-          const name = document.getElementById("nameandlastname").value.trim();
-          const allergy = document.getElementById("allergy").value.trim();
-
-          const attendance = document.querySelector(
-            'input[name="attendancestatus"]:checked'
-          )?.value;
-
-          const stayOvernight = document.querySelector(
-            'input[name="stayovernight"]:checked'
-          )?.value;
-
-          const meat = document.querySelector(
-            'input[name="typeofmeat"]:checked'
-          )?.value;
-
-          // алкоголь (checkbox)
-          const alcohol = Array.from(
-            document.querySelectorAll('input[name="alcohol"]:checked')
-          ).map((input) => input.value);
-
-          // свой вариант алкоголя
-          const customAlcohol = document
-            .getElementById("namespalkcoustom")
-            .value.trim();
-          if (customAlcohol) {
-            alcohol.push(customAlcohol);
-          }
-
-          // минимальная валидация
-          if (
-            !name ||
-            !attendance ||
-            !stayOvernight ||
-            !meat ||
-            !allergy ||
-            !alcohol
-          ) {
-            alert("Пожалуйста, заполните все поля");
-            return;
-          }
-
-          await addDoc(collection(db, "answers"), {
-            name,
-            attendance,
-            stayOvernight: stayOvernight || null,
-            meat: meat || null,
-            allergy: allergy || null,
-            alcohol,
-            createdAt: new Date(),
-          });
-
-          alert("Спасибо! Анкета отправлена ❤️");
-
-          // очистка формы
-          document.querySelectorAll("input").forEach((input) => {
-            if (input.type === "radio" || input.type === "checkbox") {
-              input.checked = false;
-            } else {
-              input.value = "";
-            }
-          });
-        } catch (e) {
-          console.error("Ошибка:", e);
-          alert("Ошибка отправки анкеты");
-        }
-      });
-    </script>
+    <script type="module" src="js/form/banquet.js"></script>
+    <script type="module" src="js/form/form-send-info-close.js"></script>
   </body>
 </html>
 

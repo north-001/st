@@ -1,0 +1,47 @@
+.form-send-status {
+  position: fixed;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px); /* Safari support */
+  background-color: rgba(255, 255, 255, 0.4);
+  transition: 0.3s;
+  opacity: 0;
+}
+.form-send-status-grid {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 /0.6;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  position: relative;
+}
+.form-send-status-text {
+  margin: 0;
+  padding: 0;
+  color: var(--main-color-dark);
+  font-size: clamp(18px, 3.2vw, 30px);
+  font-family: "C", serif;
+  font-weight: 500;
+  text-align: center;
+  transition: 0.3s;
+  transform: scale(0.9);
+}
+
+.form-send-status-text-close-button {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 16px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+.form-send-status-text-close-button:hover {
+  opacity: 1;
+}
+.form-send-status-hidden {
+  display: none;
+}
