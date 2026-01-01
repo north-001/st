@@ -43,5 +43,6 @@
   opacity: 1;
 }
 .form-send-status-hidden {
-  display: none;
+  opacity: 0;
+  pointer-events: none;
 }
