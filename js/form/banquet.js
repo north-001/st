@@ -19,15 +19,6 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 document.getElementById("s6-but").addEventListener("click", async () => {
-  // test to info window
-  const formConteiner = document.getElementById("form-send-status");
-  const formSendInfo = document.getElementById("form-send-info-s");
-  formConteiner.classList.remove("form-send-status-hidden");
-  setTimeout(() => {
-    formConteiner.style.opacity = "1";
-    formSendInfo.style.transform = "scale(1)";
-  }, 0);
-
   try {
     const name = document.getElementById("nameandlastname").value.trim();
     const allergy = document.getElementById("allergy").value.trim();
@@ -60,6 +51,15 @@ document.getElementById("s6-but").addEventListener("click", async () => {
     // минимальная валидация
     if (!name || !attendance) {
       //alert("Пожалуйста, заполните все поля");
+      // window
+      const formConteiner = document.getElementById("form-send-status");
+      const formSendInfo = document.querySelector(".form-send-status-text");
+      formConteiner.classList.remove("form-send-status-hidden");
+      setTimeout(() => {
+        formSendInfo.id = "form-send-info-f";
+        formConteiner.style.opacity = "1";
+        formSendInfo.style.transform = "scale(1)";
+      }, 0);
       return;
     }
 
@@ -74,6 +74,15 @@ document.getElementById("s6-but").addEventListener("click", async () => {
     });
 
     //alert("Спасибо! Анкета отправлена ❤️");
+    // window
+    const formConteiner = document.getElementById("form-send-status");
+    const formSendInfo = document.querySelector(".form-send-status-text");
+    formConteiner.classList.remove("form-send-status-hidden");
+    setTimeout(() => {
+      formSendInfo.id = "form-send-info-s";
+      formConteiner.style.opacity = "1";
+      formSendInfo.style.transform = "scale(1)";
+    }, 0);
 
     // очистка формы
     document.querySelectorAll("input").forEach((input) => {
@@ -86,5 +95,14 @@ document.getElementById("s6-but").addEventListener("click", async () => {
   } catch (e) {
     //console.error("Ошибка:", e);
     //alert("Ошибка отправки анкеты");
+    // window
+    const formConteiner = document.getElementById("form-send-status");
+    const formSendInfo = document.querySelector(".form-send-status-text");
+    formConteiner.classList.remove("form-send-status-hidden");
+    setTimeout(() => {
+      formSendInfo.id = "form-send-info-e";
+      formConteiner.style.opacity = "1";
+      formSendInfo.style.transform = "scale(1)";
+    }, 0);
   }
 });
