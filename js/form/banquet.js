@@ -19,6 +19,10 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 document.getElementById("s6-but").addEventListener("click", async () => {
+  // - Window -
+  const formConteiner = document.getElementById("form-send-status");
+  formConteiner.classList.remove("form-send-status-hidden");
+
   try {
     const name = document.getElementById("nameandlastname").value.trim();
     const allergy = document.getElementById("allergy").value.trim();
@@ -50,14 +54,8 @@ document.getElementById("s6-but").addEventListener("click", async () => {
 
     // минимальная валидация
     if (!name || !attendance) {
-      //alert("Пожалуйста, заполните все поля");
-      // window
-      const formConteiner = document.getElementById("form-send-status");
+      // - Window Validation -
       const formSendInfo = document.querySelector(".form-send-status-text");
-
-      // показываем контейнер
-      formConteiner.classList.remove("form-send-status-hidden");
-
       // сразу меняем id
       formSendInfo.id = "form-send-info-f";
       updateLanguageForm();
@@ -80,15 +78,8 @@ document.getElementById("s6-but").addEventListener("click", async () => {
       createdAt: new Date(),
     });
 
-    //alert("Спасибо! Анкета отправлена ❤️");
-    // window
-
-    const formConteiner = document.getElementById("form-send-status");
+    // - Window Success -
     const formSendInfo = document.querySelector(".form-send-status-text");
-
-    // показываем контейнер
-    formConteiner.classList.remove("form-send-status-hidden");
-
     // сразу меняем id
     formSendInfo.id = "form-send-info-s";
     updateLanguageForm();
@@ -107,16 +98,10 @@ document.getElementById("s6-but").addEventListener("click", async () => {
       }
     });
   } catch (e) {
-    //console.error("Ошибка:", e);
-    //alert("Ошибка отправки анкеты");
-    // window
-    // window
-    const formConteiner = document.getElementById("form-send-status");
+    //console.error("Erorr:", e);
+
+    // - Window Erorr -
     const formSendInfo = document.querySelector(".form-send-status-text");
-
-    // показываем контейнер
-    formConteiner.classList.remove("form-send-status-hidden");
-
     // сразу меняем id
     formSendInfo.id = "form-send-info-e";
     updateLanguageForm();

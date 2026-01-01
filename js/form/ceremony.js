@@ -44,7 +44,7 @@ document.getElementById("s6-but").addEventListener("click", async () => {
   }
 
   try {
-    await addDoc(collection(db, "ceremony1"), {
+    await addDoc(collection(db, "ceremony"), {
       name: name,
       attendance: status,
       createdAt: new Date(),
