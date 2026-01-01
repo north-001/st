@@ -236,7 +236,7 @@ const translations = {
 // 1️⃣ Получаем язык из хэша (#ru или #lv)
 const langFromHash = window.location.hash.substring(1);
 const savedLang = localStorage.getItem("lang");
-let currentLang = langFromHash || savedLang || "ru";
+export let currentLang = langFromHash || savedLang || "ru";
 
 // 4️⃣ Функция обновления текста
 
@@ -462,9 +462,6 @@ ruBut.addEventListener("click", () => {
 lvBut.addEventListener("click", () => {
   updateLanguage("lv");
   history.replaceState(null, "", "#lv");
-});
-document.getElementById("s6-but").addEventListener("click", async () => {
-  updateLanguage(currentLang);
 });
 
 // --- Применяем язык при загрузке страницы ---
