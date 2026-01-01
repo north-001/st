@@ -454,7 +454,7 @@ function updateLanguage(lang) {
 }
 
 // --- form ---
-export function updateLanguageForm() {
+export function updateLanguageForm(lang) {
   const language = lang || localStorage.getItem("lang") || "ru";
   if (!translations[language]) return; // если язык не найден — ничего не делаем
 
@@ -485,3 +485,4 @@ lvBut.addEventListener("click", () => {
 
 // --- Применяем язык при загрузке страницы ---
 updateLanguage(currentLang);
+
