@@ -4,7 +4,7 @@ import {
   collection,
   addDoc,
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-import { updateLanguage, currentLang } from "./js/language-full.js";
+import { updateLanguage } from "./js/language-full.js";
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyC6q8LPU13Cwv34yWfhIUif2Gn-zuzA4G0",
