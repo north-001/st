@@ -455,8 +455,9 @@ function updateLanguage(lang) {
 
 // --- form ---
 export function updateLanguageForm() {
-  if (!translations[lang]) return; // если язык не найден — ничего не делаем
-  currentLang = lang;
+  const language = lang || localStorage.getItem("lang") || "ru";
+  if (!translations[language]) return; // если язык не найден — ничего не делаем
+
   const formS = document.getElementById("form-send-info-s");
   if (formS) {
     formS.textContent = translations[lang].formSendInfoS;
