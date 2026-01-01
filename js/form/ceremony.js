@@ -46,7 +46,7 @@ document.getElementById("s6-but").addEventListener("click", async () => {
   }
 
   try {
-    await addDoc(collection(db, "ceremony"), {
+    await addDoc(collection(db, "ceremony1"), {
       name: name,
       attendance: status,
       createdAt: new Date(),
@@ -112,3 +112,4 @@ document.getElementById("s6-but").addEventListener("click", async () => {
 //  Initialize Firebase
 //const app = initializeApp(firebaseConfig);
 //-->
+
