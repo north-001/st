@@ -133,7 +133,7 @@ document.getElementById("s6-but").addEventListener("click", async () => {
 
     // сразу меняем id
     formSendInfo.id = "form-send-info-e";
-    updateLanguageForm();
+    updateLanguageForm(lang);
     // анимация
     requestAnimationFrame(() => {
       formConteiner.style.opacity = "1";
