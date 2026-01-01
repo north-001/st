@@ -236,12 +236,12 @@ const translations = {
 // 1️⃣ Получаем язык из хэша (#ru или #lv)
 const langFromHash = window.location.hash.substring(1);
 const savedLang = localStorage.getItem("lang");
-export let currentLang = langFromHash || savedLang || "ru";
+let currentLang = langFromHash || savedLang || "ru";
 
 // 4️⃣ Функция обновления текста
 
 // IMPORTANT
-export function updateLanguage(lang) {
+function updateLanguage(lang) {
   if (!translations[lang]) return; // если язык не найден — ничего не делаем
   currentLang = lang;
 
@@ -451,6 +451,24 @@ export function updateLanguage(lang) {
     translations[lang].formSendInfoCB;
 
   localStorage.setItem("lang", lang); // сохраняем язык
+}
+
+// --- form ---
+export function updateLanguageForm() {
+  if (!translations[lang]) return; // если язык не найден — ничего не делаем
+  currentLang = lang;
+  const formS = document.getElementById("form-send-info-s");
+  if (formS) {
+    formS.textContent = translations[lang].formSendInfoS;
+  }
+  const formE = document.getElementById("form-send-info-e");
+  if (formE) {
+    formE.textContent = translations[lang].formSendInfoE;
+  }
+  const formF = document.getElementById("form-send-info-f");
+  if (formF) {
+    formF.textContent = translations[lang].formSendInfoF;
+  }
 }
 
 // --- Обработчики кнопок ---
