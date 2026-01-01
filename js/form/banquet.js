@@ -19,6 +19,21 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 document.getElementById("s6-but").addEventListener("click", async () => {
+  // window
+  const formConteiner = document.getElementById("form-send-status");
+  const formSendInfo = document.querySelector(".form-send-status-text");
+
+  // показываем контейнер
+  formConteiner.classList.remove("form-send-status-hidden");
+
+  // сразу меняем id
+  formSendInfo.id = "form-send-info-s";
+
+  // анимация
+  requestAnimationFrame(() => {
+    formConteiner.style.opacity = "1";
+    formSendInfo.style.transform = "scale(1)";
+  });
   try {
     const name = document.getElementById("nameandlastname").value.trim();
     const allergy = document.getElementById("allergy").value.trim();
@@ -54,12 +69,19 @@ document.getElementById("s6-but").addEventListener("click", async () => {
       // window
       const formConteiner = document.getElementById("form-send-status");
       const formSendInfo = document.querySelector(".form-send-status-text");
+
+      // показываем контейнер
       formConteiner.classList.remove("form-send-status-hidden");
-      setTimeout(() => {
-        formSendInfo.id = "form-send-info-f";
+
+      // сразу меняем id
+      formSendInfo.id = "form-send-info-f";
+
+      // анимация
+      requestAnimationFrame(() => {
         formConteiner.style.opacity = "1";
         formSendInfo.style.transform = "scale(1)";
-      }, 0);
+      });
+
       return;
     }
 
@@ -77,12 +99,18 @@ document.getElementById("s6-but").addEventListener("click", async () => {
     // window
     const formConteiner = document.getElementById("form-send-status");
     const formSendInfo = document.querySelector(".form-send-status-text");
+
+    // показываем контейнер
     formConteiner.classList.remove("form-send-status-hidden");
-    setTimeout(() => {
-      formSendInfo.id = "form-send-info-s";
+
+    // сразу меняем id
+    formSendInfo.id = "form-send-info-s";
+
+    // анимация
+    requestAnimationFrame(() => {
       formConteiner.style.opacity = "1";
       formSendInfo.style.transform = "scale(1)";
-    }, 0);
+    });
 
     // очистка формы
     document.querySelectorAll("input").forEach((input) => {
@@ -96,13 +124,20 @@ document.getElementById("s6-but").addEventListener("click", async () => {
     //console.error("Ошибка:", e);
     //alert("Ошибка отправки анкеты");
     // window
+    // window
     const formConteiner = document.getElementById("form-send-status");
     const formSendInfo = document.querySelector(".form-send-status-text");
+
+    // показываем контейнер
     formConteiner.classList.remove("form-send-status-hidden");
-    setTimeout(() => {
-      formSendInfo.id = "form-send-info-e";
+
+    // сразу меняем id
+    formSendInfo.id = "form-send-info-e";
+
+    // анимация
+    requestAnimationFrame(() => {
       formConteiner.style.opacity = "1";
       formSendInfo.style.transform = "scale(1)";
-    }, 0);
+    });
   }
 });
