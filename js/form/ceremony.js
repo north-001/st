@@ -21,19 +21,17 @@ const db = getFirestore(app);
 
 // обработка формы
 document.getElementById("s6-but").addEventListener("click", async () => {
+  // window
+  const formConteiner = document.getElementById("form-send-status");
+  formConteiner.classList.remove("form-send-status-hidden");
+
   const name = document.getElementById("nameandlastname").value.trim();
   const status = document.querySelector(
     'input[name="attendancestatus"]:checked'
   )?.value;
 
   if (!name || !status) {
-    // window
-    const formConteiner = document.getElementById("form-send-status");
     const formSendInfo = document.querySelector(".form-send-status-text");
-
-    // показываем контейнер
-    formConteiner.classList.remove("form-send-status-hidden");
-
     // сразу меняем id
     formSendInfo.id = "form-send-info-f";
     updateLanguageForm();
@@ -55,11 +53,7 @@ document.getElementById("s6-but").addEventListener("click", async () => {
     //alert("Спасибо! Ответ отправлен ❤️");
     // window
 
-    const formConteiner = document.getElementById("form-send-status");
     const formSendInfo = document.querySelector(".form-send-status-text");
-
-    // показываем контейнер
-    formConteiner.classList.remove("form-send-status-hidden");
 
     // сразу меняем id
     formSendInfo.id = "form-send-info-s";
@@ -77,11 +71,7 @@ document.getElementById("s6-but").addEventListener("click", async () => {
       .forEach((i) => (i.checked = false));
   } catch (e) {
     // window
-    const formConteiner = document.getElementById("form-send-status");
     const formSendInfo = document.querySelector(".form-send-status-text");
-
-    // показываем контейнер
-    formConteiner.classList.remove("form-send-status-hidden");
 
     // сразу меняем id
     formSendInfo.id = "form-send-info-e";
@@ -112,4 +102,3 @@ document.getElementById("s6-but").addEventListener("click", async () => {
 //  Initialize Firebase
 //const app = initializeApp(firebaseConfig);
 //-->
-
