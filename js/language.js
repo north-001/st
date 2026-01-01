@@ -87,6 +87,12 @@ const translations = {
     fTitleW2: "Часы",
     fTitleW3: "Минуты",
     fTitleW4: "Секунды",
+
+    formSendInfoS: "Анкета успешно отправлена, спасибо за ваше участие.",
+    formSendInfoE:
+      "Форма не отправилась успешно попробуйте еще раз и проверте подключение к интернету.",
+    formSendInfoF: "Пожалуйта заполните все необходимые поля.",
+    formSendInfoCB: "закрыть",
   },
   lv: {
     title: "Ielūgums",
@@ -161,6 +167,13 @@ const translations = {
     fTitleW2: "Stundas",
     fTitleW3: "Minūtes",
     fTitleW4: "Sekundes",
+
+    formSendInfoS:
+      "Pieteikuma veidlapa ir veiksmīgi iesniegta, paldies par piedalīšanos.",
+    formSendInfoE:
+      "Veidlapa netika veiksmīgi iesniegta, lūdzu, mēģiniet vēlreiz un pārbaudiet interneta savienojumu.",
+    formSendInfoF: "Lūdzu, aizpildiet visus obligātos laukus.",
+    formSendInfoCB: "aizvērt",
   },
 };
 
@@ -263,8 +276,39 @@ function updateLanguage(lang) {
   document.getElementById("f-title-w4").textContent =
     translations[lang].fTitleW4;
 
+  // form send info
+  const formS = document.getElementById("form-send-info-s");
+  if (formS) {
+    formS.textContent = translations[lang].formSendInfoS;
+  }
+  const formE = document.getElementById("form-send-info-e");
+  if (formE) {
+    formE.textContent = translations[lang].formSendInfoE;
+  }
+  const formF = document.getElementById("form-send-info-f");
+  if (formF) {
+    formF.textContent = translations[lang].formSendInfoF;
+  }
+  document.getElementById("form-send-info-close-button").textContent =
+    translations[lang].formSendInfoCB;
+
   // Сохраняем язык
   localStorage.setItem("lang", lang);
+}
+
+// --- form ---
+export function updateLanguageForm(lang) {
+  // Если язык не передан — используем текущий сохранённый или русский
+  const language = lang || localStorage.getItem("lang") || "ru";
+
+  const formS = document.getElementById("form-send-info-s");
+  if (formS) formS.textContent = translations[language].formSendInfoS;
+
+  const formE = document.getElementById("form-send-info-e");
+  if (formE) formE.textContent = translations[language].formSendInfoE;
+
+  const formF = document.getElementById("form-send-info-f");
+  if (formF) formF.textContent = translations[language].formSendInfoF;
 }
 
 // --- Обработчики кнопок ---

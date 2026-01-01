@@ -4,6 +4,7 @@ import {
   collection,
   addDoc,
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { updateLanguageForm } from "../language.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -26,7 +27,21 @@ document.getElementById("s6-but").addEventListener("click", async () => {
   )?.value;
 
   if (!name || !status) {
-    alert("Пожалуйста, заполните все поля");
+    // window
+    const formConteiner = document.getElementById("form-send-status");
+    const formSendInfo = document.querySelector(".form-send-status-text");
+
+    // показываем контейнер
+    formConteiner.classList.remove("form-send-status-hidden");
+
+    // сразу меняем id
+    formSendInfo.id = "form-send-info-f";
+    updateLanguageForm();
+    // анимация
+    requestAnimationFrame(() => {
+      formConteiner.style.opacity = "1";
+      formSendInfo.style.transform = "scale(1)";
+    });
     return;
   }
 
@@ -37,7 +52,23 @@ document.getElementById("s6-but").addEventListener("click", async () => {
       createdAt: new Date(),
     });
 
-    alert("Спасибо! Ответ отправлен ❤️");
+    //alert("Спасибо! Ответ отправлен ❤️");
+    // window
+
+    const formConteiner = document.getElementById("form-send-status");
+    const formSendInfo = document.querySelector(".form-send-status-text");
+
+    // показываем контейнер
+    formConteiner.classList.remove("form-send-status-hidden");
+
+    // сразу меняем id
+    formSendInfo.id = "form-send-info-s";
+    updateLanguageForm();
+    // анимация
+    requestAnimationFrame(() => {
+      formConteiner.style.opacity = "1";
+      formSendInfo.style.transform = "scale(1)";
+    });
 
     // очистка формы
     document.getElementById("nameandlastname").value = "";
@@ -45,8 +76,21 @@ document.getElementById("s6-but").addEventListener("click", async () => {
       .querySelectorAll('input[name="attendancestatus"]')
       .forEach((i) => (i.checked = false));
   } catch (e) {
-    console.error("Ошибка:", e);
-    alert("Ошибка отправки");
+    // window
+    const formConteiner = document.getElementById("form-send-status");
+    const formSendInfo = document.querySelector(".form-send-status-text");
+
+    // показываем контейнер
+    formConteiner.classList.remove("form-send-status-hidden");
+
+    // сразу меняем id
+    formSendInfo.id = "form-send-info-e";
+    updateLanguageForm();
+    // анимация
+    requestAnimationFrame(() => {
+      formConteiner.style.opacity = "1";
+      formSendInfo.style.transform = "scale(1)";
+    });
   }
 });
 
