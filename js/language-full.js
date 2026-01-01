@@ -463,6 +463,9 @@ lvBut.addEventListener("click", () => {
   updateLanguage("lv");
   history.replaceState(null, "", "#lv");
 });
+document.getElementById("s6-but").addEventListener("click", async () => {
+  updateLanguage(currentLang);
+});
 
 // --- Применяем язык при загрузке страницы ---
 updateLanguage(currentLang);

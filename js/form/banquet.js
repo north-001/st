@@ -4,7 +4,6 @@ import {
   collection,
   addDoc,
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-import { languageManager } from "./js/language-full.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -76,7 +75,6 @@ document.getElementById("s6-but").addEventListener("click", async () => {
 
       // сразу меняем id
       formSendInfo.id = "form-send-info-f";
-      languageManager.refreshTexts();
       // анимация
       requestAnimationFrame(() => {
         formConteiner.style.opacity = "1";
@@ -106,7 +104,7 @@ document.getElementById("s6-but").addEventListener("click", async () => {
 
     // сразу меняем id
     formSendInfo.id = "form-send-info-s";
-    languageManager.refreshTexts();
+
     // анимация
     requestAnimationFrame(() => {
       formConteiner.style.opacity = "1";
@@ -134,7 +132,7 @@ document.getElementById("s6-but").addEventListener("click", async () => {
 
     // сразу меняем id
     formSendInfo.id = "form-send-info-e";
-    languageManager.refreshTexts();
+
     // анимация
     requestAnimationFrame(() => {
       formConteiner.style.opacity = "1";
