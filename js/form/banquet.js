@@ -19,21 +19,6 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 document.getElementById("s6-but").addEventListener("click", async () => {
-  // window
-  const formConteiner = document.getElementById("form-send-status");
-  const formSendInfo = document.querySelector(".form-send-status-text");
-
-  // показываем контейнер
-  formConteiner.classList.remove("form-send-status-hidden");
-
-  // сразу меняем id
-  formSendInfo.id = "form-send-info-s";
-
-  // анимация
-  requestAnimationFrame(() => {
-    formConteiner.style.opacity = "1";
-    formSendInfo.style.transform = "scale(1)";
-  });
   try {
     const name = document.getElementById("nameandlastname").value.trim();
     const allergy = document.getElementById("allergy").value.trim();
@@ -85,7 +70,7 @@ document.getElementById("s6-but").addEventListener("click", async () => {
       return;
     }
 
-    await addDoc(collection(db, "banquetd"), {
+    await addDoc(collection(db, "banquet"), {
       name,
       attendance,
       stayOvernight: stayOvernight || null,
@@ -136,11 +121,9 @@ document.getElementById("s6-but").addEventListener("click", async () => {
     formSendInfo.id = "form-send-info-e";
     updateLanguageForm();
     // анимация
-    setTimeout(() => {
-      requestAnimationFrame(() => {
-        formConteiner.style.opacity = "1";
-        formSendInfo.style.transform = "scale(1)";
-      });
-    }, 3000);
+    requestAnimationFrame(() => {
+      formConteiner.style.opacity = "1";
+      formSendInfo.style.transform = "scale(1)";
+    });
   }
 });
