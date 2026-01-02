@@ -34,7 +34,8 @@ const translations = {
     s4P1T3Text:
       "Шампанское, лёгкие угощения, общение и тёплые фотографии на память",
     s4P1T4Subtitle: "Завершение торжественной части",
-    s4P1T4Text: "Спасибо, что разделили с нами этот особенный момент",
+    s4P1T4Text:
+      "Будем рады, если этот особенный момент станет для вас тёплым воспоминанием",
     s4P2Title: "Речь",
     s4P2PTitle: "Место",
     s4P2PText: "Jehovas liecinieku valstības zāle, Miera iela 40, Rīgā",
@@ -88,9 +89,9 @@ const translations = {
     fTitleW3: "Минуты",
     fTitleW4: "Секунды",
 
-    formSendInfoS: "Анкета успешно отправлена, спасибо за ваше участие.",
+    formSendInfoS: "Спасибо! Ваша анкета успешно отправлена.",
     formSendInfoE:
-      "Форма не отправилась успешно попробуйте еще раз и проверте подключение к интернету.",
+      "К сожалению, форма не была отправлена. Попробуйте повторить отправку и убедитесь, что есть подключение к интернету.",
     formSendInfoF: "Пожалуйта заполните все необходимые поля.",
     formSendInfoCB: "закрыть",
   },
@@ -115,7 +116,9 @@ const translations = {
     s4P1T3Text:
       "Šampanietis, vieglas uzkodas, sarunas un siltas piemiņas fotogrāfijas",
     s4P1T4Subtitle: "Svinīgās daļas noslēgums",
-    s4P1T4Text: "Paldies, ka pavadījāt šo īpašo mirkli kopā ar mums",
+    s4P1T4Text:
+      "Mēs būsim priecīgi, ja šis īpašais brīdis kļūs par siltu atmiņu jums",
+
     s4P2Title: "Runa",
     s4P2PTitle: "Vieta",
     s4P2PText: "Jehovas liecinieku Valstības zāle, Miera iela 40, Rīga",
@@ -168,9 +171,9 @@ const translations = {
     fTitleW3: "Minūtes",
     fTitleW4: "Sekundes",
 
-    formSendInfoS: "Спасибо! Ваша анкета успешно отправлена.",
+    formSendInfoS: "Paldies! Jūsu anketa ir veiksmīgi nosūtīta.",
     formSendInfoE:
-      "К сожалению, форма не была отправлена. Попробуйте повторить отправку и убедитесь, что есть подключение к интернету.",
+      "Diemžēl forma netika nosūtīta. Lūdzu, mēģiniet vēlreiz un pārliecinieties, ka ir interneta savienojums.",
     formSendInfoF: "Lūdzu, aizpildiet visus obligātos laukus.",
     formSendInfoCB: "aizvērt",
   },
