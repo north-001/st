@@ -168,10 +168,9 @@ const translations = {
     fTitleW3: "Minūtes",
     fTitleW4: "Sekundes",
 
-    formSendInfoS:
-      "Pieteikuma veidlapa ir veiksmīgi iesniegta, paldies par piedalīšanos.",
+    formSendInfoS: "Спасибо! Ваша анкета успешно отправлена.",
     formSendInfoE:
-      "Veidlapa netika veiksmīgi iesniegta, lūdzu, mēģiniet vēlreiz un pārbaudiet interneta savienojumu.",
+      "К сожалению, форма не была отправлена. Попробуйте повторить отправку и убедитесь, что есть подключение к интернету.",
     formSendInfoF: "Lūdzu, aizpildiet visus obligātos laukus.",
     formSendInfoCB: "aizvērt",
   },

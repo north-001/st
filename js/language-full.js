@@ -42,7 +42,8 @@ const translations = {
       "Шампанское, лёгкие угощения, общение и тёплые фотографии на память",
 
     s4P1T4Subtitle: "Завершение торжественной части",
-    s4P1T4Text: "Спасибо, что разделили с нами этот особенный момент",
+    s4P1T4Text:
+      "Будем рады, если этот особенный момент станет для вас тёплым воспоминанием",
 
     // speech
     s4P2Title: "Свадебная речь",
@@ -62,6 +63,9 @@ const translations = {
     s4P3T1Subtitle: "Начало",
     s4P3T1Text: "Время для вкусной еды, танцев и веселья",
 
+    s4P3T2Subtitle: "Завершение праздника",
+    s4P3T2Text:
+      "Мы будем рады, если вы сможете насладиться нашим праздником как можно дольше",
     // Q
     c1Placeholder: "Вводить здесь",
     c1Placeholder2: "Свой вариант",
@@ -76,7 +80,8 @@ const translations = {
     s6L2A1: "Прийдете",
     s6L2A2: "Не прийдете",
 
-    s6L3Title: "Хотели бы вы остаться на ночь в месте проведения банкета?",
+    s6L3Title:
+      "На месте проведения банкета предусмотрена возможность ночного размещения в красивых и комфортных комнатах. Хотели бы вы остаться? ",
     s6L3A1: "Да",
     s6L3A2: "Нет",
 
@@ -92,10 +97,11 @@ const translations = {
     s6L6Title:
       "Пожалуйста, укажите предпочитаемые алкогольные напитки (можно выбрать несколько):",
     s6L6A1: "Шампанское",
-    s6L6A2: "Вино",
+    s6L6A2: "Белое вино",
+    s6L6A22: "Красное вино",
     s6L6A3: "Виски",
     s6L6A4: "Коньяк",
-    s6L6A5: "Водка",
+    s6L6A5: "Коктейли",
 
     s6But: "Отправить",
 
@@ -116,9 +122,9 @@ const translations = {
     fTitleW3: "Минуты",
     fTitleW4: "Секунды",
 
-    formSendInfoS: "Анкета успешно отправлена, спасибо за ваше участие.",
+    formSendInfoS: "Спасибо! Ваша анкета успешно отправлена.",
     formSendInfoE:
-      "Форма не отправилась успешно попробуйте еще раз и проверте подключение к интернету.",
+      "К сожалению, форма не была отправлена. Попробуйте повторить отправку и убедитесь, что есть подключение к интернету.",
     formSendInfoF: "Пожалуйта заполните все необходимые поля.",
     formSendInfoCB: "закрыть",
   },
@@ -153,7 +159,8 @@ const translations = {
       "Šampanietis, vieglas uzkodas, sarunas un siltas piemiņas fotogrāfijas",
 
     s4P1T4Subtitle: "Svinīgās daļas noslēgums",
-    s4P1T4Text: "Paldies, ka pavadījāt šo īpašo mirkli kopā ar mums",
+    s4P1T4Text:
+      "Mēs būsim priecīgi, ja šis īpašais brīdis kļūs par siltu atmiņu jums",
 
     // speech
     s4P2Title: "Kāzu runa",
@@ -172,6 +179,10 @@ const translations = {
 
     s4P3T1Subtitle: "Sākums",
     s4P3T1Text: "Laiks gardai ēdienreizei, dejām un jautrībai",
+
+    s4P3T2Subtitle: "Svētku noslēgums",
+    s4P3T2Text:
+      "Būsim priecīgi, ja jūs varēsiet baudīt mūsu svētkus pēc iespējas ilgāk",
     // Q
     c1Placeholder: "Ievadīt šeit",
     c1Placeholder2: "Savs variants",
@@ -185,7 +196,8 @@ const translations = {
     s6L2A1: "Būsiet",
     s6L2A2: "Nebūsiet",
 
-    s6L3Title: "Vai vēlētos palikt uz nakti banketa norises vietā?",
+    s6L3Title:
+      "Banketa norises vietā ir paredzēta nakšņošanas iespēja skaistās un ērtās istabās. Vai jūs vēlētos palikt?",
     s6L3A1: "Jā",
     s6L3A2: "Nē",
 
@@ -199,10 +211,11 @@ const translations = {
     s6L6Title:
       "Lūdzu, norādiet vēlamos alkoholiskos dzērienus (var izvēlēties vairākus):",
     s6L6A1: "Šampanietis",
-    s6L6A2: "Vīns",
+    s6L6A2: "Baltvīns",
+    s6L6A22: "Sarkanvīns",
     s6L6A3: "Viskijs",
     s6L6A4: "Konjaks",
-    s6L6A5: "Degvīns",
+    s6L6A5: "Kokteiļi",
     s6L6A6: "Savs variants",
 
     s6But: "Nosūtīt",
@@ -224,10 +237,9 @@ const translations = {
     fTitleW3: "Minūtes",
     fTitleW4: "Sekundes",
 
-    formSendInfoS:
-      "Pieteikuma veidlapa ir veiksmīgi iesniegta, paldies par piedalīšanos.",
+    formSendInfoS: "Paldies! Jūsu anketa ir veiksmīgi nosūtīta.",
     formSendInfoE:
-      "Veidlapa netika veiksmīgi iesniegta, lūdzu, mēģiniet vēlreiz un pārbaudiet interneta savienojumu.",
+      "Diemžēl forma netika nosūtīta. Lūdzu, mēģiniet vēlreiz un pārliecinieties, ka ir interneta savienojums.",
     formSendInfoF: "Lūdzu, aizpildiet visus obligātos laukus.",
     formSendInfoCB: "aizvērt",
   },
@@ -334,6 +346,12 @@ function updateLanguage(lang) {
 
   document.getElementById("s4-p3-t1-text").textContent =
     translations[lang].s4P3T1Text;
+
+  document.getElementById("s4-p3-t2-subtitle").textContent =
+    translations[lang].s4P3T2Subtitle;
+
+  document.getElementById("s4-p3-t2-text").textContent =
+    translations[lang].s4P3T2Text;
   // section Q
   const guestInput = document.querySelector(".placeholder-change-1");
   if (guestInput) {
@@ -402,6 +420,8 @@ function updateLanguage(lang) {
 
   document.querySelector("#s6-l6-a2").lastChild.textContent =
     translations[lang].s6L6A2;
+  document.querySelector("#s6-l6-a2-2").lastChild.textContent =
+    translations[lang].s6L6A22;
 
   document.querySelector("#s6-l6-a3").lastChild.textContent =
     translations[lang].s6L6A3;
