@@ -28,6 +28,10 @@ document.getElementById("downloadTxt").addEventListener("click", async () => {
       snapshot.forEach((doc) => {
         const d = doc.data();
 
+        const createdAt = d.createdAt
+          ? d.createdAt.toDate().toLocaleString("ru-RU")
+          : "-";
+
         text += `Имя: ${d.name ?? "-"}\n`;
         text += `Присутствие: ${d.attendance ?? "-"}\n`;
         text += `Ночь: ${d.stayOvernight ?? "-"}\n`;
@@ -35,7 +39,8 @@ document.getElementById("downloadTxt").addEventListener("click", async () => {
         text += `Аллергии: ${d.allergy ?? "-"}\n`;
         text += `Алкоголь: ${
           Array.isArray(d.alcohol) ? d.alcohol.join(", ") : "-"
-        }\n\n`;
+        }\n`;
+        text += `Дата отправки: ${createdAt}\n\n`;
 
         text += "---------------------------\n\n";
       });
