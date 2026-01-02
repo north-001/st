@@ -45,7 +45,7 @@ const translations = {
     s4P1T4Text: "Спасибо, что разделили с нами этот особенный момент",
 
     // speech
-    s4P2Title: "Речь",
+    s4P2Title: "Свадебная речь",
     s4P2PTitle: "Место",
     s4P2PText: "Jehovas liecinieku valstības zāle, Miera iela 40, Rīgā",
     s4P2PBut: "Открыть в Google Maps",
@@ -128,7 +128,7 @@ const translations = {
 
     hSubtext: "kāzu ielūgums",
 
-    s1Title: "Mīļie radi un draugi!",
+    s1Title: "Mīļie radinieki un draugi!",
     s1Text:
       "Mūsu dzīvē tuvojas svarīga un priecīga diena — mūsu kāzu diena. Mēs būsim ļoti priecīgi to pavadīt kopā ar jums.",
 
@@ -156,7 +156,7 @@ const translations = {
     s4P1T4Text: "Paldies, ka pavadījāt šo īpašo mirkli kopā ar mums",
 
     // speech
-    s4P2Title: "Runa",
+    s4P2Title: "Kāzu runa",
     s4P2PTitle: "Vieta",
     s4P2PText: "Jehovas liecinieku Valstības zāle, Miera iela 40, Rīga",
     s4P2PBut: "Atvērt Google Maps",
