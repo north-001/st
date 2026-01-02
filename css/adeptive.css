@@ -1,0 +1,15 @@
+@media (max-width: 369px) {
+  .section {
+    padding: 104px 10px;
+  }
+}
+@media (max-width: 339px) {
+  .section {
+    padding: 104px 5px;
+  }
+}
+@media (max-width: 329px) {
+  .section {
+    padding: 104px 3px;
+  }
+}
