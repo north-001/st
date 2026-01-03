@@ -1,15 +1,18 @@
 @media (max-width: 369px) {
-  .section {
-    padding: 104px 10px;
+  .section-adeptive {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 @media (max-width: 339px) {
-  .section {
-    padding: 104px 5px;
+  .section-adeptive {
+    padding-left: 5px;
+    padding-right: 5px;
   }
 }
 @media (max-width: 329px) {
-  .section {
-    padding: 104px 3px;
+  .section-adeptive {
+    padding-left: 3px;
+    padding-right: 3px;
   }
 }
